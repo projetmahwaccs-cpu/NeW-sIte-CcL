@@ -1,0 +1,95 @@
+=====================================================================
+  NOUVEAU — ACCUEIL FACON JUMIA (cette version)
+=====================================================================
+  index.html + ccl-styles.css ont ete transformes en clone Jumia
+  aux couleurs CCL (vert emeraude & or) :
+    - Bandeau or en haut (Vendez sur CCL / WhatsApp / Livraison)
+    - Grande barre de recherche avec bouton "Rechercher"
+    - Menus deroulants Compte et Aide dans le header
+    - Accueil : menu categories vertical + carrousel automatique
+      (5 diapositives) + colonne "Appelez pour commander"
+    - Rangee d'acces rapides (6 tuiles)
+    - VENTES FLASH avec compte a rebours jusqu'a minuit
+    - Top categories (12 tuiles rondes colorees)
+    - Barres de sections vertes "Voir plus" par rayon
+    - Boutiques officielles (Best Foods / Capital / SSR)
+    - Cartes produits style Jumia : fond blanc, badge -%, prix
+      barre, bouton "Ajouter" au survol
+  Les 15 sous-pages heritent automatiquement du nouveau design
+  (fond gris, cartes blanches, header vert) via ccl-styles.css.
+  RIEN d'autre n'a change : panier, commande WhatsApp, Wave,
+  Orange Money, vendeurs, admin — tout fonctionne comme avant.
+
+=====================================================================
+  CCL — SITE MULTI-PAGES : CONTENU DU PACK & INSTALLATION
+=====================================================================
+
+TOUT UPLOADER A LA RACINE DU REPO GITHUB (a cote des images/videos) :
+
+  FICHIERS PARTAGES (obligatoires, le site ne marche pas sans) :
+    index.html        page principale (accueil, boutique, fiche produit,
+                      panier, commande, confirmation, favoris, contact,
+                      devenir vendeur)
+    products.js       les 188 produits + categories (POUR AJOUTER UN
+                      PRODUIT : c'est CE fichier qu'on modifie, une
+                      seule fois pour tout le site)
+    ccl-core.js       moteur des sous-pages (panier, cartes, filtres)
+    ccl-styles.css    design partage de toutes les pages
+
+  12 PAGES CATEGORIES :
+    mode.html                beaute.html            alimentation.html
+    maison-nouveautes.html   maison-deco.html       high-tech.html
+    papeterie.html           sport.html             auto.html
+    supermarche.html         bebe.html              promos.html
+
+  3 PAGES PARTENAIRES :
+    bestfoods.html    capital.html    ssr.html
+    ATTENTION : capital.html et ssr.html REMPLACENT vos anciennes
+    pages du meme nom. Si vous voulez garder les anciennes versions,
+    renommez-les avant (ex: ssr_ancien.html) ou n'uploadez pas les
+    nouvelles.
+
+COMMENT CA MARCHE :
+  - Le panier et les favoris sont synchronises sur TOUTES les pages
+    (localStorage ccl_cart / ccl_wishlist)
+  - Ajouter au panier marche depuis n'importe quelle page
+  - Cliquer un produit ouvre sa fiche : index.html#/produit/ID
+  - Panier / commande / paiement : tout passe par index.html
+  - Chaque page a sa propre adresse indexable par Google :
+    votre-site/mode.html, votre-site/bestfoods.html, etc.
+
+  ESPACE ADMINISTRATION :
+    admin.html        panneau d'administration SANS CODE :
+                      - ajouter / modifier / dupliquer / supprimer des produits
+                      - uploader les photos directement dans le depot
+                      - changer bandeau d'annonce, WhatsApp, Wave, Orange Money
+                      - bouton "Publier sur GitHub" = mise en ligne automatique
+                      Acces : votre-site/admin.html (non reference par Google,
+                      inutilisable sans votre jeton GitHub personnel)
+
+  MARKETPLACE VENDEURS (7500 FCFA/mois) :
+    vendeur.html      espace vendeur public :
+                      - offre + inscription (dossier WhatsApp + paiement
+                        Wave/OM du 1er mois)
+                      - formulaire "Ajouter un produit" (envoi structure
+                        sur votre WhatsApp, photos jointes dans le chat)
+                      - renouvellement d'abonnement
+    Dans admin.html, onglet "Vendeurs" :
+                      - creer la boutique apres reception du paiement
+                        (code V-001 genere automatiquement)
+                      - bouton "+1 mois" a chaque paiement de 7500
+                      - produits d'un vendeur suspendu ou expire =
+                        MASQUES AUTOMATIQUEMENT du site (pas supprimes)
+                      - dans la fiche produit : champ "Vendeur" pour
+                        rattacher le produit a une boutique
+    Sur le site : mention "Vendu par [Boutique]" sur les cartes et
+    fiches, et nom de la boutique dans les commandes WhatsApp.
+
+  DESIGN EN MOUVEMENT (FX) :
+    Chaque en-tete de page a son ambiance : video de fond, halos
+    lumineux derivants, balayage de lumiere, visuels produits
+    flottants, etincelles or (SSR), rayons (Promos), logos de
+    marque (Capital, SSR). Tous les visuels/videos utilises sont
+    DEJA dans votre repo actuel (rien a uploader de plus).
+    Les animations se coupent automatiquement pour les visiteurs
+    ayant active "reduire les animations" sur leur telephone.

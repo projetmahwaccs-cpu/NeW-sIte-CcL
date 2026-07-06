@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Vendeur — Vendez sur Crystal Company Limited | 7 500 FCFA/mois</title>
+  <meta name="description" content="Ouvrez votre boutique sur la marketplace CCL pour 7 500 FCFA/mois : vos produits devant les clients de Dakar, livraison J+1, paiements Wave et Orange Money gérés." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b7a44" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Crystal Company Limited" />
+  <meta property="og:title" content="Devenez vendeur sur CCL — 7 500 FCFA/mois" />
+  <meta property="og:description" content="Vos produits sur la marketplace qui livre Dakar en 24h. Inscription simple, publication rapide, abonnement 7 500 FCFA/mois." />
+  <meta property="og:image" content="ccl-logo.png" />
+  <link rel="icon" href="ccl-logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="ccl-styles.css">
+  <style>
+    .pricecard{ max-width:420px; margin:26px auto 0; background:#fff; color:var(--ink); border:1px solid var(--line); text-align:center; padding:34px 28px; }
+    .pricecard .amount{ font-size:44px; font-weight:700; }
+    .pricecard .amount small{ font-size:15px; font-weight:600; color:var(--body); }
+    .pricecard ul{ list-style:none; margin:18px 0 22px; display:flex; flex-direction:column; gap:9px; text-align:left; }
+    .pricecard li{ display:flex; gap:9px; font-size:13.5px; color:var(--body); }
+    .pricecard li i{ color:var(--accent); flex:0 0 auto; margin-top:2px; }
+    .vtabs{ display:flex; gap:8px; margin-bottom:22px; flex-wrap:wrap; }
+    .vtab{ padding:11px 20px; border:1px solid var(--line-strong); background:#fff; font-weight:600; font-size:13px; letter-spacing:.04em; }
+    .vtab.on{ background:var(--ink); color:#fff; border-color:var(--ink); }
+    .vpanel{ display:none; } .vpanel.show{ display:block; }
+    .formbox{ max-width:760px; border:1px solid var(--line); padding:30px; }
+    .paysteps{ border:1px dashed var(--line-strong); padding:18px; margin-top:16px; font-size:13.5px; line-height:1.65; }
+    .paysteps b.big{ font-size:17px; }
+    @media(max-width:900px){ .formbox{ padding:18px 14px; } }
+  </style>
+</head>
+<body>
+
+<div class="announce"><i class="ti ti-truck-delivery"></i> Livraison J+1 partout à Dakar · Paiement Wave, Orange Money ou à la livraison</div>
+<header class="header">
+  <div class="header-in">
+    <a class="logo" href="index.html"><img src="ccl-logo.png" alt="Crystal Company Limited"></a>
+    <form class="hsearch" onsubmit="event.preventDefault(); location.href='index.html#/boutique?q='+encodeURIComponent(this.q.value.trim());">
+      <input name="q" type="search" placeholder="Rechercher un produit, une marque..." autocomplete="off">
+      <button type="submit" aria-label="Rechercher"><i class="ti ti-search"></i></button>
+    </form>
+    <div class="hacts">
+      <a class="hact" href="index.html#/favoris"><i class="ti ti-heart"></i><span class="lbl">Favoris</span><span class="bub bub-fav" data-n="0">0</span></a>
+      <a class="hact" href="index.html#/panier"><i class="ti ti-shopping-bag"></i><span class="lbl">Panier</span><span class="bub bub-cart" data-n="0">0</span></a>
+    </div>
+  </div>
+  <nav class="catnav">
+    <a href="index.html">Accueil</a>
+    <a href="index.html#/boutique">Boutique</a>
+    <a href="mode.html">Mode</a>
+    <a href="beaute.html">Beauté</a>
+    <a href="alimentation.html">Alimentation</a>
+    <a href="maison-nouveautes.html">Maison</a>
+    <a href="high-tech.html">High-Tech</a>
+    <a href="papeterie.html">Papeterie</a>
+    <a href="promos.html" class="promo">Promos</a>
+    <a href="index.html#/contact">Contact</a>
+    <a href="vendeur.html" class="on" style="color:var(--accent);">Espace Vendeur</a>
+  </nav>
+</header>
+
+<main>
+  <div class="cathero fx" style="background:linear-gradient(115deg,#04301c,#075232 55%,#0d6b3e); --fx1:rgba(242,213,122,.85); --fx2:rgba(140,255,180,.5);"><div class="fx-orb o1"></div><div class="fx-orb o2"></div><div class="fx-sweep"></div>
+    <div class="cathero-in" style="padding-top:56px; padding-bottom:56px;">
+      <span class="cathero-ic"><i class="ti ti-building-store"></i></span>
+      <div>
+        <h1>Espace Vendeur CCL</h1>
+        <p>Exposez vos produits devant les clients de la marketplace qui livre Dakar en 24h. Vous gérez vos produits, nous gérons la visibilité, les commandes et la livraison.</p>
+        <span class="cathero-n">Abonnement 7 500 FCFA / mois · Sans engagement</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ OFFRE ============ -->
+  <section class="sec" style="background:var(--tile); max-width:none; margin:0;">
+    <div style="max-width:1400px; margin:0 auto;">
+      <div class="sec-head" style="justify-content:center;"><h2>Une offre simple et claire</h2></div>
+      <div class="pricecard rv">
+        <span class="pcat" style="letter-spacing:.14em;">BOUTIQUE VENDEUR</span>
+        <div class="amount">7 500 <small>FCFA / mois</small></div>
+        <ul>
+          <li><i class="ti ti-check"></i> Vos produits publiés sur le site et sa page catégorie</li>
+          <li><i class="ti ti-check"></i> Mention « Vendu par votre boutique » sur chaque produit</li>
+          <li><i class="ti ti-check"></i> Nombre de produits illimité</li>
+          <li><i class="ti ti-check"></i> Commandes transmises directement sur votre WhatsApp</li>
+          <li><i class="ti ti-check"></i> Livraison J+1 à Dakar par notre réseau</li>
+          <li><i class="ti ti-check"></i> Paiements clients : Wave, Orange Money, espèces</li>
+          <li><i class="ti ti-check"></i> Sans engagement — arrêtez quand vous voulez</li>
+        </ul>
+        <button class="btn btn-green" style="width:100%;" onclick="showPanel('inscription')">Ouvrir ma boutique</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMMENT ÇA MARCHE ============ -->
+  <section class="sec">
+    <div class="sec-head"><h2>Comment ça marche</h2></div>
+    <div class="steps">
+      <div class="step rv"><span class="sn">1</span><h4>Inscription</h4><p>Remplissez le formulaire et réglez votre 1er mois (7 500 FCFA par Wave ou Orange Money).</p></div>
+      <div class="step rv"><span class="sn">2</span><h4>Activation sous 24h</h4><p>Nous validons votre boutique et vous recevez votre code vendeur sur WhatsApp.</p></div>
+      <div class="step rv"><span class="sn">3</span><h4>Ajoutez vos produits</h4><p>Envoyez chaque produit via le formulaire ci-dessous + les photos sur WhatsApp. Publication sous 24h.</p></div>
+      <div class="step rv"><span class="sn">4</span><h4>Vous vendez</h4><p>Les clients commandent sur le site, nous vous transmettons la commande, la livraison part en J+1.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ ESPACE FORMULAIRES ============ -->
+  <section class="sec" id="espace">
+    <div class="sec-head"><h2>Gérer ma boutique</h2></div>
+    <div class="vtabs">
+      <button class="vtab on" data-p="inscription" onclick="showPanel('inscription')"><i class="ti ti-user-plus"></i> Devenir vendeur</button>
+      <button class="vtab" data-p="produit" onclick="showPanel('produit')"><i class="ti ti-package"></i> Ajouter un produit</button>
+      <button class="vtab" data-p="abo" onclick="showPanel('abo')"><i class="ti ti-refresh"></i> Renouveler mon abonnement</button>
+    </div>
+
+    <!-- --- Inscription --- -->
+    <div class="vpanel show formbox" id="p-inscription">
+      <h3 style="font-size:18px; font-weight:600; margin-bottom:4px;">Inscription vendeur</h3>
+      <p class="page-sub" style="margin-bottom:18px;">Étape 1 : envoyez votre dossier. Étape 2 : réglez 7 500 FCFA. Activation sous 24h.</p>
+      <div class="frow">
+        <div class="field" id="i-shop"><label>Nom de votre boutique <em>*</em></label><input id="iv-shop" placeholder="Ex : Awa Fashion"><span class="err">Indiquez le nom de votre boutique.</span></div>
+        <div class="field" id="i-name"><label>Votre nom complet <em>*</em></label><input id="iv-name"><span class="err">Indiquez votre nom.</span></div>
+      </div>
+      <div class="frow">
+        <div class="field" id="i-phone"><label>WhatsApp <em>*</em></label><input id="iv-phone" inputmode="tel" placeholder="77 000 00 00"><span class="err">Numéro sénégalais requis.</span></div>
+        <div class="field"><label>Zone / Ville</label><input id="iv-zone" placeholder="Ex : Dakar, Pikine, Touba..."></div>
+      </div>
+      <div class="frow one">
+        <div class="field" id="i-desc"><label>Que vendez-vous ? <em>*</em></label><textarea id="iv-desc" rows="3" placeholder="Ex : vêtements femme, une trentaine de références, stock à Dakar..."></textarea><span class="err">Décrivez votre activité (10 caractères min).</span></div>
+      </div>
+      <button class="btn btn-wa" style="width:100%;" onclick="sendInscription()"><i class="ti ti-brand-whatsapp"></i> Étape 1 — Envoyer mon dossier sur WhatsApp</button>
+      <div class="paysteps">
+        <b class="big">Étape 2 — Régler le 1er mois : 7 500 FCFA</b><br>
+        Par <b>Wave</b> (bouton ci-dessous) ou <b>Orange Money</b> au <b id="om-num">77 497 63 64</b>.
+        Envoyez la capture du paiement dans la même conversation WhatsApp : votre boutique est activée sous 24h et vous recevez votre <b>code vendeur</b>.
+        <div style="margin-top:12px;"><a class="btn btn-solid" id="wave-btn-1" href="#" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Payer 7 500 FCFA avec Wave</a></div>
+      </div>
+    </div>
+
+    <!-- --- Ajouter un produit --- -->
+    <div class="vpanel formbox" id="p-produit">
+      <h3 style="font-size:18px; font-weight:600; margin-bottom:4px;">Ajouter un produit à ma boutique</h3>
+      <p class="page-sub" style="margin-bottom:18px;">Réservé aux vendeurs actifs. Votre produit est publié sous 24h après vérification.</p>
+      <div class="frow">
+        <div class="field" id="a-shop"><label>Nom de votre boutique <em>*</em></label><input id="av-shop" placeholder="Tel qu'enregistré à l'inscription"><span class="err">Indiquez votre boutique.</span></div>
+        <div class="field"><label>Code vendeur (si reçu)</label><input id="av-code" placeholder="Ex : V-012"></div>
+      </div>
+      <div class="frow one">
+        <div class="field" id="a-name"><label>Nom du produit <em>*</em></label><input id="av-name" placeholder="Ex : Robe wax taille unique"><span class="err">Nom du produit requis.</span></div>
+      </div>
+      <div class="frow">
+        <div class="field" id="a-price"><label>Prix de vente (FCFA) <em>*</em></label><input id="av-price" type="number" min="100" inputmode="numeric"><span class="err">Prix invalide.</span></div>
+        <div class="field"><label>Ancien prix (si promo)</label><input id="av-old" type="number" min="0" inputmode="numeric"></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label>Catégorie</label><select id="av-cat"></select></div>
+        <div class="field"><label>Quantité en stock</label><input id="av-stock" type="number" min="1" inputmode="numeric" placeholder="Ex : 10"></div>
+      </div>
+      <div class="frow one">
+        <div class="field"><label>Description / variantes (tailles, coloris...)</label><textarea id="av-desc" rows="3" placeholder="Ex : disponible en S, M, L — coloris bleu et rouge"></textarea></div>
+      </div>
+      <button class="btn btn-wa" style="width:100%;" onclick="sendProduct()"><i class="ti ti-brand-whatsapp"></i> Envoyer le produit sur WhatsApp</button>
+      <p class="page-sub" style="margin-top:12px;"><i class="ti ti-camera"></i> Important : joignez <b>les photos du produit</b> dans la conversation WhatsApp juste après l'envoi — ce sont elles qui seront publiées.</p>
+    </div>
+
+    <!-- --- Renouvellement --- -->
+    <div class="vpanel formbox" id="p-abo">
+      <h3 style="font-size:18px; font-weight:600; margin-bottom:4px;">Renouveler mon abonnement</h3>
+      <p class="page-sub" style="margin-bottom:18px;">7 500 FCFA / mois. Si l'abonnement expire, vos produits sont mis en pause (pas supprimés) et réapparaissent dès le renouvellement.</p>
+      <div class="frow">
+        <div class="field" id="r-shop"><label>Nom de votre boutique <em>*</em></label><input id="rv-shop"><span class="err">Indiquez votre boutique.</span></div>
+        <div class="field"><label>Code vendeur (si reçu)</label><input id="rv-code" placeholder="Ex : V-012"></div>
+      </div>
+      <div class="paysteps">
+        <b class="big">Payer 7 500 FCFA</b><br>
+        Par <b>Wave</b> (bouton ci-dessous) ou <b>Orange Money</b> au <b class="om-num2">77 497 63 64</b>, puis confirmez sur WhatsApp avec la capture.
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn-solid" id="wave-btn-2" href="#" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Payer avec Wave</a>
+          <button class="btn btn-wa" onclick="sendRenew()"><i class="ti ti-brand-whatsapp"></i> Confirmer sur WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec">
+    <div class="sec-head"><h2>Questions fréquentes</h2></div>
+    <div class="whygrid">
+      <div class="why rv"><i class="ti ti-clock"></i><h4>En combien de temps mon produit est en ligne ?</h4><p>Sous 24h après réception du produit et de ses photos. Vous recevez le lien de votre produit sur WhatsApp.</p></div>
+      <div class="why rv"><i class="ti ti-cash"></i><h4>Comment je reçois l'argent de mes ventes ?</h4><p>À chaque commande, nous vous contactons sur WhatsApp pour organiser la remise du produit et votre règlement.</p></div>
+      <div class="why rv"><i class="ti ti-player-pause"></i><h4>Que se passe-t-il si je ne renouvelle pas ?</h4><p>Vos produits sont mis en pause automatiquement, sans être supprimés. Ils reviennent en ligne dès le paiement suivant.</p></div>
+      <div class="why rv"><i class="ti ti-photo"></i><h4>Qui fait les photos ?</h4><p>Vous envoyez vos photos sur WhatsApp. Sur demande, notre équipe peut vous aider à les améliorer.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div>
+      <img class="foot-logo" src="ccl-logo.png" alt="CCL">
+      <p>Crystal Company Limited — votre marketplace de confiance au Sénégal. Mode, maison, beauté, alimentation, papeterie et plus, livrés en 24h à Dakar.</p>
+      <div class="foot-pay"><span>WAVE</span><span>ORANGE MONEY</span><span>ESPÈCES À LA LIVRAISON</span></div>
+    </div>
+    <div>
+      <h4>Boutique</h4>
+      <ul>
+        <li><a href="index.html#/boutique">Tous les produits</a></li>
+        <li><a href="promos.html">Promotions</a></li>
+        <li><a href="mode.html">Mode</a></li>
+        <li><a href="beaute.html">Parfums &amp; Beauté</a></li>
+        <li><a href="alimentation.html">Alimentation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Nos marques</h4>
+      <ul>
+        <li><a href="bestfoods.html">Best Foods</a></li>
+        <li><a href="capital.html">Papier Capital</a></li>
+        <li><a href="ssr.html">Sen Senteurs Royal</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Aide</h4>
+      <ul>
+        <li><a href="index.html#/contact">Nous contacter</a></li>
+        <li><a href="https://wa.me/221774976364" target="_blank" rel="noopener">WhatsApp : 77 497 63 64</a></li>
+        <li><a href="mailto:crystalecom2026@gmail.com">crystalecom2026@gmail.com</a></li>
+        <li><a href="index.html#/panier">Mon panier</a></li>
+        <li><a href="vendeur.html">Espace Vendeur</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">© <span id="year"></span> Crystal Company Limited — Dakar, Sénégal. Tous droits réservés.</div>
+</footer>
+<nav id="bnav" aria-label="Navigation mobile">
+  <a href="index.html"><i class="ti ti-home"></i>Accueil</a>
+  <a href="index.html#/boutique"><i class="ti ti-building-store"></i>Boutique</a>
+  <a class="fabwa" href="https://wa.me/221774976364" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+  <a href="index.html#/favoris"><i class="ti ti-heart"></i>Favoris<span class="bub bub-fav" data-n="0">0</span></a>
+  <a href="index.html#/panier"><i class="ti ti-shopping-bag"></i>Panier<span class="bub bub-cart" data-n="0">0</span></a>
+</nav>
+<div id="toast" role="status"></div>
+
+<script src="products.js"></script>
+<script src="ccl-core.js"></script>
+<script>
+/* ---------- Espace vendeur : formulaires → WhatsApp ---------- */
+const SUB_PRICE = 7500;
+function showPanel(p){
+  document.querySelectorAll('.vtab').forEach(b=>b.classList.toggle('on', b.dataset.p===p));
+  document.querySelectorAll('.vpanel').forEach(x=>x.classList.remove('show'));
+  document.getElementById('p-'+p).classList.add('show');
+  const esp = document.getElementById('espace');
+  if(esp && esp.scrollIntoView) esp.scrollIntoView({behavior:'smooth', block:'start'});
+}
+function markField(id, bad){ const f = document.getElementById(id); if(f) f.classList.toggle('bad', bad); return !bad; }
+function waOpen(msg){ window.open('https://wa.me/' + SHOP.WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank'); }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // catégories + liens Wave + numéros depuis SHOP
+  const sel = document.getElementById('av-cat');
+  sel.innerHTML = Object.entries(CAT_LABEL).map(([k,v]) => '<option value="'+v+'">'+v+'</option>').join('');
+  document.getElementById('wave-btn-1').href = SHOP.WAVE_LINK;
+  document.getElementById('wave-btn-2').href = SHOP.WAVE_LINK;
+  document.getElementById('om-num').textContent = SHOP.OM_NUMBER_DISPLAY;
+  document.querySelectorAll('.om-num2').forEach(e => e.textContent = SHOP.OM_NUMBER_DISPLAY);
+});
+
+function sendInscription(){
+  const shop = document.getElementById('iv-shop').value.trim();
+  const name = document.getElementById('iv-name').value.trim();
+  const phone = document.getElementById('iv-phone').value.replace(/\D/g,'').replace(/^221/,'');
+  const zone = document.getElementById('iv-zone').value.trim();
+  const desc = document.getElementById('iv-desc').value.trim();
+  let ok = true;
+  ok = markField('i-shop', shop.length < 2) && ok;
+  ok = markField('i-name', name.length < 2) && ok;
+  ok = markField('i-phone', !/^(7[05678])\d{7}$/.test(phone)) && ok;
+  ok = markField('i-desc', desc.length < 10) && ok;
+  if(!ok){ toast('Vérifiez les champs en rouge','alert-triangle'); return; }
+  let msg = 'INSCRIPTION VENDEUR — ' + SHOP.NAME + '\n\n';
+  msg += 'Boutique : ' + shop + '\nNom : ' + name + '\nWhatsApp : ' + phone + '\n';
+  if(zone) msg += 'Zone : ' + zone + '\n';
+  msg += 'Produits : ' + desc + '\n\n';
+  msg += 'Abonnement : ' + SUB_PRICE.toLocaleString('fr-FR') + ' FCFA / mois\n(J\'envoie la capture du paiement dans ce chat.)';
+  waOpen(msg);
+  toast('Dossier envoyé — pensez à régler les 7 500 FCFA (étape 2)');
+}
+function sendProduct(){
+  const shop = document.getElementById('av-shop').value.trim();
+  const code = document.getElementById('av-code').value.trim();
+  const name = document.getElementById('av-name').value.trim();
+  const price = Number(document.getElementById('av-price').value);
+  const old = Number(document.getElementById('av-old').value) || null;
+  const cat = document.getElementById('av-cat').value;
+  const stock = document.getElementById('av-stock').value.trim();
+  const desc = document.getElementById('av-desc').value.trim();
+  let ok = true;
+  ok = markField('a-shop', shop.length < 2) && ok;
+  ok = markField('a-name', name.length < 3) && ok;
+  ok = markField('a-price', !price || price < 100) && ok;
+  if(!ok){ toast('Vérifiez les champs en rouge','alert-triangle'); return; }
+  if(old && old <= price){ toast("L'ancien prix doit être supérieur au prix promo",'alert-triangle'); return; }
+  let msg = 'NOUVEAU PRODUIT VENDEUR — ' + SHOP.NAME + '\n\n';
+  msg += 'Boutique : ' + shop + (code ? ' (code ' + code + ')' : '') + '\n\n';
+  msg += 'Produit : ' + name + '\nPrix : ' + price.toLocaleString('fr-FR') + ' FCFA\n';
+  if(old) msg += 'Ancien prix : ' + old.toLocaleString('fr-FR') + ' FCFA\n';
+  msg += 'Catégorie : ' + cat + '\n';
+  if(stock) msg += 'Stock : ' + stock + '\n';
+  if(desc) msg += 'Description : ' + desc + '\n';
+  msg += '\n(J\'envoie les photos du produit dans ce chat.)';
+  waOpen(msg);
+  toast('Produit envoyé — joignez les photos sur WhatsApp !');
+}
+function sendRenew(){
+  const shop = document.getElementById('rv-shop').value.trim();
+  const code = document.getElementById('rv-code').value.trim();
+  if(!markField('r-shop', shop.length < 2)){ toast('Indiquez votre boutique','alert-triangle'); return; }
+  let msg = 'RENOUVELLEMENT ABONNEMENT VENDEUR — ' + SHOP.NAME + '\n\n';
+  msg += 'Boutique : ' + shop + (code ? ' (code ' + code + ')' : '') + '\n';
+  msg += 'Montant : ' + SUB_PRICE.toLocaleString('fr-FR') + ' FCFA\n\n(Capture du paiement jointe dans ce chat.)';
+  waOpen(msg);
+  toast('Renouvellement envoyé — joignez la capture du paiement');
+}
+</script>
+</body>
+</html>

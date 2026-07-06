@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crystal Company Limited — Boutique en ligne au Sénégal | Livraison Dakar</title>
+  <meta name="description" content="Boutique en ligne au Sénégal : mode, électroménager, beauté & parfums, alimentation Best Foods, papier Capital & Double A. Livraison J+1 à Dakar. Paiement Wave, Orange Money ou à la livraison." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b7a44" />
+  <meta name="geo.region" content="SN-DK" />
+  <meta name="geo.placename" content="Dakar" />
+  <link rel="canonical" href="https://crystal-company.sn/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Crystal Company Limited" />
+  <meta property="og:title" content="Crystal Company Limited — Boutique en ligne au Sénégal" />
+  <meta property="og:description" content="Mode, électroménager, beauté, alimentation, papier. Livraison J+1 à Dakar. Wave, Orange Money, paiement à la livraison." />
+  <meta property="og:image" content="https://crystal-company.sn/ccl-logo.png" />
+  <meta property="og:url" content="https://crystal-company.sn/" />
+  <meta property="og:locale" content="fr_SN" />
+  <link rel="icon" href="ccl-logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="ccl-logo.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Crystal Company Limited",
+    "alternateName": "CCL",
+    "image": "https://crystal-company.sn/ccl-logo.png",
+    "description": "Boutique en ligne au Sénégal : mode, électroménager, beauté, alimentation, papier. Livraison à Dakar.",
+    "url": "https://crystal-company.sn/",
+    "telephone": "+221774976364",
+    "email": "crystalecom2026@gmail.com",
+    "priceRange": "FCFA",
+    "currenciesAccepted": "XOF",
+    "paymentAccepted": "Wave, Orange Money, Espèces à la livraison",
+    "areaServed": "Dakar, Sénégal",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dakar", "addressCountry": "SN" },
+    "sameAs": ["https://wa.me/221774976364"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+
+<link rel="stylesheet" href="ccl-styles.css">
+</head>
+<body>
+
+<!-- ===================== BANDEAU CAMPAGNE (haut de page) ===================== -->
+<div class="jcamp">
+  <span class="brand"><i class="ti ti-diamond"></i> La <em>Grande Vente</em> CCL</span>
+  <span class="chip">JUSQU'À -40%</span>
+  <span class="sp"></span>
+  <a class="call" href="tel:+221774976364"><i class="ti ti-phone-call"></i><span><small>Commander au</small><b>77 497 63 64</b></span></a>
+</div>
+<div class="jsell"><a href="vendeur.html"><i class="ti ti-star-filled"></i> Vendez sur CCL</a></div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="header">
+  <div class="header-in">
+    <a class="logo" href="#/"><img src="ccl-logo.png" alt="Crystal Company Limited"></a>
+    <form class="hsearch" onsubmit="event.preventDefault(); go('#/boutique?q='+encodeURIComponent(this.q.value.trim()));">
+      <input name="q" id="hsearch-input" type="search" placeholder="Cherchez un produit, une marque ou une catégorie..." autocomplete="off">
+      <button type="submit" aria-label="Rechercher"><i class="ti ti-search"></i></button>
+    </form>
+    <div class="hacts">
+      <div class="hdrop">
+        <a class="hact" href="#/favoris" onclick="return window.innerWidth>760;"><i class="ti ti-user"></i><span class="lbl">Compte</span><i class="ti ti-chevron-down caret lbl"></i></a>
+        <div class="hdrop-menu">
+          <a class="cta" href="https://wa.me/221774976364" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="color:#fff;"></i> Nous écrire sur WhatsApp</a>
+          <a href="#/favoris"><i class="ti ti-heart"></i> Mes favoris</a>
+          <a href="#/panier"><i class="ti ti-shopping-bag"></i> Mon panier</a>
+          <div class="sep"></div>
+          <a href="vendeur.html"><i class="ti ti-building-store"></i> Devenir vendeur</a>
+        </div>
+      </div>
+      <div class="hdrop">
+        <a class="hact" href="#/contact" onclick="return window.innerWidth>760;"><i class="ti ti-help-circle"></i><span class="lbl">Aide</span><i class="ti ti-chevron-down caret lbl"></i></a>
+        <div class="hdrop-menu">
+          <a href="#/contact"><i class="ti ti-message-circle"></i> Nous contacter</a>
+          <a href="tel:+221774976364"><i class="ti ti-phone"></i> 77 497 63 64</a>
+          <a href="mailto:crystalecom2026@gmail.com"><i class="ti ti-mail"></i> Écrire un e-mail</a>
+        </div>
+      </div>
+      <a class="hact" href="#/panier"><i class="ti ti-shopping-cart"></i><span class="lbl">Panier</span><span class="bub" id="bub-cart" data-n="0">0</span></a>
+      <span class="bub" id="bub-fav" data-n="0" style="display:none;">0</span>
+    </div>
+  </div>
+  <nav class="catnav" id="catnav">
+    <a href="#/" data-nav="home">Accueil</a>
+    <a href="#/boutique" data-nav="shop">Boutique</a>
+    <a href="mode.html">Mode</a>
+    <a href="beaute.html">Beauté</a>
+    <a href="alimentation.html">Alimentation</a>
+    <a href="maison-nouveautes.html">Maison</a>
+    <a href="high-tech.html">High-Tech</a>
+    <a href="papeterie.html">Papeterie</a>
+    <a href="promos.html" class="promo">Promos</a>
+    <a href="#/contact">Contact</a>
+    <a href="vendeur.html" style="color:#F2D57A;">Devenir vendeur</a>
+  </nav>
+  <div class="announce"><i class="ti ti-truck-delivery"></i> Livraison J+1 partout à Dakar · Paiement Wave, Orange Money ou à la livraison</div>
+</header>
+
+<!-- ===================== VUES ===================== -->
+<main id="app" aria-live="polite"></main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="foot-in">
+    <div>
+      <img class="foot-logo" src="ccl-logo.png" alt="CCL">
+      <p>Crystal Company Limited — votre marketplace de confiance au Sénégal. Mode, maison, beauté, alimentation, papeterie et plus, livrés en 24h à Dakar.</p>
+      <div class="foot-pay"><span>WAVE</span><span>ORANGE MONEY</span><span>ESPÈCES À LA LIVRAISON</span></div>
+    </div>
+    <div>
+      <h4>Boutique</h4>
+      <ul>
+        <li><a href="#/boutique">Tous les produits</a></li>
+        <li><a href="promos.html">Promotions</a></li>
+        <li><a href="mode.html">Mode</a></li>
+        <li><a href="beaute.html">Parfums &amp; Beauté</a></li>
+        <li><a href="alimentation.html">Alimentation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Nos marques</h4>
+      <ul>
+        <li><a href="bestfoods.html">Best Foods</a></li>
+        <li><a href="capital.html">Papier Capital</a></li>
+        <li><a href="ssr.html">Sen Senteurs Royal</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Aide</h4>
+      <ul>
+        <li><a href="#/contact">Nous contacter</a></li>
+        <li><a href="https://wa.me/221774976364" target="_blank" rel="noopener">WhatsApp : 77 497 63 64</a></li>
+        <li><a href="mailto:crystalecom2026@gmail.com">crystalecom2026@gmail.com</a></li>
+        <li><a href="#/panier">Mon panier</a></li>
+        <li><a href="vendeur.html">Devenir vendeur</a></li>
+        <li><a href="#/favoris">Mes favoris</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">© <span id="year"></span> Crystal Company Limited — Dakar, Sénégal. Tous droits réservés.</div>
+</footer>
+
+<!-- ===================== NAVIGATION MOBILE ===================== -->
+<nav id="bnav" aria-label="Navigation mobile">
+  <a href="#/" data-nav="home"><i class="ti ti-home"></i>Accueil</a>
+  <a href="#/boutique" data-nav="shop"><i class="ti ti-building-store"></i>Boutique</a>
+  <a class="fabwa" href="https://wa.me/221774976364" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ti ti-brand-whatsapp"></i></a>
+  <a href="#/favoris"><i class="ti ti-heart"></i>Favoris<span class="bub" id="bub-fav2" data-n="0">0</span></a>
+  <a href="#/panier"><i class="ti ti-shopping-bag"></i>Panier<span class="bub" id="bub-cart2" data-n="0">0</span></a>
+</nav>
+
+<div id="toast" role="status"></div>
+
+<script src="products.js"></script>
+<script>
+/* ============================================================
+   CCL E-COMMERCE PRO — Application
+   Architecture : mini-routeur par hash → vraies pages
+   #/               Accueil
+   #/boutique       Catalogue (filtres, tri, recherche)
+   #/produit/ID     Fiche produit
+   #/panier         Panier
+   #/commande       Checkout (livraison + paiement)
+   #/confirmation   Confirmation de commande
+   #/favoris        Liste de souhaits
+   #/contact        Contact & infos
+   ============================================================ */
+
+/* ---------- DONNÉES : chargées depuis products.js ---------- */
+
+
+
+
+
+
+/* ---------- PAGES CATÉGORIES : identité de chaque rayon ---------- */
+
+
+
+
+
+
+const PAGE_OF = {"mode": "mode.html", "beaute": "beaute.html", "alim": "alimentation.html", "maison-new": "maison-nouveautes.html", "maisondeco": "maison-deco.html", "tech": "high-tech.html", "papier": "papeterie.html", "sport": "sport.html", "auto": "auto.html", "super": "supermarche.html", "bebe": "bebe.html", "flash": "promos.html"};
+
+/* ---------- OUTILS ---------- */
+const $ = s => document.querySelector(s);
+const money = n => n.toLocaleString('fr-FR') + ' FCFA';
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function store(key, val){
+  if(val === undefined){ try{ return JSON.parse(localStorage.getItem(key)); }catch(e){ return null; } }
+  try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){}
+}
+function toast(msg, icon){
+  const t = $('#toast');
+  t.innerHTML = '<i class="ti ti-' + (icon||'check') + '"></i> ' + msg;
+  t.classList.add('show');
+  clearTimeout(window._tt);
+  window._tt = setTimeout(()=>t.classList.remove('show'), 2600);
+}
+function imgErr(el){ el.style.display='none'; el.parentElement.classList.add('noimg'); }
+function go(hash){ location.hash = hash; }
+function isVid(src){ return /\.mp4($|\?)/i.test(src||''); }
+function mediaHTML(p){
+  const v = p.video || (isVid(p.image) ? p.image : null);
+  if(v){
+    const poster = (p.image && !isVid(p.image)) ? ' poster="' + esc(p.image) + '"' : '';
+    return '<video src="' + esc(v) + '"' + poster + ' muted loop playsinline autoplay preload="metadata"></video><span class="vtag"><i class="ti ti-player-play-filled"></i> Vidéo</span>';
+  }
+  if(p.image) return '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy" onerror="imgErr(this)">';
+  return '';
+}
+const byId = id => products.find(p => p.id === Number(id));
+
+/* ---------- Vendeurs : visibilité & label ---------- */
+function sellerOf(p){ return (typeof SELLERS !== 'undefined' && p.seller) ? SELLERS.find(s => s.id === p.seller) : null; }
+function sellerVisible(p){
+  if(!p.seller) return true;
+  const s = sellerOf(p);
+  if(!s || s.active === false) return false;
+  if(s.paidUntil){ const d = new Date(s.paidUntil + 'T23:59:59'); if(isFinite(d) && d < new Date()) return false; }
+  return true;
+}
+function visibleProducts(){ return products.filter(sellerVisible); }
+
+
+/* ---------- ÉTAT : PANIER & FAVORIS (clés compatibles ancien site) ---------- */
+let cart = store('ccl_cart') || [];
+let wish = store('ccl_wishlist') || [];
+function saveCart(){ store('ccl_cart', cart); badges(); }
+function saveWish(){ store('ccl_wishlist', wish); badges(); }
+function cartCount(){ return cart.reduce((s,i)=>s+i.qty,0); }
+function cartTotal(){ return cart.reduce((s,i)=>s+i.price*i.qty,0); }
+function badges(){
+  const c = String(cartCount()), f = String(wish.length);
+  ['bub-cart','bub-cart2'].forEach(id=>{ const e=document.getElementById(id); if(e){ e.textContent=c; e.dataset.n=c; }});
+  ['bub-fav','bub-fav2'].forEach(id=>{ const e=document.getElementById(id); if(e){ e.textContent=f; e.dataset.n=f; }});
+}
+function addToCart(id, qty, size, silent){
+  const p = byId(id); if(!p) return;
+  qty = qty || 1;
+  const key = String(id) + '|' + (size||'');
+  const line = cart.find(i => String(i.id)+'|'+(i.size||'') === key);
+  if(line){ line.qty += qty; } else { cart.push({ id:p.id, name:p.name, price:p.price, image:p.image||'', qty:qty, size:size||null }); }
+  saveCart();
+  if(!silent) toast('Ajouté au panier — ' + esc(p.name), 'shopping-bag');
+}
+function setQty(index, q){
+  if(!cart[index]) return;
+  cart[index].qty = Math.max(1, Math.min(99, q));
+  saveCart(); render();
+}
+function removeLine(index){ cart.splice(index,1); saveCart(); render(); }
+function toggleWish(id, btn){
+  const i = wish.indexOf(id);
+  if(i >= 0){ wish.splice(i,1); toast('Retiré des favoris','heart-off'); }
+  else { wish.push(id); toast('Ajouté aux favoris','heart'); }
+  saveWish();
+  if(btn){ btn.classList.toggle('on', wish.includes(id)); }
+  else render();
+}
+
+/* ---------- COMPOSANTS ---------- */
+function badgeHTML(p){
+  if(p.old) {
+    const pct = Math.round((1 - p.price/p.old) * 100);
+    return '<span class="ptag sale">-' + pct + '%</span>';
+  }
+  if(p.badge === 'Nouveau') return '<span class="ptag new">Nouveau</span>';
+  if(p.badge) return '<span class="ptag">' + esc(p.badge) + '</span>';
+  return '';
+}
+function cardHTML(p, extra){
+  const inWish = wish.includes(p.id) ? ' on' : '';
+  const img = mediaHTML(p);
+  const price = p.old
+    ? '<span class="sale">' + money(p.price) + '</span><span class="pold"><s>' + money(p.old) + '</s></span>'
+    : money(p.price);
+  return '<article class="pcard rv" onclick="go(\'#/produit/' + p.id + '\')">' +
+    '<div class="pimg' + (img?'':' noimg') + '">' + badgeHTML(p) +
+      '<button class="pfav' + inWish + '" onclick="event.stopPropagation(); toggleWish(' + p.id + ', this)" aria-label="Favoris"><i class="ti ti-heart"></i></button>' +
+      img +
+    '</div>' +
+    '<div class="pinfo">' +
+      '<span class="pcat">' + esc(CAT_LABEL[p.cat] || 'Boutique') + '</span>' +
+      (sellerOf(p) ? '<span class="soldby"><i class="ti ti-building-store"></i> ' + esc(sellerOf(p).shop) + '</span>' : '') +
+      '<h3 class="pname">' + esc(p.name) + '</h3>' +
+      '<div class="pprice">' + price + '</div>' +
+      (extra || '') +
+      '<button class="padd" onclick="event.stopPropagation(); addToCart(' + p.id + ')"><i class="ti ti-plus"></i> Ajouter au panier</button>' +
+    '</div>' +
+  '</article>';
+}
+function gridHTML(list){ return '<div class="pgrid">' + list.map(cardHTML).join('') + '</div>'; }
+function crumbs(items){
+  return '<div class="crumbs"><a href="#/">Accueil</a>' +
+    items.map(it => '<i class="ti ti-chevron-right"></i>' + (it.href ? '<a href="'+it.href+'">'+esc(it.label)+'</a>' : '<b>'+esc(it.label)+'</b>')).join('') +
+  '</div>';
+}
+
+/* ============================================================
+   VUES
+   ============================================================ */
+
+/* ---------- ACCUEIL (fidèle à jumia.sn) ---------- */
+const JMENU = [
+  ['','ti-rosette-discount-check','Boutiques Officielles','#boutiques'],
+  ['super','ti-shopping-cart','Supermarché','supermarche.html'],
+  ['tech','ti-device-mobile','Téléphones & High-Tech','high-tech.html'],
+  ['maison-new','ti-home','Maison & Cuisine','maison-nouveautes.html'],
+  ['maisondeco','ti-lamp','Maison & Déco','maison-deco.html'],
+  ['beaute','ti-spray','Santé & Beauté','beaute.html'],
+  ['mode','ti-shirt','Mode','mode.html'],
+  ['alim','ti-basket','Épicerie','alimentation.html'],
+  ['bebe','ti-baby-carriage','Produits pour bébés','bebe.html'],
+  ['sport','ti-barbell','Articles de sport','sport.html'],
+  ['auto','ti-car','Automobile','auto.html'],
+  ['papier','ti-file-stack','Papeterie & Bureau','papeterie.html']
+];
+const JSLIDES = [
+  { photo:'campagne-hero.jpg', kick:'La Grande Vente CCL', h:"Jusqu'à -40% sur tout le site", cta:"J'en profite", href:'promos.html' },
+  { grad:'linear-gradient(115deg,#8f1d12,#eb5e0b)', kick:'Offres limitées', h:'Ventes Flash — maintenant', p:"Prix cassés tant qu'il y a du stock.", cta:"J'achète", href:'promos.html', img:'banner-flash.jpg' },
+  { photo:'banner-mode.jpg', kick:'Nouvelle collection', h:'La mode au meilleur prix de Dakar', cta:'Voir la mode', href:'mode.html' },
+  { photo:'banner-bestfoods.jpg', kick:'Boutique officielle', h:'Best Foods — épices & épicerie fine', cta:'Découvrir', href:'bestfoods.html' },
+  { photo:'banner-maison.jpg', kick:'Équipez votre maison', h:'Cuisine, rangement & confort', cta:'Voir les nouveautés', href:'maison-nouveautes.html' },
+  { photo:'banner-ssr.jpg', kick:'Sen Senteurs Royal', h:"Parfums d'exception & bakhoor", cta:'Entrer', href:'ssr.html' }
+];
+/* Stock affiché en vente flash : p.stock si défini dans products.js, sinon valeur stable dérivée de l'id */
+function stockOf(p){ return (typeof p.stock === 'number') ? p.stock : (7 + (p.id * 13) % 54); }
+function flashCard(p){
+  const st = stockOf(p);
+  const pct = Math.min(92, Math.max(8, 100 - st));
+  return cardHTML(p, '<div class="pstock"><small>' + st + ' articles restants</small><div class="bar"><b style="width:' + pct + '%"></b></div></div>');
+}
+function jRow(title, list, href, barClass, extra, flash){
+  if(!list.length) return '';
+  return '<section class="jsec rv">' +
+    '<div class="jbar ' + (barClass||'') + '"><h2>' + title + ' <span>| Meilleures offres</span></h2>' + (extra||'') + '<span class="sp"></span><a class="more" href="' + href + '">Voir plus <i class="ti ti-chevron-right"></i></a></div>' +
+    '<div class="rowscroll">' + list.map(flash ? flashCard : (p=>cardHTML(p))).join('') + '</div>' +
+  '</section>';
+}
+function viewHome(){
+  const vp = visibleProducts();
+  const by = c => vp.filter(p => p.cat === c);
+  const flash = by('flash'), mode = by('mode'), beaute = by('beaute'),
+        maison = by('maison-new'), deco = by('maisondeco'), alim = by('alim'),
+        tech = by('tech'), papier = by('papier'), sup = by('super'), bebe = by('bebe'), sport = by('sport');
+  const cheap = vp.filter(p => p.price <= 10000).slice(0,12);
+  const reco = vp.slice().sort((a,b)=> (b.old?1:0)-(a.old?1:0) || a.id-b.id).slice(0,18);
+  return `
+  <!-- Panneaux de campagne latéraux (grands écrans) -->
+  <div class="jsidead l"><span class="cclmark">CCL <i class="ti ti-diamond"></i></span><span class="fete">La <em>Grande<br>Vente</em></span><div class="disc"><small>JUSQU'À</small><b>-40%</b></div><div class="ball"></div></div>
+  <div class="jsidead r"><span class="cclmark">CCL <i class="ti ti-diamond"></i></span><span class="fete">La <em>Grande<br>Vente</em></span><div class="disc"><small>JUSQU'À</small><b>-40%</b></div><div class="ball"></div></div>
+
+  <div class="jwrap">
+
+    <!-- Rangée 1 : menu | carrousel | assistance -->
+    <div class="jrow1">
+      <nav class="jmenu" aria-label="Catégories">
+        ${JMENU.map(([c,ic,label,href]) => '<a href="'+href+'"><i class="ti '+ic+'"></i>'+label+'</a>').join('')}
+      </nav>
+
+      <div class="jslider" id="jslider" aria-label="Promotions">
+        ${JSLIDES.map((s,i) => `
+        <a class="jslide${s.photo?' photo':''}${i===0?' on':''}" href="${s.href}" style="${s.photo?"background-image:url('"+s.photo+"')":'background:'+s.grad}">
+          <div class="txt">
+            <span class="kick">${s.kick}</span>
+            <h2>${s.h}</h2>
+            ${s.p?'<p>'+s.p+'</p>':''}
+            <span class="go">${s.cta}</span>
+          </div>
+          ${s.img?'<div class="vis"><img src="'+s.img+'" alt="" loading="lazy"></div>':''}
+        </a>`).join('')}
+        <button class="jarrow l" onclick="jGo(-1)" aria-label="Précédent"><i class="ti ti-chevron-left"></i></button>
+        <button class="jarrow r" onclick="jGo(1)" aria-label="Suivant"><i class="ti ti-chevron-right"></i></button>
+        <div class="jdots" id="jdots">${JSLIDES.map((_,i)=>'<button class="'+(i===0?'on':'')+'" onclick="jSet('+i+')" aria-label="Diapositive '+(i+1)+'"></button>').join('')}</div>
+      </div>
+
+      <aside class="jside">
+        <div class="assist">
+          <a href="#/contact"><i class="ti ti-help-circle"></i><span><b>Centre d'assistance</b>Guide du service client</span></a>
+          <a href="tel:+${SHOP.WHATSAPP}"><i class="ti ti-phone-call"></i><span><b>Commandez au</b>${SHOP.PHONE_DISPLAY}</span></a>
+          <a href="vendeur.html"><i class="ti ti-building-store"></i><span><b>Vendez sur CCL</b>Ouvrez votre shop ici</span></a>
+        </div>
+        <a class="campsq" href="promos.html">
+          <span class="lg">CCL <i class="ti ti-diamond"></i></span>
+          <span>La <em>Grande Vente</em></span>
+          <span class="pc">JUSQU'À -40%</span>
+        </a>
+      </aside>
+    </div>
+
+    <!-- Pastilles rondes -->
+    <div class="jrounds rv">
+      <a href="promos.html"><span class="rd" style="background:linear-gradient(140deg,#8f1d12,#eb5e0b)"><img src="round-flash.jpg" alt="" loading="lazy" onerror="this.remove()"><i class="ti ti-bolt"></i></span>Ventes Flash</a>
+      <a href="vendeur.html"><span class="rd" style="background:linear-gradient(140deg,#b8911a,#d4af37)"><img src="round-argent.jpg" alt="" loading="lazy" onerror="this.remove()"><i class="ti ti-coin"></i></span>Gagnez de l'argent</a>
+      <a href="supermarche.html"><span class="rd" style="background:linear-gradient(140deg,#33691e,#689f38)"><img src="round-super.jpg" alt="" loading="lazy" onerror="this.remove()"><i class="ti ti-shopping-cart"></i></span>Supermarché</a>
+      <a href="high-tech.html"><span class="rd" style="background:linear-gradient(140deg,#0f2a3d,#1976a8)"><img src="round-tech.jpg" alt="" loading="lazy" onerror="this.remove()"><i class="ti ti-device-mobile"></i></span>High-Tech</a>
+      <a href="maison-nouveautes.html"><span class="rd" style="background:linear-gradient(140deg,#7a3b0d,#d9822b)"><img src="round-arrivage.jpg" alt="" loading="lazy" onerror="this.remove()"><i class="ti ti-home"></i></span>Nouvel arrivage</a>
+      <a href="bestfoods.html"><span class="rd" style="background:linear-gradient(140deg,#0a4a26,#1a8a4a)"><img src="round-bestfoods.jpg" alt="" loading="lazy" onerror="this.remove()"><i class="ti ti-leaf"></i></span>Best Foods</a>
+      <a href="ssr.html"><span class="rd" style="background:linear-gradient(140deg,#141414,#5a4408)"><img src="round-ssr.jpg" alt="" loading="lazy" onerror="this.remove()"><i class="ti ti-crown"></i></span>SSR</a>
+      <a href="capital.html"><span class="rd" style="background:linear-gradient(140deg,#0d47a1,#1e6fd8)"><img src="round-capital.jpg" alt="" loading="lazy" onerror="this.remove()"><i class="ti ti-file-stack"></i></span>Papier Capital</a>
+    </div>
+
+    <!-- Nouveautés (barre blanche) -->
+    ${jRow('Nouveautés Maison', maison.slice(0,12), 'maison-nouveautes.html', 'white')}
+
+    <!-- Ventes flash - maintenant -->
+    ${flash.length ? '<section class="jsec rv">' +
+      '<div class="jbar flash"><h2><i class="ti ti-bolt"></i> Ventes flash - maintenant</h2>' +
+      '<div class="jtimer">Termine dans : <span id="jt-h">--</span><span id="jt-m">--</span><span id="jt-s">--</span></div>' +
+      '<span class="sp"></span><a class="more" href="promos.html">Voir plus <i class="ti ti-chevron-right"></i></a></div>' +
+      '<div class="rowscroll">' + flash.map(flashCard).join('') + '</div>' +
+    '</section>' : ''}
+
+    ${jRow('Mode Homme & Femme', mode.slice(0,12), 'mode.html')}
+    ${jRow('Parfums & Beauté', beaute.slice(0,12), 'beaute.html')}
+
+    <!-- BEST FOODS (barre rouge sombre, façon SMART TECHNOLOGY) -->
+    ${jRow('BEST FOODS', alim.slice(0,12), 'bestfoods.html', 'dark')}
+
+    <!-- Découvrez les offres de nos catégories -->
+    <div class="jdisco rv" id="boutiques">
+      <h2>Découvrez les offres de nos catégories</h2>
+      <div class="tiles">
+        ${JMENU.filter(([c])=>c).map(([c,ic,label,href]) => {
+          const m = CAT_META[c] || {};
+          const TILE = {super:'tile-super.jpg',tech:'tile-tech.jpg','maison-new':'tile-maison.jpg',maisondeco:'tile-deco.jpg',beaute:'tile-beaute.jpg',mode:'tile-mode.jpg',alim:'tile-alim.jpg',bebe:'tile-bebe.jpg',sport:'tile-sport.jpg',auto:'tile-auto.jpg',papier:'tile-papier.jpg'}[c];
+          return '<a href="'+href+'"><span class="ph" style="background:'+(m.grad||'var(--accent)')+'">'+(TILE?'<img src="'+TILE+'" alt="" loading="lazy" onerror="this.remove()">':'')+'<i class="ti '+ic+'"></i></span><span class="lb">'+esc(CAT_LABEL[c]||label)+'</span></a>';
+        }).join('')}<a href="promos.html"><span class="ph" style="background:linear-gradient(140deg,#8f1d12,#eb5e0b)"><img src="tile-flash.jpg" alt="" loading="lazy" onerror="this.remove()"><i class="ti ti-bolt"></i></span><span class="lb">Ventes Flash</span></a>
+      </div>
+    </div>
+
+    <!-- Bannière Wave / Orange Money -->
+    <a class="jbanner pay photo rv" href="#/commande" style="background-image:url('banner-wave-om.jpg')">
+      <div class="tx">
+        <span class="lg">CCL <i class="ti ti-diamond"></i></span>
+        <h3>Prépayer avec <b>Wave</b> ou <b>Orange Money</b> = livraison prioritaire</h3>
+        <p>Paiement mobile sécurisé, ou espèces à la livraison — partout à Dakar dès aujourd'hui.</p>
+      </div>
+      <div class="art"><span class="paychip">wave</span><span class="paychip om">Orange Money</span></div>
+    </a>
+
+    ${jRow('Maison & Déco', deco.slice(0,12), 'maison-deco.html')}
+    ${tech.length ? jRow('High-Tech', tech.slice(0,12), 'high-tech.html', 'blue') : ''}
+    ${sport.length ? jRow('Sport & Fitness', sport.slice(0,12), 'sport.html') : ''}
+
+    <!-- Bannière Devenez vendeur (façon JForce) -->
+    <a class="jbanner force photo rv" href="vendeur.html" style="background-image:url('banner-vendeur.jpg')">
+      <div class="tx">
+        <span class="lg">CCL <i class="ti ti-diamond"></i> VENDEURS</span>
+        <h3>Rejoignez la marketplace — <b>gagnez plus d'argent</b></h3>
+        <p>Votre boutique en ligne dès 7 500 FCFA/mois, vos produits devant tout Dakar.</p>
+      </div>
+      <div class="art"><span class="btnw">En savoir plus</span></div>
+    </a>
+
+    ${sup.length ? jRow('Supermarché', sup.slice(0,12), 'supermarche.html') : ''}
+    ${bebe.length ? jRow('Rayon Bébé', bebe.slice(0,12), 'bebe.html') : ''}
+    ${papier.length ? jRow('SEN SENTEURS ROYAL & CAPITAL', papier.slice(0,12), 'papeterie.html', 'black') : ''}
+    ${cheap.length ? jRow('Tout à moins de 10 000 F', cheap, '#/boutique', 'white') : ''}
+
+    <!-- Recommandé pour vous : grande grille -->
+    <section class="jsec rv">
+      <div class="jbar white"><h2>Recommandé pour vous</h2><span class="sp"></span><a class="more" href="#/boutique">Voir plus <i class="ti ti-chevron-right"></i></a></div>
+      <div class="pgrid">${reco.map(p=>cardHTML(p)).join('')}</div>
+    </section>
+
+    <!-- Bloc SEO -->
+    <div class="jseo rv">
+      <h2>Crystal Company Limited : votre marketplace d'achat et de vente en ligne au Sénégal</h2>
+      <p>Explorez l'univers de <b>CCL</b>, votre boutique en ligne de confiance à Dakar : une sélection de <b>${vp.length} produits authentiques</b> à prix avantageux, livrés en 24h partout à Dakar et sa banlieue. Mode, maison, beauté, high-tech, épicerie — acheteurs et vendeurs se retrouvent sur une plateforme simple et sécurisée.</p>
+      <h3>Large catalogue, meilleurs prix et boutiques officielles</h3>
+      <p>Chez CCL, nous abritons des <b>boutiques officielles</b> comme <b>Best Foods</b> (épices et épicerie fine), <b>Capital &amp; Double A</b> (papier premium) et <b>Sen Senteurs Royal</b> (parfums et bakhoor de luxe). Vêtements, électroménager, articles pour bébés, sport et décoration : tout ce qu'il vous faut au meilleur prix du marché.</p>
+      <h3>Les meilleures offres avec livraison rapide</h3>
+      <p>Profitez des <b>ventes flash</b>, du paiement <b>Wave</b> et <b>Orange Money</b> ou en espèces à la livraison, et d'un support WhatsApp 7j/7 au ${SHOP.PHONE_DISPLAY}. Commandez aujourd'hui, recevez demain — c'est la promesse CCL.</p>
+    </div>
+
+  </div>
+
+  <!-- Pop-up campagne flottant -->
+  <a class="jpop" id="jpop" href="high-tech.html">
+    <button class="x" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('jpop').remove();" aria-label="Fermer"><i class="ti ti-x"></i></button>
+    <img src="popup-campagne.jpg" alt="" loading="lazy" onerror="this.remove()">
+    <span class="tx"><b>La Grande Vente CCL</b>Votre univers high-tech à portée de clic !</span>
+  </a>
+
+  <!-- Carte flottante Commandez au -->
+  <div class="jcall" id="jcall">
+    <button class="x" onclick="document.getElementById('jcall').remove()" aria-label="Fermer"><i class="ti ti-x"></i></button>
+    <i class="ti ti-phone-call"></i>
+    <small>Commandez au</small>
+    <a href="tel:+${SHOP.WHATSAPP}" style="color:#fff;"><b>${SHOP.PHONE_DISPLAY}</b></a>
+  </div>
+
+  <section class="news">
+    <h2>Nouveau sur CCL ?</h2>
+    <p>Abonnez-vous à notre newsletter pour recevoir nos dernières offres, ventes flash et nouveautés.</p>
+    <form onsubmit="event.preventDefault(); store('ccl_newsletter', this.email.value); this.reset(); toast('Merci, vous êtes inscrit !','mail-check');">
+      <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+      <button class="btn btn-solid" type="submit">S'inscrire</button>
+    </form>
+  </section>`;
+}
+
+/* ---------- Carrousel & chrono flash (accueil) ---------- */
+let jIdx = 0, jTimerId = null, jFlashId = null;
+function jSet(i){
+  const slides = document.querySelectorAll('#jslider .jslide');
+  const dots = document.querySelectorAll('#jdots button');
+  if(!slides.length) return;
+  jIdx = (i + slides.length) % slides.length;
+  slides.forEach((s,k)=>s.classList.toggle('on', k===jIdx));
+  dots.forEach((d,k)=>d.classList.toggle('on', k===jIdx));
+}
+function jGo(d){ jSet(jIdx + d); jRestart(); }
+function jRestart(){
+  clearInterval(jTimerId);
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  jTimerId = setInterval(()=>jSet(jIdx+1), 4500);
+}
+function jStartHome(){
+  clearInterval(jTimerId); clearInterval(jFlashId);
+  document.body.classList.toggle('jhome', !!document.getElementById('jslider'));
+  if(!document.getElementById('jslider')) return;
+  jIdx = 0; jRestart();
+  const tick = () => {
+    const h = document.getElementById('jt-h'); if(!h){ clearInterval(jFlashId); return; }
+    const now = new Date(), end = new Date(now); end.setHours(23,59,59,999);
+    let s = Math.max(0, Math.floor((end - now)/1000));
+    h.textContent = String(Math.floor(s/3600)).padStart(2,'0') + 'h';
+    document.getElementById('jt-m').textContent = String(Math.floor(s%3600/60)).padStart(2,'0') + 'm';
+    document.getElementById('jt-s').textContent = String(s%60).padStart(2,'0') + 's';
+  };
+  tick(); jFlashId = setInterval(tick, 1000);
+}
+
+/* ---------- BOUTIQUE ---------- */
+const shopState = { cat:'', q:'', min:'', max:'', sort:'reco', limit:24 };
+function viewShop(params){
+  shopState.cat = params.get('cat') || '';
+  shopState.q = params.get('q') || '';
+  shopState.min = ''; shopState.max = ''; shopState.sort = 'reco';
+  shopState.limit = 24;
+  return renderShopShell();
+}
+
+function catHero(){
+  if(!shopState.cat) return '';
+  const m = CAT_META[shopState.cat] || { icon:'ti-tag', grad:'linear-gradient(115deg,#04301c,#0d6b3e)', desc:'' };
+  const n = products.filter(p => p.cat === shopState.cat).length;
+  return '<div class="cathero" style="background:' + m.grad + '">' +
+    '<div class="cathero-in">' +
+      '<span class="cathero-ic"><i class="ti ' + m.icon + '"></i></span>' +
+      '<div>' +
+        '<h1>' + esc(CAT_LABEL[shopState.cat] || 'Rayon') + '</h1>' +
+        (m.desc ? '<p>' + esc(m.desc) + '</p>' : '') +
+        '<span class="cathero-n">' + n + ' produit' + (n>1?'s':'') + ' · Livraison J+1 à Dakar</span>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+}
+
+function renderShopShell(){
+  const counts = {};
+  products.forEach(p => counts[p.cat] = (counts[p.cat]||0) + 1);
+  const cats = Object.keys(CAT_LABEL).filter(c => counts[c]);
+  return `
+  ${crumbs(shopState.cat ? [{label:'Boutique', href:'#/boutique'},{label:CAT_LABEL[shopState.cat]||'Rayon'}] : [{label:'Boutique'}])}
+  ${catHero()}
+  <section class="sec" style="${shopState.cat ? 'padding-top:26px;' : ''}">
+    ${shopState.cat ? '' : '<h1 class="page-title">Boutique</h1><p class="page-sub">' + products.length + ' produits — livraison J+1 à Dakar</p>'}
+    <div class="shop-layout" style="margin-top:28px;">
+      <aside class="filters">
+        <div class="fgroup">
+          <h4>Catégories</h4>
+          <div class="fcat">
+            <button class="${shopState.cat===''?'on':''}" onclick="setFilter('cat','')">Tout <small>${products.length}</small></button>
+            ${cats.map(c => '<button class="'+(shopState.cat===c?'on':'')+'" onclick="setFilter(\'cat\',\''+c+'\')">'+esc(CAT_LABEL[c])+' <small>'+counts[c]+'</small></button>').join('')}
+          </div>
+        </div>
+        <div class="fgroup">
+          <h4>Prix (FCFA)</h4>
+          <div class="fprice">
+            <input type="number" id="fmin" placeholder="Min" value="${esc(shopState.min)}" min="0">
+            <span>—</span>
+            <input type="number" id="fmax" placeholder="Max" value="${esc(shopState.max)}" min="0">
+          </div>
+          <button class="btn btn-line" style="width:100%; margin-top:12px; padding:10px;" onclick="setFilter('price')">Appliquer</button>
+        </div>
+      </aside>
+      <div>
+        <div class="shop-bar">
+          <span class="count" id="shop-count"></span>
+          <select onchange="setFilter('sort', this.value)">
+            <option value="reco" ${shopState.sort==='reco'?'selected':''}>Tri : Recommandé</option>
+            <option value="price-asc" ${shopState.sort==='price-asc'?'selected':''}>Prix croissant</option>
+            <option value="price-desc" ${shopState.sort==='price-desc'?'selected':''}>Prix décroissant</option>
+            <option value="promo" ${shopState.sort==='promo'?'selected':''}>Promotions d'abord</option>
+            <option value="name" ${shopState.sort==='name'?'selected':''}>Nom A → Z</option>
+          </select>
+        </div>
+        <div class="chips" id="shop-chips"></div>
+        <div id="shop-results"></div>
+      </div>
+    </div>
+  </section>`;
+}
+function setFilter(kind, val){
+  if(kind==='cat'){ shopState.cat = val; shopState.limit = 24; }
+  if(kind==='sort'){ shopState.sort = val; }
+  if(kind==='price'){
+    shopState.min = ($('#fmin')||{}).value || '';
+    shopState.max = ($('#fmax')||{}).value || '';
+    shopState.limit = 24;
+  }
+  if(kind==='clearq'){ shopState.q=''; }
+  // Re-render la page boutique sans toucher au hash (état interne)
+  $('#app').innerHTML = renderShopShell();
+  renderShopResults();
+  window.scrollTo({top:0});
+}
+function shopFiltered(){
+  let list = visibleProducts();
+  if(shopState.cat) list = list.filter(p => p.cat === shopState.cat);
+  if(shopState.q){
+    const q = shopState.q.toLowerCase();
+    list = list.filter(p => (p.name + ' ' + (CAT_LABEL[p.cat]||'') + ' ' + (p.badge||'')).toLowerCase().includes(q));
+  }
+  const min = Number(shopState.min), max = Number(shopState.max);
+  if(shopState.min !== '' && !isNaN(min)) list = list.filter(p => p.price >= min);
+  if(shopState.max !== '' && !isNaN(max)) list = list.filter(p => p.price <= max);
+  switch(shopState.sort){
+    case 'price-asc': list.sort((a,b)=>a.price-b.price); break;
+    case 'price-desc': list.sort((a,b)=>b.price-a.price); break;
+    case 'name': list.sort((a,b)=>a.name.localeCompare(b.name,'fr')); break;
+    case 'promo': list.sort((a,b)=>(b.old?1:0)-(a.old?1:0)); break;
+  }
+  return list;
+}
+function renderShopResults(){
+  const list = shopFiltered();
+  const count = $('#shop-count');
+  if(count) count.textContent = list.length + ' produit' + (list.length>1?'s':'');
+  const chips = $('#shop-chips');
+  if(chips){
+    let h = '';
+    if(shopState.cat) h += '<span class="chip">'+esc(CAT_LABEL[shopState.cat])+' <button style="border:none;background:none;padding:0;display:flex;" onclick="setFilter(\'cat\',\'\')" aria-label="Retirer"><i class="ti ti-x"></i></button></span>';
+    if(shopState.q) h += '<span class="chip">« '+esc(shopState.q)+' » <button style="border:none;background:none;padding:0;display:flex;" onclick="setFilter(\'clearq\')" aria-label="Retirer"><i class="ti ti-x"></i></button></span>';
+    if(shopState.min || shopState.max) h += '<span class="chip">'+(shopState.min||'0')+' — '+(shopState.max||'∞')+' FCFA</span>';
+    chips.innerHTML = h;
+  }
+  const box = $('#shop-results');
+  if(!box) return;
+  if(list.length === 0){
+    box.innerHTML = '<div class="empty"><i class="ti ti-mood-empty"></i>Aucun produit ne correspond à votre recherche.<br><br><button class="btn btn-line" onclick="shopState.q=\'\';shopState.cat=\'\';shopState.min=\'\';shopState.max=\'\';setFilter(\'sort\',\'reco\')">Réinitialiser les filtres</button></div>';
+    return;
+  }
+  const shown = list.slice(0, shopState.limit);
+  box.innerHTML = gridHTML(shown) +
+    (list.length > shopState.limit
+      ? '<div class="loadmore"><button class="btn btn-line" onclick="shopState.limit += 24; renderShopResults(); observeReveals();">Afficher plus (' + (list.length - shopState.limit) + ' restants)</button></div>'
+      : '');
+}
+
+/* ---------- FICHE PRODUIT ---------- */
+function viewProduct(id){
+  const p = byId(id);
+  if(!p) return view404();
+  const sizes = SIZE_SETS[p.cat];
+  const related = visibleProducts().filter(x => x.cat === p.cat && x.id !== p.id).slice(0,10);
+  const pct = p.old ? Math.round((1 - p.price/p.old)*100) : 0;
+  const inWish = wish.includes(p.id);
+  return `
+  ${crumbs([{label:'Boutique', href:'#/boutique'},{label:CAT_LABEL[p.cat]||'Boutique', href:(PAGE_OF[p.cat]||'#/boutique?cat='+p.cat)},{label:p.name}])}
+  <section class="sec">
+    <div class="prod">
+      <div class="prod-img">
+        <div class="pimg${(p.image||p.video)?'':' noimg'}">
+          ${badgeHTML(p)}
+          ${mediaHTML(p)}
+        </div>
+      </div>
+      <div class="prod-info">
+        <span class="pcat">${esc(CAT_LABEL[p.cat]||'Boutique')} · Réf. CCL-${p.id}${sellerOf(p) ? ' · Vendu par <b>'+esc(sellerOf(p).shop)+'</b>' : ''}</span>
+        <h1>${esc(p.name)}</h1>
+        <div class="prod-price">
+          ${p.old ? '<span class="sale">'+money(p.price)+'</span><s>'+money(p.old)+'</s>' : money(p.price)}
+        </div>
+        ${p.old ? '<span class="save-tag">Vous économisez '+money(p.old-p.price)+' (-'+pct+'%)</span>' : ''}
+        <div class="stockline"><span class="dot"></span> En stock — expédié sous 24h à Dakar</div>
+        ${sizes ? '<div class="opt-label">Taille</div><div class="sizes" id="psizes">'+sizes.map((s,i)=>'<button class="size'+(i===0?' on':'')+'" data-size="'+esc(s)+'" onclick="pickSize(this)">'+esc(s)+'</button>').join('')+'</div>' : ''}
+        <div class="opt-label">Quantité</div>
+        <div class="qty">
+          <button type="button" onclick="bumpQty(-1)" aria-label="Moins">−</button>
+          <input id="pqty" type="number" value="1" min="1" max="99" inputmode="numeric">
+          <button type="button" onclick="bumpQty(1)" aria-label="Plus">+</button>
+        </div>
+        <div class="buyrow">
+          <button class="btn btn-solid" onclick="buyNow(${p.id}, false)"><i class="ti ti-shopping-bag-plus"></i> Ajouter au panier</button>
+          <button class="btn btn-green" onclick="buyNow(${p.id}, true)"><i class="ti ti-bolt"></i> Acheter maintenant</button>
+        </div>
+        <button class="btn btn-line" style="width:100%;" onclick="toggleWish(${p.id})"><i class="ti ti-heart"></i> ${inWish ? 'Retirer des favoris' : 'Ajouter aux favoris'}</button>
+        <div class="prod-meta">
+          <div><i class="ti ti-truck-delivery"></i> Livraison J+1 partout à Dakar — frais confirmés sur WhatsApp selon votre zone</div>
+          <div><i class="ti ti-wallet"></i> Paiement Wave, Orange Money ou espèces à la livraison</div>
+          <div><i class="ti ti-brand-whatsapp"></i> Une question ? <a class="link" href="https://wa.me/${SHOP.WHATSAPP}?text=${encodeURIComponent('Bonjour, je souhaite des informations sur : '+p.name+' (Réf CCL-'+p.id+')')}" target="_blank" rel="noopener">Écrivez-nous sur WhatsApp</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  ${related.length ? `
+  <section class="sec">
+    <div class="sec-head"><h2>Vous aimerez aussi</h2><a class="link" href="#/boutique?cat=${p.cat}">Tout voir</a></div>
+    <div class="rowscroll">${related.map(cardHTML).join('')}</div>
+  </section>` : ''}`;
+}
+function pickSize(btn){
+  document.querySelectorAll('#psizes .size').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+}
+function bumpQty(d){
+  const i = $('#pqty'); if(!i) return;
+  i.value = Math.max(1, Math.min(99, (Number(i.value)||1) + d));
+}
+function buyNow(id, direct){
+  const qty = Number(($('#pqty')||{}).value) || 1;
+  const sBtn = document.querySelector('#psizes .size.on');
+  const size = sBtn ? sBtn.dataset.size : null;
+  addToCart(id, qty, size, direct);
+  if(direct) go('#/panier');
+}
+
+/* ---------- PANIER ---------- */
+function viewCart(){
+  if(cart.length === 0){
+    return crumbs([{label:'Panier'}]) + `
+    <div class="empty" style="padding:90px 20px;">
+      <i class="ti ti-shopping-bag"></i>
+      <h1 class="page-title" style="margin-bottom:8px;">Votre panier est vide</h1>
+      <p style="margin-bottom:26px;">Découvrez nos ${products.length} produits livrés en 24h à Dakar.</p>
+      <a class="btn btn-solid" href="#/boutique">Continuer mes achats</a>
+    </div>`;
+  }
+  const rows = cart.map((i, idx) => {
+    const img = i.image ? (isVid(i.image) ? '<video src="'+esc(i.image)+'" muted playsinline preload="metadata"></video>' : '<img src="'+esc(i.image)+'" alt="" onerror="imgErr(this)">') : '';
+    return `
+    <div class="citem">
+      <a class="pimg${i.image?'':' noimg'}" href="#/produit/${i.id}">${img}</a>
+      <div>
+        <h4><a href="#/produit/${i.id}">${esc(i.name)}</a></h4>
+        ${i.size ? '<div class="sz">Taille : '+esc(i.size)+'</div>' : ''}
+        <div class="unit">${money(i.price)} / unité</div>
+      </div>
+      <div class="citem-right">
+        <div class="qty">
+          <button onclick="setQty(${idx}, ${i.qty-1})" aria-label="Moins">−</button>
+          <input type="number" value="${i.qty}" min="1" max="99" onchange="setQty(${idx}, Number(this.value)||1)">
+          <button onclick="setQty(${idx}, ${i.qty+1})" aria-label="Plus">+</button>
+        </div>
+        <span class="line-total">${money(i.price*i.qty)}</span>
+        <button class="rm" onclick="removeLine(${idx})"><i class="ti ti-trash"></i> Retirer</button>
+      </div>
+    </div>`;
+  }).join('');
+  return `
+  ${crumbs([{label:'Panier'}])}
+  <section class="sec">
+    <h1 class="page-title">Mon panier</h1>
+    <p class="page-sub">${cartCount()} article${cartCount()>1?'s':''}</p>
+    <div class="cart-layout" style="margin-top:22px;">
+      <div>${rows}
+        <div style="margin-top:20px;"><a class="link" href="#/boutique"><i class="ti ti-arrow-left"></i> Continuer mes achats</a></div>
+      </div>
+      <aside class="summary">
+        <h3>Récapitulatif</h3>
+        <div class="srow"><span>Sous-total</span><b>${money(cartTotal())}</b></div>
+        <div class="srow"><span>Livraison (Dakar)</span><span>Confirmée sur WhatsApp</span></div>
+        <div class="srow total"><span>Total</span><span>${money(cartTotal())}</span></div>
+        <a class="btn btn-green" href="#/commande"><i class="ti ti-lock"></i> Passer la commande</a>
+        <div class="note"><i class="ti ti-shield-check"></i> Paiement Wave, Orange Money ou en espèces à la livraison. Votre commande est confirmée par notre équipe sur WhatsApp.</div>
+      </aside>
+    </div>
+  </section>`;
+}
+
+/* ---------- CHECKOUT ---------- */
+let payMethod = null;
+function viewCheckout(){
+  if(cart.length === 0){ go('#/panier'); return ''; }
+  payMethod = null;
+  const c = store('ccl_customer') || {};
+  const rows = cart.map(i => {
+    const img = i.image ? (isVid(i.image) ? '<video src="'+esc(i.image)+'" muted playsinline preload="metadata"></video>' : '<img src="'+esc(i.image)+'" alt="" onerror="imgErr(this)">') : '';
+    return '<div class="citem"><span class="pimg'+(i.image?'':' noimg')+'">'+img+'</span><div><h4>'+esc(i.name)+(i.size?' <span class="sz">('+esc(i.size)+')</span>':'')+'</h4><div class="unit">'+i.qty+' × '+money(i.price)+'</div></div><b>'+money(i.price*i.qty)+'</b></div>';
+  }).join('');
+  return `
+  ${crumbs([{label:'Panier', href:'#/panier'},{label:'Commande'}])}
+  <section class="sec">
+    <h1 class="page-title">Finaliser ma commande</h1>
+    <div class="co-layout" style="margin-top:24px;">
+      <div>
+        <div class="fblock">
+          <h3><span class="n">1</span> Vos coordonnées</h3>
+          <div class="frow">
+            <div class="field" id="f-name"><label>Nom complet <em>*</em></label><input id="co-name" value="${esc(c.name||'')}" autocomplete="name"><span class="err">Indiquez votre nom complet.</span></div>
+            <div class="field" id="f-phone"><label>Téléphone (WhatsApp) <em>*</em></label><input id="co-phone" value="${esc(c.phone||'')}" inputmode="tel" placeholder="77 000 00 00" autocomplete="tel"><span class="err">Numéro sénégalais requis (9 chiffres, ex : 77 123 45 67).</span></div>
+          </div>
+        </div>
+        <div class="fblock">
+          <h3><span class="n">2</span> Livraison à Dakar</h3>
+          <div class="frow">
+            <div class="field" id="f-zone"><label>Quartier / Zone <em>*</em></label><input id="co-zone" value="${esc(c.zone||'')}" placeholder="Ex : Plateau, Ouakam, Pikine..."><span class="err">Indiquez votre quartier.</span></div>
+            <div class="field"><label>Repère (facultatif)</label><input id="co-landmark" value="${esc(c.landmark||'')}" placeholder="Ex : en face de la pharmacie..."></div>
+          </div>
+          <div class="frow one">
+            <div class="field" id="f-addr"><label>Adresse précise <em>*</em></label><input id="co-addr" value="${esc(c.addr||'')}" placeholder="Rue, villa, appartement..."><span class="err">Indiquez votre adresse de livraison.</span></div>
+          </div>
+          <div class="frow one">
+            <div class="field"><label>Note pour le livreur (facultatif)</label><textarea id="co-note" rows="2" placeholder="Horaires préférés, instructions...">${esc(c.note||'')}</textarea></div>
+          </div>
+        </div>
+        <div class="fblock">
+          <h3><span class="n">3</span> Mode de paiement</h3>
+          <div class="paychoice">
+            <button type="button" class="paym" data-pay="wave" onclick="pickPay('wave',this)"><i class="ti ti-wallet"></i><b>Wave</b><small>Paiement mobile</small></button>
+            <button type="button" class="paym" data-pay="orange" onclick="pickPay('orange',this)"><i class="ti ti-device-mobile"></i><b>Orange Money</b><small>Paiement mobile</small></button>
+            <button type="button" class="paym" data-pay="cash" onclick="pickPay('cash',this)"><i class="ti ti-cash"></i><b>À la livraison</b><small>Espèces</small></button>
+          </div>
+          <div class="payinfo" id="payinfo"></div>
+        </div>
+      </div>
+      <aside class="summary co-summary">
+        <h3>Votre commande</h3>
+        ${rows}
+        <div class="srow" style="margin-top:16px;"><span>Sous-total</span><b>${money(cartTotal())}</b></div>
+        <div class="srow"><span>Livraison</span><span>Confirmée sur WhatsApp</span></div>
+        <div class="srow total"><span>Total</span><span>${money(cartTotal())}</span></div>
+        <button class="btn btn-wa" id="co-submit" onclick="submitOrder()"><i class="ti ti-brand-whatsapp"></i> Confirmer sur WhatsApp</button>
+        <div class="note"><i class="ti ti-info-circle"></i> En confirmant, votre commande détaillée s'ouvre dans WhatsApp vers notre équipe (${SHOP.PHONE_DISPLAY}). C'est elle qui valide définitivement la commande et la livraison.</div>
+      </aside>
+    </div>
+  </section>`;
+}
+function pickPay(m, btn){
+  payMethod = m;
+  document.querySelectorAll('.paym').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  const box = $('#payinfo');
+  const total = money(cartTotal());
+  if(m === 'wave'){
+    box.innerHTML = '<b>Paiement Wave — ' + total + '</b><ol>' +
+      '<li>Cliquez sur le bouton ci-dessous : la page de paiement <b>Crystal Company</b> s\'ouvre.</li>' +
+      '<li>Payez le montant exact : <b>' + total + '</b>.</li>' +
+      '<li>Faites une capture d\'écran de la confirmation.</li>' +
+      '<li>Confirmez ensuite votre commande sur WhatsApp en joignant la capture.</li></ol>' +
+      '<a class="btn btn-solid" style="margin-top:14px;" href="' + SHOP.WAVE_LINK + '" target="_blank" rel="noopener"><i class="ti ti-external-link"></i> Payer ' + total + ' avec Wave</a>';
+  } else if(m === 'orange'){
+    box.innerHTML = '<b>Paiement Orange Money — ' + total + '</b>' +
+      '<div class="num"><i class="ti ti-device-mobile"></i> ' + SHOP.OM_NUMBER_DISPLAY +
+      ' <button type="button" class="copy" onclick="copyOM(this)"><i class="ti ti-copy"></i> Copier</button></div><ol>' +
+      '<li>Envoyez <b>' + total + '</b> au <b>' + SHOP.OM_NUMBER_DISPLAY + '</b> (Crystal Company Limited).</li>' +
+      '<li>Faites une capture d\'écran de la confirmation.</li>' +
+      '<li>Confirmez ensuite votre commande sur WhatsApp en joignant la capture.</li></ol>';
+  } else {
+    box.innerHTML = '<b>Paiement à la livraison — ' + total + '</b><p style="margin-top:8px;">Rien à payer maintenant. Confirmez votre commande : nous vous livrons à Dakar et vous réglez <b>' + total + '</b> en espèces à la réception.</p>';
+  }
+  box.classList.add('show');
+}
+function copyOM(btn){
+  try{ navigator.clipboard && navigator.clipboard.writeText(SHOP.OM_NUMBER_RAW); }catch(e){}
+  btn.innerHTML = '<i class="ti ti-check"></i> Copié';
+  setTimeout(()=>{ btn.innerHTML = '<i class="ti ti-copy"></i> Copier'; }, 1800);
+}
+function markField(id, bad){ const f = document.getElementById(id); if(f) f.classList.toggle('bad', bad); return !bad; }
+function submitOrder(){
+  const name = ($('#co-name').value||'').trim();
+  const phoneRaw = ($('#co-phone').value||'').replace(/\D/g,'').replace(/^221/,'');
+  const zone = ($('#co-zone').value||'').trim();
+  const addr = ($('#co-addr').value||'').trim();
+  const landmark = ($('#co-landmark').value||'').trim();
+  const note = ($('#co-note').value||'').trim();
+  let ok = true;
+  ok = markField('f-name', name.length < 2) && ok;
+  ok = markField('f-phone', !/^(7[05678])\d{7}$/.test(phoneRaw)) && ok;
+  ok = markField('f-zone', zone.length < 2) && ok;
+  ok = markField('f-addr', addr.length < 3) && ok;
+  if(!ok){ toast('Vérifiez les champs en rouge','alert-triangle'); return; }
+  if(!payMethod){ toast('Choisissez un mode de paiement','alert-triangle'); const pi = $('#payinfo'); if(pi && pi.scrollIntoView) pi.scrollIntoView({block:'center'}); return; }
+
+  store('ccl_customer', { name, phone:phoneRaw, zone, addr, landmark, note });
+
+  const num = 'CCL-' + new Date().toISOString().slice(2,10).replace(/-/g,'') + '-' + Math.floor(1000 + Math.random()*9000);
+  const payLabel = payMethod === 'wave' ? 'Wave' : payMethod === 'orange' ? 'Orange Money' : 'Espèces à la livraison';
+  let msg = 'Bonjour ' + SHOP.NAME + ', voici ma commande ' + num + ' :\n\n';
+  cart.forEach(i => { const sp = byId(i.id); const sname = sp && sellerOf(sp) ? ' [Boutique ' + sellerOf(sp).shop + ']' : ''; msg += '- ' + i.qty + ' x ' + i.name + (i.size ? ' (' + i.size + ')' : '') + sname + ' : ' + money(i.price*i.qty) + '\n'; });
+  msg += '\nTOTAL : ' + money(cartTotal()) + '\nPaiement : ' + payLabel + '\n\n';
+  msg += 'Nom : ' + name + '\nTel : ' + phoneRaw + '\nQuartier : ' + zone + '\nAdresse : ' + addr + '\n';
+  if(landmark) msg += 'Repère : ' + landmark + '\n';
+  if(note) msg += 'Note : ' + note + '\n';
+  if(payMethod === 'wave' || payMethod === 'orange') msg += '\n(Je joins la capture d\'écran de mon paiement.)';
+
+  const orders = store('ccl_orders') || [];
+  orders.unshift({ num, date:new Date().toISOString(), items:cart, total:cartTotal(), pay:payLabel, customer:{name, phone:phoneRaw, zone, addr} });
+  store('ccl_orders', orders.slice(0,20));
+  window._lastOrder = orders[0];
+
+  window.open('https://wa.me/' + SHOP.WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank');
+  cart = []; saveCart();
+  go('#/confirmation');
+}
+
+/* ---------- CONFIRMATION ---------- */
+function viewConfirm(){
+  const o = window._lastOrder || (store('ccl_orders')||[])[0];
+  if(!o) return view404();
+  return `
+  <div class="confirm">
+    <div class="big"><i class="ti ti-check"></i></div>
+    <h1>Commande envoyée !</h1>
+    <p class="num">Numéro de commande : <b>${esc(o.num)}</b> · Paiement : ${esc(o.pay)}</p>
+    <p style="color:var(--body); line-height:1.6;">Votre commande détaillée a été transmise sur WhatsApp à notre équipe. Nous vous confirmons la disponibilité, les frais de livraison pour <b>${esc(o.customer.zone)}</b> et l'heure de passage dans les plus brefs délais.</p>
+    <div class="recap">
+      ${o.items.map(i=>'<div class="srow"><span>'+i.qty+' × '+esc(i.name)+(i.size?' ('+esc(i.size)+')':'')+'</span><b>'+money(i.price*i.qty)+'</b></div>').join('')}
+      <div class="srow total"><span>Total</span><span>${money(o.total)}</span></div>
+    </div>
+    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <a class="btn btn-solid" href="#/boutique">Continuer mes achats</a>
+      <a class="btn btn-wa" href="https://wa.me/${SHOP.WHATSAPP}" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i> Ouvrir WhatsApp</a>
+    </div>
+  </div>`;
+}
+
+/* ---------- FAVORIS ---------- */
+function viewFav(){
+  const list = wish.map(byId).filter(Boolean);
+  return `
+  ${crumbs([{label:'Mes favoris'}])}
+  <section class="sec">
+    <h1 class="page-title">Mes favoris</h1>
+    <p class="page-sub">${list.length} produit${list.length>1?'s':''} enregistré${list.length>1?'s':''}</p>
+    <div style="margin-top:26px;">
+      ${list.length ? gridHTML(list) : '<div class="empty"><i class="ti ti-heart"></i>Aucun favori pour le moment.<br><br><a class="btn btn-line" href="#/boutique">Parcourir la boutique</a></div>'}
+    </div>
+  </section>`;
+}
+
+/* ---------- CONTACT ---------- */
+function viewContact(){
+  return `
+  ${crumbs([{label:'Contact'}])}
+  <section class="sec">
+    <h1 class="page-title">Nous contacter</h1>
+    <p class="page-sub">Notre équipe vous répond 7j/7 à Dakar.</p>
+    <div class="contact-grid" style="margin-top:28px;">
+      <div class="ccard rv"><i class="ti ti-brand-whatsapp"></i><h4>WhatsApp</h4><p>Le plus rapide — commandes, questions, suivi.</p><a class="btn btn-wa" href="https://wa.me/${SHOP.WHATSAPP}" target="_blank" rel="noopener">${SHOP.PHONE_DISPLAY}</a></div>
+      <div class="ccard rv"><i class="ti ti-phone"></i><h4>Téléphone</h4><p>Appelez-nous aux heures de bureau.</p><a class="btn btn-line" href="tel:+${SHOP.WHATSAPP}">+221 ${SHOP.PHONE_DISPLAY}</a></div>
+      <div class="ccard rv"><i class="ti ti-mail"></i><h4>E-mail</h4><p>Pour les demandes professionnelles et partenariats.</p><a class="btn btn-line" href="mailto:${SHOP.EMAIL}">Écrire un e-mail</a></div>
+      <div class="ccard rv"><i class="ti ti-map-pin"></i><h4>Dakar, Sénégal</h4><p>Livraison J+1 dans tout Dakar et sa banlieue.</p><a class="btn btn-line" href="#/boutique">Voir la boutique</a></div>
+    </div>
+  </section>`;
+}
+
+/* ---------- DEVENIR VENDEUR ---------- */
+function viewSeller(){
+  const cats = Object.keys(CAT_LABEL).map(c => '<option value="'+esc(CAT_LABEL[c])+'">'+esc(CAT_LABEL[c])+'</option>').join('');
+  return `
+  ${crumbs([{label:'Devenir vendeur'}])}
+  <section class="seller-hero">
+    <div class="seller-hero-in">
+      <span class="hero-kicker">Marketplace CCL · Programme vendeurs</span>
+      <h1>Vendez sur Crystal Company Limited</h1>
+      <p>Rejoignez la marketplace qui livre Dakar en 24h. Exposez vos produits devant nos clients, nous nous occupons de la visibilité — vous vous concentrez sur votre activité.</p>
+      <a class="btn btn-solid" href="#seller-form" onclick="event.preventDefault(); const f=document.getElementById('seller-form'); if(f&&f.scrollIntoView) f.scrollIntoView({behavior:'smooth',block:'start'});">Déposer ma candidature</a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Pourquoi vendre sur CCL ?</h2></div>
+    <div class="whygrid">
+      <div class="why rv"><i class="ti ti-users"></i><h4>Une clientèle prête à acheter</h4><p>Des acheteurs à Dakar qui commandent chaque jour mode, maison, beauté et alimentation.</p></div>
+      <div class="why rv"><i class="ti ti-truck-delivery"></i><h4>Logistique J+1</h4><p>Notre réseau de livraison couvre tout Dakar et sa banlieue en 24h.</p></div>
+      <div class="why rv"><i class="ti ti-wallet"></i><h4>Paiements simplifiés</h4><p>Wave, Orange Money ou espèces : vos clients paient comme ils veulent, vous êtes réglé rapidement.</p></div>
+      <div class="why rv"><i class="ti ti-speakerphone"></i><h4>Visibilité incluse</h4><p>Vos produits mis en avant sur le site, dans nos promos et nos campagnes WhatsApp.</p></div>
+      <div class="why rv"><i class="ti ti-device-mobile"></i><h4>Zéro technique</h4><p>Pas de site à créer : envoyez vos photos et prix, nous mettons vos produits en ligne.</p></div>
+      <div class="why rv"><i class="ti ti-headset"></i><h4>Accompagnement 7j/7</h4><p>Une équipe dédiée aux vendeurs répond à vos questions sur WhatsApp.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Comment ça marche</h2></div>
+    <div class="steps">
+      <div class="step rv"><span class="sn">1</span><h4>Candidature</h4><p>Remplissez le formulaire ci-dessous en 2 minutes.</p></div>
+      <div class="step rv"><span class="sn">2</span><h4>Validation</h4><p>Notre équipe vous contacte sous 48h sur WhatsApp pour valider votre dossier.</p></div>
+      <div class="step rv"><span class="sn">3</span><h4>Mise en ligne</h4><p>Envoyez photos, prix et stocks : vos produits rejoignent la boutique.</p></div>
+      <div class="step rv"><span class="sn">4</span><h4>Vous vendez</h4><p>Nous vous transmettons les commandes, la livraison part en J+1.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="seller-form">
+    <div class="seller-form-box">
+      <h2 style="font-size:24px; font-weight:500; margin-bottom:6px;">Candidature vendeur</h2>
+      <p class="page-sub" style="margin-bottom:24px;">Champs marqués <em style="color:var(--sale); font-style:normal;">*</em> obligatoires. Réponse sous 48h.</p>
+      <div class="frow">
+        <div class="field" id="s-name"><label>Votre nom complet <em>*</em></label><input id="sv-name" autocomplete="name"><span class="err">Indiquez votre nom.</span></div>
+        <div class="field" id="s-biz"><label>Nom de votre boutique / entreprise <em>*</em></label><input id="sv-biz"><span class="err">Indiquez le nom de votre activité.</span></div>
+      </div>
+      <div class="frow">
+        <div class="field" id="s-phone"><label>Téléphone WhatsApp <em>*</em></label><input id="sv-phone" inputmode="tel" placeholder="77 000 00 00"><span class="err">Numéro sénégalais requis (ex : 77 123 45 67).</span></div>
+        <div class="field"><label>E-mail (facultatif)</label><input id="sv-email" type="email" autocomplete="email"></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label>Catégorie principale</label><select id="sv-cat">${cats}<option value="Autre">Autre</option></select></div>
+        <div class="field"><label>Ville / Zone</label><input id="sv-city" placeholder="Ex : Dakar, Pikine, Touba..."></div>
+      </div>
+      <div class="frow one">
+        <div class="field" id="s-desc"><label>Décrivez vos produits <em>*</em></label><textarea id="sv-desc" rows="4" placeholder="Ex : vêtements femme importés, une trentaine de références, stock disponible à Dakar..."></textarea><span class="err">Décrivez brièvement votre activité (au moins 10 caractères).</span></div>
+      </div>
+      <button class="btn btn-green" style="width:100%; padding:15px;" onclick="submitSeller()"><i class="ti ti-brand-whatsapp"></i> Envoyer ma candidature sur WhatsApp</button>
+      <div class="summary-note" style="font-size:12px; color:var(--body); margin-top:12px; display:flex; gap:7px;"><i class="ti ti-info-circle"></i><span>Votre dossier s'ouvre dans WhatsApp vers notre équipe vendeurs (${SHOP.PHONE_DISPLAY}). Aucune donnée n'est envoyée ailleurs.</span></div>
+    </div>
+  </section>`;
+}
+function submitSeller(){
+  const name = ($('#sv-name').value||'').trim();
+  const biz = ($('#sv-biz').value||'').trim();
+  const phoneRaw = ($('#sv-phone').value||'').replace(/\D/g,'').replace(/^221/,'');
+  const email = ($('#sv-email').value||'').trim();
+  const cat = ($('#sv-cat').value||'').trim();
+  const city = ($('#sv-city').value||'').trim();
+  const desc = ($('#sv-desc').value||'').trim();
+  let ok = true;
+  ok = markField('s-name', name.length < 2) && ok;
+  ok = markField('s-biz', biz.length < 2) && ok;
+  ok = markField('s-phone', !/^(7[05678])\d{7}$/.test(phoneRaw)) && ok;
+  ok = markField('s-desc', desc.length < 10) && ok;
+  if(!ok){ toast('Vérifiez les champs en rouge','alert-triangle'); return; }
+  let msg = 'Bonjour ' + SHOP.NAME + ', je souhaite devenir vendeur sur votre marketplace.\n\n';
+  msg += 'Nom : ' + name + '\nBoutique : ' + biz + '\nTel : ' + phoneRaw + '\n';
+  if(email) msg += 'Email : ' + email + '\n';
+  msg += 'Catégorie : ' + cat + '\n';
+  if(city) msg += 'Zone : ' + city + '\n';
+  msg += '\nMes produits :\n' + desc;
+  window.open('https://wa.me/' + SHOP.WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank');
+  toast('Candidature envoyée — merci !','check');
+}
+
+/* ---------- 404 ---------- */
+function view404(){
+  return '<div class="empty" style="padding:90px 20px;"><i class="ti ti-error-404"></i><h1 class="page-title" style="margin-bottom:8px;">Page introuvable</h1><p style="margin-bottom:26px;">Le produit ou la page demandée n\'existe pas.</p><a class="btn btn-solid" href="#/">Retour à l\'accueil</a></div>';
+}
+
+/* ============================================================
+   ROUTEUR
+   ============================================================ */
+function parseHash(){
+  const h = location.hash.replace(/^#\/?/, '');
+  const [pathStr, queryStr] = h.split('?');
+  return { path: pathStr.split('/').filter(Boolean), params: new URLSearchParams(queryStr || '') };
+}
+function render(){
+  const { path, params } = parseHash();
+  const p0 = path[0] || '';
+  let html = '', title = SHOP.NAME, nav = '';
+  switch(p0){
+    case '': html = viewHome(); nav='home'; title = SHOP.NAME + ' — Boutique en ligne au Sénégal'; break;
+    case 'boutique': html = viewShop(params); nav='shop'; title = (params.get('cat') && CAT_LABEL[params.get('cat')] ? CAT_LABEL[params.get('cat')] : 'Boutique') + ' — ' + SHOP.NAME; break;
+    case 'produit': { const p = byId(path[1]); html = viewProduct(path[1]); title = (p ? p.name + ' — ' : '') + SHOP.NAME; break; }
+    case 'panier': html = viewCart(); title = 'Panier — ' + SHOP.NAME; break;
+    case 'commande': html = viewCheckout(); title = 'Commande — ' + SHOP.NAME; break;
+    case 'confirmation': html = viewConfirm(); title = 'Commande envoyée — ' + SHOP.NAME; break;
+    case 'favoris': html = viewFav(); title = 'Mes favoris — ' + SHOP.NAME; break;
+    case 'contact': html = viewContact(); title = 'Contact — ' + SHOP.NAME; break;
+    case 'devenir-vendeur': html = viewSeller(); title = 'Devenir vendeur — ' + SHOP.NAME; break;
+    default: html = view404();
+  }
+  if(html === '') return; // redirection interne déjà effectuée
+  $('#app').innerHTML = html;
+  document.title = title;
+  document.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('on', a.dataset.nav === nav));
+  if(p0 === 'boutique') renderShopResults();
+  const hs = $('#hsearch-input'); if(hs && p0 !== 'boutique') hs.value = '';
+  window.scrollTo({ top:0 });
+  jStartHome();
+  observeReveals();
+  badges();
+}
+window.addEventListener('hashchange', render);
+
+/* ---------- Révélation au scroll ---------- */
+let io = null;
+function observeReveals(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(!('IntersectionObserver' in window)) return;
+  if(!io){
+    io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin:'0px 0px -30px 0px', threshold:.05 });
+  }
+  document.querySelectorAll('.rv:not(.in)').forEach(el => io.observe(el));
+}
+
+/* ---------- Header ombré au scroll ---------- */
+let tick = false;
+window.addEventListener('scroll', () => {
+  if(tick) return; tick = true;
+  requestAnimationFrame(() => {
+    document.body.classList.toggle('scrolled', (window.scrollY||0) > 10);
+    tick = false;
+  });
+}, { passive:true });
+
+/* ---------- Démarrage ---------- */
+(function(){ const an = document.querySelector('.announce'); if(an && SHOP.ANNOUNCE) an.innerHTML = '<i class="ti ti-truck-delivery"></i> ' + esc(SHOP.ANNOUNCE); })();
+window.addEventListener('storage', e => { if(e.key==='ccl_cart'||e.key==='ccl_wishlist'){ cart = store('ccl_cart')||[]; wish = store('ccl_wishlist')||[]; badges(); } });
+document.getElementById('year').textContent = new Date().getFullYear();
+badges();
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administration — Crystal Company Limited</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="ccl-logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#101511;--panel:#181f1a;--panel2:#1f2821;--line:#2b362e;--ink:#eef2ee;--mut:#93a396;--accent:#26b566;--accent-d:#1a8a4c;--danger:#e05252;--warn:#d9a62e;--r:8px}
+body{font-family:'Assistant',sans-serif;background:var(--bg);color:var(--ink);font-size:14.5px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+input,select,textarea{font-family:inherit;font-size:14px;background:var(--panel2);border:1px solid var(--line);color:var(--ink);padding:10px 12px;border-radius:var(--r);width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+label{display:block;font-size:12px;font-weight:600;color:var(--mut);margin:12px 0 5px;letter-spacing:.04em}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:var(--r);border:1px solid var(--line);background:var(--panel2);color:var(--ink);font-weight:600;font-size:13.5px;transition:.15s}
+.btn:hover{border-color:var(--accent)}
+.btn-green{background:var(--accent);border-color:var(--accent);color:#06170d}
+.btn-green:hover{background:#2fce77}
+.btn-red{color:var(--danger);border-color:rgba(224,82,82,.4)}
+.btn-red:hover{background:rgba(224,82,82,.12)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:14px;background:var(--panel);border-bottom:1px solid var(--line);padding:12px 22px}
+.topbar img{height:34px;border-radius:6px}
+.topbar h1{font-size:16px;font-weight:700}
+.topbar .st{font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px}
+.dot{width:8px;height:8px;border-radius:99px;background:var(--danger)}
+.dot.ok{background:var(--accent)}
+.spacer{flex:1}
+.tabs{display:flex;gap:4px;background:var(--panel);border-bottom:1px solid var(--line);padding:0 22px;overflow-x:auto}
+.tab{padding:13px 18px;font-weight:600;font-size:13.5px;color:var(--mut);border:none;background:none;border-bottom:2px solid transparent;white-space:nowrap}
+.tab.on{color:var(--ink);border-bottom-color:var(--accent)}
+main{max-width:1100px;margin:0 auto;padding:26px 22px 90px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:18px}
+.card h2{font-size:16px;font-weight:700;margin-bottom:4px}
+.card .sub{font-size:13px;color:var(--mut);margin-bottom:14px;line-height:1.5}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.stat b{font-size:24px;display:block}
+.stat span{font-size:12px;color:var(--mut)}
+.toolrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.toolrow input[type=search]{max-width:320px}
+.toolrow select{max-width:220px}
+.plist{display:flex;flex-direction:column;gap:8px}
+.prow{display:grid;grid-template-columns:54px 1fr auto auto;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.prow .th{width:54px;height:54px;border-radius:8px;background:var(--panel2);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--mut)}
+.prow .th img,.prow .th video{width:100%;height:100%;object-fit:cover}
+.prow h4{font-size:14px;font-weight:600;line-height:1.3}
+.prow .meta{font-size:12px;color:var(--mut);margin-top:2px}
+.prow .meta b{color:var(--warn)}
+.prow .price{font-weight:700;white-space:nowrap}
+.prow .price s{color:var(--mut);font-weight:400;font-size:12px;margin-left:6px}
+.pacts{display:flex;gap:6px}
+.ic{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:15px}
+.ic:hover{border-color:var(--accent)}
+.ic.red:hover{border-color:var(--danger);color:var(--danger)}
+.badge{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;background:var(--panel2);border:1px solid var(--line);border-radius:99px;padding:2px 9px;color:var(--mut)}
+.editor{position:fixed;inset:0;background:rgba(6,10,7,.72);z-index:100;display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:30px 14px}
+.editor.show{display:flex}
+.ebox{background:var(--panel);border:1px solid var(--line);border-radius:14px;width:100%;max-width:640px;padding:24px}
+.ebox h3{font-size:17px;margin-bottom:4px}
+.erow{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
+.imgprev{margin-top:8px;display:flex;gap:12px;align-items:center}
+.imgprev .th{width:74px;height:74px;border-radius:8px;background:var(--panel2);overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--mut)}
+.imgprev .th img{width:100%;height:100%;object-fit:cover}
+.hint{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.5}
+.hint code{background:var(--panel2);padding:1px 6px;border-radius:5px;font-size:11.5px}
+.alert{border-radius:10px;padding:13px 15px;font-size:13px;line-height:1.55;margin-bottom:14px;display:flex;gap:9px}
+.alert i{flex:0 0 auto;margin-top:1px}
+.alert.info{background:rgba(38,181,102,.08);border:1px solid rgba(38,181,102,.3)}
+.alert.warn{background:rgba(217,166,46,.08);border:1px solid rgba(217,166,46,.35)}
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#fff;color:#111;font-weight:600;font-size:13.5px;padding:12px 20px;border-radius:10px;display:flex;gap:8px;align-items:center;opacity:0;pointer-events:none;transition:.3s;z-index:200;max-width:92vw}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+#toast.bad{background:#ffe4e4;color:#8f1d1d}
+.publishbar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--panel);border-top:1px solid var(--line);padding:12px 22px;display:flex;align-items:center;gap:14px}
+.publishbar .chg{font-size:13px;color:var(--warn);font-weight:600}
+ol.steps{padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:13.5px;line-height:1.55;color:var(--mut)}
+ol.steps b{color:var(--ink)}
+@media(max-width:760px){.grid2,.grid3{grid-template-columns:1fr}.prow{grid-template-columns:44px 1fr;row-gap:8px}.prow .price{grid-column:2}.pacts{grid-column:1/-1;justify-content:flex-end}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <img src="ccl-logo.png" alt="" onerror="this.style.display='none'">
+  <h1>Administration CCL</h1>
+  <span class="st"><span class="dot" id="gh-dot"></span><span id="gh-state">GitHub non connecté</span></span>
+  <div class="spacer"></div>
+  <a class="btn" href="index.html" target="_blank"><i class="ti ti-external-link"></i> Voir le site</a>
+</div>
+
+<div class="tabs">
+  <button class="tab on" data-tab="produits" onclick="showTab('produits')"><i class="ti ti-package"></i> Produits</button>
+  <button class="tab" data-tab="vendeurs" onclick="showTab('vendeurs')"><i class="ti ti-building-store"></i> Vendeurs</button>
+  <button class="tab" data-tab="params" onclick="showTab('params')"><i class="ti ti-settings"></i> Paramètres</button>
+  <button class="tab" data-tab="github" onclick="showTab('github')"><i class="ti ti-brand-github"></i> Connexion GitHub</button>
+  <button class="tab" data-tab="aide" onclick="showTab('aide')"><i class="ti ti-help"></i> Aide</button>
+</div>
+
+<main>
+
+  <!-- ================= PRODUITS ================= -->
+  <section id="tab-produits">
+    <div class="stats" id="stats"></div>
+    <div class="toolrow">
+      <button class="btn btn-green" onclick="openEditor()"><i class="ti ti-plus"></i> Nouveau produit</button>
+      <input type="search" id="q" placeholder="Rechercher un produit..." oninput="renderList()">
+      <select id="fcat" onchange="renderList()"><option value="">Toutes catégories</option></select>
+    </div>
+    <div class="plist" id="plist"></div>
+  </section>
+
+  <!-- ================= VENDEURS ================= -->
+  <section id="tab-vendeurs" style="display:none">
+    <div class="alert info"><i class="ti ti-info-circle"></i><span>Abonnement vendeur : <b>7 500 FCFA / mois</b>. Un vendeur <b>inactif</b> ou dont la <b>date payé jusqu'au</b> est dépassée voit tous ses produits <b>masqués automatiquement</b> du site (ils ne sont pas supprimés).</span></div>
+    <div class="stats" id="vstats"></div>
+    <div class="toolrow">
+      <button class="btn btn-green" onclick="openSeller()"><i class="ti ti-plus"></i> Nouveau vendeur</button>
+    </div>
+    <div class="plist" id="vlist"></div>
+  </section>
+
+  <!-- ================= PARAMÈTRES ================= -->
+  <section id="tab-params" style="display:none">
+    <div class="card">
+      <h2>Bandeau d'annonce</h2>
+      <p class="sub">Le message affiché tout en haut de toutes les pages du site.</p>
+      <input id="s-announce">
+    </div>
+    <div class="card">
+      <h2>Contact &amp; WhatsApp</h2>
+      <div class="grid2">
+        <div><label>Numéro WhatsApp (format international, sans +)</label><input id="s-wa" inputmode="numeric" placeholder="221774976364"></div>
+        <div><label>Numéro affiché</label><input id="s-watxt" placeholder="77 497 63 64"></div>
+        <div><label>E-mail</label><input id="s-email" type="email"></div>
+        <div><label>Nom de la boutique</label><input id="s-name"></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Paiements</h2>
+      <div class="grid2">
+        <div><label>Lien de paiement Wave</label><input id="s-wave" placeholder="https://pay.wave.com/m/..."></div>
+        <div><label>Numéro Orange Money affiché</label><input id="s-omtxt" placeholder="77 497 63 64"></div>
+        <div><label>Numéro Orange Money (chiffres seuls, pour le bouton copier)</label><input id="s-omraw" inputmode="numeric" placeholder="774976364"></div>
+      </div>
+    </div>
+    <button class="btn btn-green" onclick="saveParams()"><i class="ti ti-device-floppy"></i> Enregistrer les paramètres</button>
+  </section>
+
+  <!-- ================= GITHUB ================= -->
+  <section id="tab-github" style="display:none">
+    <div class="alert info"><i class="ti ti-shield-lock"></i><span>Votre jeton reste <b>uniquement dans ce navigateur</b> (localStorage). Il n'est envoyé qu'à l'API officielle GitHub. Ne le partagez jamais.</span></div>
+    <div class="card">
+      <h2>Connexion au dépôt</h2>
+      <div class="grid3">
+        <div><label>Propriétaire (compte GitHub)</label><input id="gh-owner" placeholder="projetmahwaccs-cpu"></div>
+        <div><label>Nom du dépôt</label><input id="gh-repo" placeholder="CRYSTAL-"></div>
+        <div><label>Branche</label><input id="gh-branch" placeholder="main" value="main"></div>
+      </div>
+      <label>Jeton d'accès (fine-grained token)</label>
+      <input id="gh-token" type="password" placeholder="github_pat_...">
+      <div class="hint">Comment le créer : GitHub → votre photo → <b>Settings</b> → <b>Developer settings</b> → <b>Fine-grained tokens</b> → Generate new token → dans "Repository access" choisissez <b>uniquement votre dépôt</b> → dans "Permissions" → Repository permissions → <b>Contents : Read and write</b> → Generate. Copiez le jeton ici.</div>
+      <div class="erow" style="justify-content:flex-start">
+        <button class="btn btn-green" onclick="ghConnect()"><i class="ti ti-plug-connected"></i> Connecter</button>
+        <button class="btn btn-red" onclick="ghForget()"><i class="ti ti-trash"></i> Oublier la connexion</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Sans connexion GitHub ?</h2>
+      <p class="sub">Vous pouvez travailler hors connexion : faites vos modifications puis téléchargez le fichier <code>products.js</code> et uploadez-le vous-même sur GitHub (Add file → Upload files → remplacer).</p>
+      <button class="btn" onclick="downloadProductsJs()"><i class="ti ti-download"></i> Télécharger products.js</button>
+    </div>
+  </section>
+
+  <!-- ================= AIDE ================= -->
+  <section id="tab-aide" style="display:none">
+    <div class="card">
+      <h2>Comment publier une modification</h2>
+      <ol class="steps">
+        <li><b>Connectez GitHub</b> une seule fois (onglet Connexion GitHub).</li>
+        <li>Ajoutez / modifiez / supprimez vos produits, ou changez les paramètres.</li>
+        <li>La barre du bas indique les modifications en attente → cliquez <b>Publier sur GitHub</b>.</li>
+        <li>Attendez 1 à 2 minutes : GitHub Pages met le site à jour automatiquement.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>Photos des produits</h2>
+      <ol class="steps">
+        <li>Dans la fiche produit, cliquez <b>Uploader une photo</b> : elle part directement dans votre dépôt GitHub et le nom de fichier se remplit tout seul (connexion GitHub requise).</li>
+        <li>Ou tapez simplement le nom d'un fichier déjà présent dans le dépôt (ex : <code>montre-luxe.jpg</code>).</li>
+        <li>Les vidéos <code>.mp4</code> sont acceptées comme visuel : elles jouent en boucle sur le site.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h2>Bon à savoir</h2>
+      <ol class="steps">
+        <li>Cette page n'est pas référencée par Google (noindex) et n'apparaît nulle part sur le site public. Elle est toutefois accessible à qui connaît l'adresse <code>admin.html</code> — sans votre jeton GitHub, personne ne peut rien modifier.</li>
+        <li>Chaque publication crée un commit propre dans votre dépôt : vous pouvez toujours revenir en arrière depuis GitHub (History).</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<!-- ================= ÉDITEUR PRODUIT ================= -->
+<div class="editor" id="editor">
+  <div class="ebox">
+    <h3 id="e-title">Nouveau produit</h3>
+    <p class="sub" id="e-sub"></p>
+    <label>Nom du produit *</label>
+    <input id="e-name" placeholder="Ex : Montre Homme Classique Cuir Marron">
+    <div class="grid3">
+      <div><label>Prix (FCFA) *</label><input id="e-price" type="number" min="0" inputmode="numeric"></div>
+      <div><label>Ancien prix (si promo)</label><input id="e-old" type="number" min="0" inputmode="numeric" placeholder="Laisser vide si pas de promo"></div>
+      <div><label>Catégorie *</label><select id="e-cat"></select></div>
+    </div>
+    <div class="grid2">
+      <div><label>Badge (facultatif)</label><input id="e-badge" placeholder="Nouveau, Hot, Best Foods..."></div>
+      <div><label>Vidéo .mp4 (facultatif)</label><input id="e-video" placeholder="ex : demo-produit.mp4"></div>
+    </div>
+    <label>Vendeur</label>
+    <select id="e-seller"><option value="">CCL (ma boutique)</option></select>
+    <label>Image (nom du fichier dans le dépôt)</label>
+    <input id="e-image" placeholder="ex : montre-luxe-marron.jpg">
+    <div class="imgprev">
+      <span class="th" id="e-prev"><i class="ti ti-photo"></i></span>
+      <div>
+        <button class="btn" onclick="document.getElementById('e-file').click()"><i class="ti ti-upload"></i> Uploader une photo</button>
+        <input type="file" id="e-file" accept="image/*,video/mp4" style="display:none" onchange="uploadAsset(this)">
+        <div class="hint" id="e-uphint">Connexion GitHub requise pour l'upload direct.</div>
+      </div>
+    </div>
+    <div class="erow">
+      <button class="btn" onclick="closeEditor()">Annuler</button>
+      <button class="btn btn-green" onclick="saveProduct()"><i class="ti ti-check"></i> Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<div class="editor" id="seditor">
+  <div class="ebox">
+    <h3 id="se-title">Nouveau vendeur</h3>
+    <label>Nom de la boutique *</label>
+    <input id="se-shop" placeholder="Ex : Awa Fashion">
+    <div class="grid2">
+      <div><label>Nom du vendeur</label><input id="se-name"></div>
+      <div><label>WhatsApp (chiffres seuls)</label><input id="se-phone" inputmode="numeric" placeholder="771234567"></div>
+    </div>
+    <div class="grid2">
+      <div><label>Payé jusqu'au</label><input id="se-paid" type="date"></div>
+      <div><label>Statut</label><select id="se-active"><option value="1">Actif (produits visibles)</option><option value="0">Suspendu (produits masqués)</option></select></div>
+    </div>
+    <div class="hint">Le code vendeur est généré automatiquement (V-001, V-002...). Communiquez-le au vendeur : il l'utilisera dans ses envois.</div>
+    <div class="erow">
+      <button class="btn" onclick="closeSeller()">Annuler</button>
+      <button class="btn btn-green" onclick="saveSeller()"><i class="ti ti-check"></i> Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<div class="publishbar" id="publishbar" style="display:none">
+  <span class="chg"><i class="ti ti-alert-circle"></i> <span id="chg-txt"></span></span>
+  <div class="spacer"></div>
+  <button class="btn" onclick="downloadProductsJs()"><i class="ti ti-download"></i> Télécharger</button>
+  <button class="btn btn-green" id="pubbtn" onclick="publish()"><i class="ti ti-cloud-upload"></i> Publier sur GitHub</button>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* ============================================================
+   ADMIN CCL — gestion sans code, publication directe GitHub
+   ============================================================ */
+let DATA = null;          // { products, CAT_LABEL, SIZE_SETS, CAT_META, SHOP }
+let dirty = 0;            // nb de modifications non publiées
+let editId = null;        // produit en cours d'édition
+let gh = JSON.parse(localStorage.getItem('ccl_admin_gh') || 'null');
+
+const $ = s => document.querySelector(s);
+const money = n => Number(n).toLocaleString('fr-FR') + ' FCFA';
+function toast(msg, bad){
+  const t = $('#toast');
+  t.className = 'show' + (bad ? ' bad' : '');
+  t.innerHTML = '<i class="ti ti-' + (bad?'alert-triangle':'check') + '"></i>' + msg;
+  clearTimeout(window._tt); window._tt = setTimeout(()=>t.className='',3200);
+}
+function markDirty(n){ dirty += (n||1); $('#publishbar').style.display='flex'; $('#chg-txt').textContent = dirty + ' modification' + (dirty>1?'s':'') + ' non publiée' + (dirty>1?'s':''); }
+function clearDirty(){ dirty = 0; $('#publishbar').style.display='none'; }
+
+/* ---------- Chargement des données (GitHub d'abord, sinon fichier local) ---------- */
+async function loadData(){
+  let code = null;
+  if(gh && gh.token){
+    try{ code = await ghGetFile('products.js'); setGhState(true); }
+    catch(e){ setGhState(false, e.message); }
+  }
+  if(!code){
+    try{ code = await (await fetch('products.js?v=' + Date.now())).text(); }
+    catch(e){ toast("Impossible de charger products.js — ouvrez l'admin depuis le site en ligne", true); return; }
+  }
+  parseData(code);
+  initUI();
+}
+function parseData(code){
+  DATA = new Function(code + '; return { products, CAT_LABEL, SIZE_SETS, CAT_META, SHOP, SELLERS: (typeof SELLERS !== "undefined" ? SELLERS : []) };')();
+  window._sha = window._lastSha || null;
+}
+
+/* ---------- Sérialisation : régénérer products.js proprement ---------- */
+const q = s => "'" + String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'") + "'";
+function serializeProducts(){
+  const lines = DATA.products.map(p => {
+    let f = ['id:' + p.id, 'cat:' + q(p.cat)];
+    if(p.badge) f.push('badge:' + q(p.badge));
+    f.push('name:' + q(p.name), 'price:' + p.price);
+    if(p.old) f.push('old:' + p.old);
+    if(p.image) f.push('image:' + q(p.image));
+    if(p.video) f.push('video:' + q(p.video));
+    if(p.seller) f.push('seller:' + q(p.seller));
+    return '  { ' + f.join(', ') + ' }';
+  });
+  return 'const products = [\n' + lines.join(',\n') + '\n];';
+}
+function serializeObj(name, obj, pretty){
+  const body = Object.entries(obj).map(([k,v]) => {
+    const key = /^[a-zA-Z_$][\w$]*$/.test(k) ? k : q(k);
+    let val;
+    if(typeof v === 'string') val = q(v);
+    else if(Array.isArray(v)) val = '[' + v.map(x => typeof x==='string' ? q(x) : x).join(',') + ']';
+    else if(typeof v === 'object') val = '{ ' + Object.entries(v).map(([k2,v2]) => k2 + ':' + (typeof v2==='string'?q(v2):v2)).join(', ') + ' }';
+    else val = v;
+    return (pretty?'  ':'') + key + ': ' + val;
+  }).join(pretty ? ',\n' : ', ');
+  return 'const ' + name + ' = {' + (pretty ? '\n'+body+'\n' : ' '+body+' ') + '};';
+}
+function serializeSellers(){
+  const S = sellers();
+  const lines = S.map(s => {
+    let f = ['id:' + q(s.id), 'shop:' + q(s.shop)];
+    if(s.name) f.push('name:' + q(s.name));
+    if(s.phone) f.push('phone:' + q(s.phone));
+    if(s.paidUntil) f.push('paidUntil:' + q(s.paidUntil));
+    f.push('active:' + (s.active === false ? 'false' : 'true'));
+    return '  { ' + f.join(', ') + ' }';
+  });
+  return '/* Vendeurs partenaires. active:false OU paidUntil depassee => produits masques. */\nconst SELLERS = [\n' + lines.join(',\n') + '\n];';
+}
+function buildProductsJs(){
+  return '/* CCL — Données partagées (généré par admin.html le ' + new Date().toLocaleString('fr-FR') + ') */\n' +
+    serializeProducts() + '\n\n' +
+    serializeObj('CAT_LABEL', DATA.CAT_LABEL) + '\n\n' +
+    serializeObj('SIZE_SETS', DATA.SIZE_SETS) + '\n\n' +
+    serializeObj('CAT_META', DATA.CAT_META, true) + '\n\n' +
+    serializeObj('SHOP', DATA.SHOP, true) + '\n\n' +
+    serializeSellers() + '\n';
+}
+
+/* ---------- UI ---------- */
+function showTab(t){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on', b.dataset.tab===t));
+  ['produits','vendeurs','params','github','aide'].forEach(x => $('#tab-'+x).style.display = (x===t?'':'none'));
+}
+function initUI(){
+  // catégories dans les selects
+  const opts = Object.entries(DATA.CAT_LABEL).map(([k,v])=>'<option value="'+k+'">'+v+'</option>').join('');
+  $('#fcat').innerHTML = '<option value="">Toutes catégories</option>' + opts;
+  $('#e-cat').innerHTML = opts;
+  // paramètres
+  const S = DATA.SHOP;
+  $('#s-announce').value = S.ANNOUNCE || '';
+  $('#s-wa').value = S.WHATSAPP || '';
+  $('#s-watxt').value = S.PHONE_DISPLAY || '';
+  $('#s-email').value = S.EMAIL || '';
+  $('#s-name').value = S.NAME || '';
+  $('#s-wave').value = S.WAVE_LINK || '';
+  $('#s-omtxt').value = S.OM_NUMBER_DISPLAY || '';
+  $('#s-omraw').value = S.OM_NUMBER_RAW || '';
+  // github
+  if(gh){ $('#gh-owner').value = gh.owner||''; $('#gh-repo').value = gh.repo||''; $('#gh-branch').value = gh.branch||'main'; $('#gh-token').value = gh.token||''; }
+  renderStats(); renderList(); renderSellers();
+}
+function renderStats(){
+  const P = DATA.products;
+  const promos = P.filter(p=>p.old).length;
+  const noimg = P.filter(p=>!p.image && !p.video).length;
+  $('#stats').innerHTML =
+    '<div class="stat"><b>' + P.length + '</b><span>Produits en ligne</span></div>' +
+    '<div class="stat"><b>' + Object.keys(DATA.CAT_LABEL).length + '</b><span>Catégories</span></div>' +
+    '<div class="stat"><b>' + promos + '</b><span>En promotion</span></div>' +
+    '<div class="stat"><b>' + noimg + '</b><span>Sans visuel</span></div>';
+}
+function renderList(){
+  const qv = ($('#q').value||'').toLowerCase();
+  const fc = $('#fcat').value;
+  let list = DATA.products.slice().reverse(); // récents d'abord
+  if(fc) list = list.filter(p=>p.cat===fc);
+  if(qv) list = list.filter(p=>(p.name+' '+(p.badge||'')).toLowerCase().includes(qv));
+  $('#plist').innerHTML = list.slice(0,200).map(p => {
+    const th = p.image
+      ? (/\.mp4$/i.test(p.image) ? '<video src="'+p.image+'" muted></video>' : '<img src="'+p.image+'" onerror="this.outerHTML=\'<i class=&quot;ti ti-photo-off&quot;></i>\'">')
+      : '<i class="ti ti-photo-off"></i>';
+    return '<div class="prow">' +
+      '<span class="th">' + th + '</span>' +
+      '<div><h4>' + escH(p.name) + '</h4><div class="meta">#' + p.id + ' · ' + (DATA.CAT_LABEL[p.cat]||p.cat) + (p.badge?' · <b>'+escH(p.badge)+'</b>':'') + (p.video?' · <i class="ti ti-video"></i>':'') + (p.seller?' · <span style="color:var(--accent)">'+escH((sellers().find(s=>s.id===p.seller)||{}).shop||p.seller)+'</span>':'') + '</div></div>' +
+      '<span class="price">' + money(p.price) + (p.old?'<s>'+money(p.old)+'</s>':'') + '</span>' +
+      '<div class="pacts">' +
+        '<button class="ic" title="Modifier" onclick="openEditor('+p.id+')"><i class="ti ti-pencil"></i></button>' +
+        '<button class="ic" title="Dupliquer" onclick="dupProduct('+p.id+')"><i class="ti ti-copy"></i></button>' +
+        '<button class="ic red" title="Supprimer" onclick="delProduct('+p.id+')"><i class="ti ti-trash"></i></button>' +
+      '</div></div>';
+  }).join('') || '<div class="card">Aucun produit ne correspond.</div>';
+}
+function escH(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- CRUD produits ---------- */
+function openEditor(id){
+  editId = id || null;
+  const p = id ? DATA.products.find(x=>x.id===id) : {};
+  $('#e-title').textContent = id ? 'Modifier le produit #' + id : 'Nouveau produit';
+  $('#e-sub').textContent = id ? '' : 'Il apparaîtra sur la page de sa catégorie et dans la boutique.';
+  $('#e-name').value = p.name||'';
+  $('#e-price').value = p.price||'';
+  $('#e-old').value = p.old||'';
+  $('#e-cat').value = p.cat||'mode';
+  $('#e-badge').value = p.badge||'';
+  $('#e-image').value = p.image||'';
+  $('#e-video').value = p.video||'';
+  $('#e-seller').value = p.seller||'';
+  updatePrev();
+  $('#e-uphint').textContent = (gh && gh.token) ? 'La photo sera envoyée directement dans votre dépôt GitHub.' : "Connexion GitHub requise pour l'upload direct (onglet Connexion GitHub).";
+  $('#editor').classList.add('show');
+}
+function closeEditor(){ $('#editor').classList.remove('show'); }
+$('#e-image') && null;
+document.addEventListener('input', e => { if(e.target && e.target.id==='e-image') updatePrev(); });
+function updatePrev(){
+  const v = $('#e-image').value.trim();
+  $('#e-prev').innerHTML = v && !/\.mp4$/i.test(v) ? '<img src="'+v+'" onerror="this.outerHTML=\'<i class=&quot;ti ti-photo-off&quot;></i>\'">' : '<i class="ti ti-photo"></i>';
+}
+function saveProduct(){
+  const name = $('#e-name').value.trim();
+  const price = Number($('#e-price').value);
+  if(name.length < 3){ toast('Nom du produit trop court', true); return; }
+  if(!price || price <= 0){ toast('Prix invalide', true); return; }
+  const old = Number($('#e-old').value) || null;
+  if(old && old <= price){ toast("L'ancien prix doit être supérieur au prix promo", true); return; }
+  const obj = {
+    id: editId || (Math.max(0, ...DATA.products.map(p=>p.id)) + 1),
+    cat: $('#e-cat').value,
+    name, price
+  };
+  const badge = $('#e-badge').value.trim(); if(badge) obj.badge = badge;
+  if(old) obj.old = old;
+  const image = $('#e-image').value.trim(); if(image) obj.image = image;
+  const video = $('#e-video').value.trim(); if(video) obj.video = video;
+  const seller = $('#e-seller').value; if(seller) obj.seller = seller;
+  if(editId){
+    const i = DATA.products.findIndex(p=>p.id===editId);
+    DATA.products[i] = obj;
+    toast('Produit #' + editId + ' modifié');
+  } else {
+    DATA.products.push(obj);
+    toast('Produit ajouté : ' + escH(name));
+  }
+  markDirty(); closeEditor(); renderStats(); renderList();
+}
+function dupProduct(id){
+  const p = DATA.products.find(x=>x.id===id);
+  const c = JSON.parse(JSON.stringify(p));
+  c.id = Math.max(0, ...DATA.products.map(x=>x.id)) + 1;
+  c.name = p.name + ' (copie)';
+  DATA.products.push(c);
+  markDirty(); renderStats(); renderList(); toast('Produit dupliqué — modifiez la copie');
+}
+function delProduct(id){
+  const p = DATA.products.find(x=>x.id===id);
+  if(!confirm('Supprimer définitivement « ' + p.name + ' » ?')) return;
+  DATA.products = DATA.products.filter(x=>x.id!==id);
+  markDirty(); renderStats(); renderList(); toast('Produit supprimé');
+}
+
+/* ---------- Vendeurs ---------- */
+let editSellerId = null;
+function sellers(){ if(!DATA.SELLERS) DATA.SELLERS = []; return DATA.SELLERS; }
+function sellerStatus(s){
+  if(s.active === false) return ['Suspendu','var(--danger)'];
+  if(s.paidUntil){
+    const d = new Date(s.paidUntil + 'T23:59:59'), now = new Date();
+    if(d < now) return ['Abonnement expiré — produits masqués','var(--danger)'];
+    const days = Math.ceil((d - now) / 86400000);
+    if(days <= 5) return ['Expire dans ' + days + ' j','var(--warn)'];
+    return ['À jour jusqu\'au ' + s.paidUntil,'var(--accent)'];
+  }
+  return ['Actif (pas de date de fin)','var(--accent)'];
+}
+function renderSellers(){
+  const S = sellers();
+  const activeN = S.filter(s => s.active !== false).length;
+  $('#vstats').innerHTML =
+    '<div class="stat"><b>' + S.length + '</b><span>Vendeurs inscrits</span></div>' +
+    '<div class="stat"><b>' + activeN + '</b><span>Actifs</span></div>' +
+    '<div class="stat"><b>' + (activeN * 7500).toLocaleString('fr-FR') + '</b><span>FCFA / mois potentiels</span></div>' +
+    '<div class="stat"><b>' + DATA.products.filter(p=>p.seller).length + '</b><span>Produits vendeurs</span></div>';
+  $('#vlist').innerHTML = S.map(s => {
+    const [txt, col] = sellerStatus(s);
+    const nb = DATA.products.filter(p => p.seller === s.id).length;
+    return '<div class="prow" style="grid-template-columns:1fr auto auto;">' +
+      '<div><h4>' + escH(s.shop) + ' <span class="badge">' + s.id + '</span></h4>' +
+      '<div class="meta">' + escH(s.name||'') + (s.phone ? ' · ' + s.phone : '') + ' · ' + nb + ' produit' + (nb>1?'s':'') + ' · <b style="color:' + col + '">' + txt + '</b></div></div>' +
+      '<button class="btn" onclick="renewSeller(\'' + s.id + '\')" title="Enregistrer un paiement de 7500"><i class="ti ti-cash"></i> +1 mois</button>' +
+      '<div class="pacts">' +
+        '<button class="ic" title="Modifier" onclick="openSeller(\'' + s.id + '\')"><i class="ti ti-pencil"></i></button>' +
+        '<button class="ic" title="' + (s.active===false?'Réactiver':'Suspendre') + '" onclick="toggleSeller(\'' + s.id + '\')"><i class="ti ti-' + (s.active===false?'player-play':'player-pause') + '"></i></button>' +
+        '<button class="ic red" title="Supprimer" onclick="delSeller(\'' + s.id + '\')"><i class="ti ti-trash"></i></button>' +
+      '</div></div>';
+  }).join('') || '<div class="card">Aucun vendeur pour le moment. Les demandes arrivent sur votre WhatsApp depuis la page « Espace Vendeur » du site — ajoutez-les ici après paiement des 7 500 FCFA.</div>';
+  // select vendeur dans l'éditeur produit
+  $('#e-seller').innerHTML = '<option value="">CCL (ma boutique)</option>' + S.map(s => '<option value="' + s.id + '">' + escH(s.shop) + ' (' + s.id + ')</option>').join('');
+}
+function openSeller(id){
+  editSellerId = id || null;
+  const s = id ? sellers().find(x=>x.id===id) : {};
+  $('#se-title').textContent = id ? 'Modifier ' + s.shop + ' (' + id + ')' : 'Nouveau vendeur';
+  $('#se-shop').value = s.shop || '';
+  $('#se-name').value = s.name || '';
+  $('#se-phone').value = s.phone || '';
+  $('#se-paid').value = s.paidUntil || '';
+  $('#se-active').value = s.active === false ? '0' : '1';
+  $('#seditor').classList.add('show');
+}
+function closeSeller(){ $('#seditor').classList.remove('show'); }
+function saveSeller(){
+  const shop = $('#se-shop').value.trim();
+  if(shop.length < 2){ toast('Nom de boutique trop court', true); return; }
+  const obj = {
+    id: editSellerId || nextSellerId(),
+    shop,
+    name: $('#se-name').value.trim(),
+    phone: $('#se-phone').value.replace(/\D/g,''),
+    paidUntil: $('#se-paid').value || null,
+    active: $('#se-active').value === '1'
+  };
+  if(!obj.paidUntil) delete obj.paidUntil;
+  if(editSellerId){
+    const i = sellers().findIndex(x=>x.id===editSellerId);
+    sellers()[i] = obj;
+    toast('Vendeur ' + obj.id + ' modifié');
+  } else {
+    sellers().push(obj);
+    toast('Vendeur ajouté — code : ' + obj.id);
+  }
+  markDirty(); closeSeller(); renderSellers();
+}
+function nextSellerId(){
+  const nums = sellers().map(s => Number(String(s.id).replace(/\D/g,'')) || 0);
+  return 'V-' + String(Math.max(0, ...nums) + 1).padStart(3,'0');
+}
+function renewSeller(id){
+  const s = sellers().find(x=>x.id===id);
+  const base = s.paidUntil && new Date(s.paidUntil) > new Date() ? new Date(s.paidUntil) : new Date();
+  base.setDate(base.getDate() + 30);
+  s.paidUntil = base.toISOString().slice(0,10);
+  s.active = true;
+  markDirty(); renderSellers();
+  toast(s.shop + ' : payé jusqu\'au ' + s.paidUntil + ' (7 500 FCFA)');
+}
+function toggleSeller(id){
+  const s = sellers().find(x=>x.id===id);
+  s.active = s.active === false;
+  markDirty(); renderSellers();
+  toast(s.shop + (s.active ? ' réactivé — produits visibles' : ' suspendu — produits masqués'));
+}
+function delSeller(id){
+  const s = sellers().find(x=>x.id===id);
+  const nb = DATA.products.filter(p=>p.seller===id).length;
+  if(!confirm('Supprimer la boutique « ' + s.shop + ' » ?' + (nb ? '\nSes ' + nb + ' produits seront rattachés à CCL.' : ''))) return;
+  DATA.SELLERS = sellers().filter(x=>x.id!==id);
+  DATA.products.forEach(p => { if(p.seller===id) delete p.seller; });
+  markDirty(); renderSellers(); renderList();
+  toast('Vendeur supprimé');
+}
+
+/* ---------- Paramètres ---------- */
+function saveParams(){
+  const S = DATA.SHOP;
+  S.ANNOUNCE = $('#s-announce').value.trim();
+  S.WHATSAPP = $('#s-wa').value.replace(/\D/g,'');
+  S.PHONE_DISPLAY = $('#s-watxt').value.trim();
+  S.EMAIL = $('#s-email').value.trim();
+  S.NAME = $('#s-name').value.trim();
+  S.WAVE_LINK = $('#s-wave').value.trim();
+  S.OM_NUMBER_DISPLAY = $('#s-omtxt').value.trim();
+  S.OM_NUMBER_RAW = $('#s-omraw').value.replace(/\D/g,'');
+  markDirty(); toast('Paramètres enregistrés — pensez à publier');
+}
+
+/* ---------- GitHub API ---------- */
+function setGhState(ok, msg){
+  $('#gh-dot').className = 'dot' + (ok?' ok':'');
+  $('#gh-state').textContent = ok ? 'GitHub connecté : ' + gh.owner + '/' + gh.repo : (msg || 'GitHub non connecté');
+}
+function ghHeaders(){
+  return { 'Authorization': 'Bearer ' + gh.token, 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
+}
+async function ghGetFile(path){
+  const r = await fetch('https://api.github.com/repos/' + gh.owner + '/' + gh.repo + '/contents/' + encodeURIComponent(path) + '?ref=' + (gh.branch||'main') + '&t=' + Date.now(), { headers: ghHeaders() });
+  if(!r.ok) throw new Error('GitHub ' + r.status + ' — vérifiez dépôt/jeton');
+  const j = await r.json();
+  window._lastSha = j.sha;
+  // décoder l'UTF-8 proprement
+  const bin = atob(j.content.replace(/\n/g,''));
+  const bytes = new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) bytes[i] = bin.charCodeAt(i);
+  return new TextDecoder('utf-8').decode(bytes);
+}
+async function ghPutFile(path, content, message, isBinaryB64){
+  let b64;
+  if(isBinaryB64){ b64 = content; }
+  else {
+    const bytes = new TextEncoder().encode(content);
+    let bin = ''; bytes.forEach(b => bin += String.fromCharCode(b));
+    b64 = btoa(bin);
+  }
+  // sha existant ?
+  let sha = null;
+  try{
+    const r0 = await fetch('https://api.github.com/repos/' + gh.owner + '/' + gh.repo + '/contents/' + encodeURIComponent(path) + '?ref=' + (gh.branch||'main') + '&t=' + Date.now(), { headers: ghHeaders() });
+    if(r0.ok) sha = (await r0.json()).sha;
+  }catch(e){}
+  const body = { message, content: b64, branch: gh.branch||'main' };
+  if(sha) body.sha = sha;
+  const r = await fetch('https://api.github.com/repos/' + gh.owner + '/' + gh.repo + '/contents/' + encodeURIComponent(path), {
+    method:'PUT', headers: Object.assign({'Content-Type':'application/json'}, ghHeaders()), body: JSON.stringify(body)
+  });
+  if(!r.ok){ const j = await r.json().catch(()=>({})); throw new Error('GitHub ' + r.status + (j.message?' — '+j.message:'')); }
+  return r.json();
+}
+async function ghConnect(){
+  gh = {
+    owner: $('#gh-owner').value.trim(),
+    repo: $('#gh-repo').value.trim(),
+    branch: $('#gh-branch').value.trim() || 'main',
+    token: $('#gh-token').value.trim()
+  };
+  if(!gh.owner || !gh.repo || !gh.token){ toast('Remplissez propriétaire, dépôt et jeton', true); return; }
+  try{
+    const code = await ghGetFile('products.js');
+    localStorage.setItem('ccl_admin_gh', JSON.stringify(gh));
+    parseData(code); initUI(); setGhState(true);
+    toast('Connecté — données chargées depuis GitHub');
+  }catch(e){ setGhState(false); toast(e.message, true); }
+}
+function ghForget(){
+  localStorage.removeItem('ccl_admin_gh'); gh = null;
+  $('#gh-token').value=''; setGhState(false); toast('Connexion oubliée');
+}
+
+/* ---------- Upload de photo/vidéo vers le dépôt ---------- */
+function slug(s){
+  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9.]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
+}
+async function uploadAsset(input){
+  const file = input.files[0]; if(!file) return;
+  if(!(gh && gh.token)){ toast('Connectez GitHub pour uploader (onglet Connexion GitHub)', true); return; }
+  if(file.size > 20*1024*1024){ toast('Fichier trop lourd (max 20 Mo)', true); return; }
+  const fname = slug(file.name);
+  toast('Envoi de ' + fname + '...');
+  const b64 = await new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(String(r.result).split(',')[1]);
+    r.onerror = rej;
+    r.readAsDataURL(file);
+  });
+  try{
+    await ghPutFile(fname, b64, 'Ajout visuel produit : ' + fname, true);
+    if(/\.mp4$/i.test(fname)) $('#e-video').value = fname; else $('#e-image').value = fname;
+    updatePrev();
+    toast('Fichier envoyé sur GitHub : ' + fname);
+  }catch(e){ toast(e.message, true); }
+  input.value = '';
+}
+
+/* ---------- Publication ---------- */
+async function publish(){
+  if(!(gh && gh.token)){ showTab('github'); toast('Connectez GitHub, ou utilisez Télécharger', true); return; }
+  const btn = $('#pubbtn'); btn.disabled = true; btn.innerHTML = '<i class="ti ti-loader-2"></i> Publication...';
+  try{
+    await ghPutFile('products.js', buildProductsJs(), 'Mise à jour boutique via admin (' + dirty + ' modif.)');
+    clearDirty();
+    toast('Publié ! Le site se met à jour d\'ici 1 à 2 minutes.');
+  }catch(e){ toast(e.message, true); }
+  btn.disabled = false; btn.innerHTML = '<i class="ti ti-cloud-upload"></i> Publier sur GitHub';
+}
+function downloadProductsJs(){
+  const blob = new Blob([buildProductsJs()], {type:'text/javascript;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'products.js';
+  document.body.appendChild(a); a.click(); a.remove();
+  toast('products.js téléchargé — uploadez-le sur GitHub pour publier');
+}
+
+loadData();
+</script>
+</body>
+</html>
