@@ -888,3 +888,87 @@ footer{ position:relative; z-index:2; }
 .jrounds .rd img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .jrounds .rd i{ position:relative; z-index:0; }
 .jrounds .rd img + i{ z-index:-1; }
+
+/* ============================================================
+   COUCHE JUMIA v5 — ajustements : bandeau haut plus fin,
+   héros des sous-pages plus hauts, dernières images.
+   ============================================================ */
+/* Bandeau campagne compact */
+.jcamp{ padding:4px var(--pad); gap:14px; }
+.jcamp .brand{ font-size:14px; }
+.jcamp .brand i{ font-size:15px; }
+.jcamp .chip{ font-size:11.5px; padding:3px 12px; }
+.jcamp .call{ padding:4px 12px; gap:8px; }
+.jcamp .call i{ font-size:16px; }
+.jcamp .call small{ font-size:9px; }
+.jcamp .call b{ font-size:12.5px; }
+.jsell{ padding:4px var(--pad); font-size:11.5px; }
+
+/* Héros des sous-pages plus généreux */
+.cathero.photo{ display:flex; align-items:center; min-height:340px; }
+.cathero.photo .cathero-in{ padding:64px var(--pad); width:100%; }
+.cathero.photo h1{ font-size:clamp(32px,4vw,44px); }
+.cathero.photo p{ font-size:15.5px; max-width:560px; }
+.cathero.photo .cathero-ic{ width:84px; height:84px; flex:0 0 84px; font-size:38px; }
+@media(max-width:720px){
+  .cathero.photo{ min-height:240px; }
+  .cathero.photo .cathero-in{ padding:40px var(--pad); }
+  .cathero.photo h1{ font-size:28px; }
+}
+
+/* Correctif : conflit avec .brand (cartes marques) — le bandeau campagne reste sur UNE ligne */
+.jcamp{ min-height:0; }
+.jcamp .brand{ display:inline-flex; flex-direction:row; align-items:center; white-space:nowrap; padding:0; background:none; border:none; box-shadow:none; min-height:0; width:auto; text-align:left; }
+.jcamp .brand em{ margin:0 5px; }
+.jcamp .chip{ white-space:nowrap; }
+.jcamp .call{ white-space:nowrap; flex-direction:row; }
+.jcamp .call span{ display:flex; flex-direction:column; align-items:flex-start; line-height:1.15; }
+.jcamp .jbrand{ display:inline-flex; align-items:center; gap:7px; font-weight:800; font-size:14px; letter-spacing:.03em; white-space:nowrap; }
+.jcamp .jbrand em{ font-style:italic; color:#F2D57A; }
+
+/* ============================================================
+   COUCHE JUMIA v6 — bandes promo animées au milieu des catalogues
+   ============================================================ */
+.jpromo{ grid-column:1/-1; display:flex; flex-direction:column; gap:0; border-radius:var(--jr); overflow:hidden; box-shadow:var(--jshadow); margin:6px 0; }
+.jpromo-band{ position:relative; display:flex; align-items:center; min-height:230px; background-size:cover; background-position:center right; overflow:hidden; }
+.jpromo-band .shine{ position:absolute; inset:0; background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.18) 45%,transparent 60%); background-size:280% 100%; animation:jshine 4.5s ease-in-out infinite; pointer-events:none; }
+@keyframes jshine{ 0%,55%{ background-position:130% 0; } 100%{ background-position:-80% 0; } }
+.jpromo-tx{ position:relative; z-index:2; padding:26px 30px; display:flex; flex-direction:column; align-items:flex-start; gap:9px; max-width:52%; }
+.jpromo-tx .lg{ font-weight:800; font-size:15px; color:#fff; letter-spacing:.05em; display:inline-flex; align-items:center; gap:6px; text-shadow:0 2px 8px rgba(0,0,0,.4); }
+.jpromo-tx .lg i{ color:#F2D57A; }
+.jpromo-tx h3{ color:#fff; font-size:clamp(22px,3vw,34px); line-height:1.05; font-weight:800; text-transform:uppercase; text-shadow:0 2px 12px rgba(0,0,0,.45); }
+.jpromo-tx h3 b{ color:#F2D57A; }
+.jpromo-tx .pill{ background:#fff; color:#0b5d33; font-weight:800; font-size:15px; padding:7px 18px; border-radius:99px; box-shadow:0 8px 22px rgba(0,0,0,.25); animation:jpulse 1.6s ease-in-out infinite; }
+.jpromo-tx .pill b{ color:#c22f2f; font-size:19px; }
+@keyframes jpulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.07); } }
+.jpromo-tx .go{ background:#F2D57A; color:#1c1608; font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase; padding:11px 20px; border-radius:5px; display:inline-flex; align-items:center; gap:5px; transition:.15s; }
+.jpromo-band:hover .go{ transform:translateX(4px); }
+/* Défilement des produits en promo de la page */
+.jpromo-marq{ background:#fff; border-top:1px solid var(--line); overflow:hidden; position:relative; }
+.jm-track{ display:flex; gap:0; width:max-content; animation:jmarq 36s linear infinite; }
+.jpromo-marq:hover .jm-track{ animation-play-state:paused; }
+@keyframes jmarq{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+.jm-item{ display:flex; align-items:center; gap:10px; padding:10px 18px; border-right:1px solid var(--line); min-width:230px; }
+.jm-item:hover{ background:#f3f8f5; }
+.jm-item img{ width:46px; height:46px; border-radius:8px; object-fit:cover; background:#f1f1f2; flex:0 0 auto; }
+.jm-n{ font-size:12px; font-weight:600; color:#282828; max-width:130px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.jm-p{ font-size:12.5px; font-weight:800; white-space:nowrap; }
+.jm-p b{ color:#fff; background:var(--sale); font-size:10.5px; padding:2px 6px; border-radius:4px; margin-left:4px; }
+@media(max-width:720px){
+  .jpromo-band{ min-height:190px; background-position:75% center; }
+  .jpromo-tx{ max-width:75%; padding:20px; }
+}
+@media(prefers-reduced-motion:reduce){ .jpromo-band .shine,.jpromo-tx .pill,.jm-track{ animation:none; } }
+
+/* ============================================================
+   RECHERCHE A SUGGESTIONS
+   ============================================================ */
+.hsuggest{ position:absolute; top:calc(100% + 6px); left:0; right:0; background:#fff; border-radius:10px; box-shadow:0 14px 40px rgba(0,0,0,.18); z-index:400; display:none; overflow:hidden; max-height:420px; overflow-y:auto; }
+.hsuggest.open{ display:block; }
+.hs-item{ display:flex; align-items:center; gap:12px; padding:10px 14px; border-bottom:1px solid var(--line); }
+.hs-item:hover{ background:#f3f8f5; }
+.hs-item img{ width:42px; height:42px; border-radius:8px; object-fit:cover; background:#f1f1f2; flex:0 0 auto; }
+.hs-n{ flex:1; font-size:13px; font-weight:600; color:#282828; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.hs-p{ font-size:12.5px; font-weight:800; white-space:nowrap; }
+.hs-all{ display:flex; align-items:center; gap:9px; padding:12px 14px; font-size:12.5px; font-weight:700; color:var(--accent); }
+.hs-all:hover{ background:#f3f8f5; }

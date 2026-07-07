@@ -305,3 +305,46 @@ const SHOP = {
    active:false OU paidUntil depassee => produits masques automatiquement. */
 const SELLERS = [
 ];
+
+
+/* ============================================================
+   RECHERCHE A SUGGESTIONS (toutes pages)
+   ============================================================ */
+(function(){
+  function norm(s){ return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+  function fmt(n){ return n.toLocaleString('fr-FR') + ' FCFA'; }
+  function init(){
+    document.querySelectorAll('.hsearch').forEach(function(form){
+      const input = form.querySelector('input'); if(!input || form.dataset.sugg) return;
+      form.dataset.sugg = '1';
+      form.style.position = 'relative';
+      const box = document.createElement('div');
+      box.className = 'hsuggest';
+      form.appendChild(box);
+      let items = [];
+      function close(){ box.classList.remove('open'); box.innerHTML=''; items=[]; }
+      function show(){
+        const q = norm(input.value.trim());
+        if(q.length < 2){ close(); return; }
+        items = products.filter(function(p){ return norm(p.name).includes(q) || norm(CAT_LABEL[p.cat]||'').includes(q); }).slice(0, 8);
+        if(!items.length){ close(); return; }
+        box.innerHTML = items.map(function(p){
+          const img = p.image || (p.images && p.images[0]) || '';
+          return '<a class="hs-item" href="index.html#/produit/' + p.id + '">' +
+            '<img src="' + img + '" alt="" loading="lazy" onerror="this.style.visibility=\'hidden\'">' +
+            '<span class="hs-n">' + p.name.replace(/</g,'&lt;') + '</span>' +
+            '<span class="hs-p">' + fmt(p.price) + '</span></a>';
+        }).join('') +
+        '<a class="hs-all" href="index.html#/boutique?q=' + encodeURIComponent(input.value.trim()) + '">' +
+          '<i class="ti ti-search"></i> Voir tous les résultats pour \u00ab ' + input.value.trim().replace(/</g,'&lt;') + ' \u00bb</a>';
+        box.classList.add('open');
+      }
+      input.addEventListener('input', show);
+      input.addEventListener('focus', show);
+      input.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+      document.addEventListener('click', function(e){ if(!form.contains(e.target)) close(); });
+    });
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

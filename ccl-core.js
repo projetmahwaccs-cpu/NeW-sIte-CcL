@@ -128,6 +128,39 @@ function applyPageFilter(kind, val){
   if(kind==='price'){ pageState.min = ($('#fmin')||{}).value || ''; pageState.max = ($('#fmax')||{}).value || ''; pageState.limit = 24; }
   renderPage();
 }
+
+/* ---------- Bande promo animée insérée au milieu du catalogue ---------- */
+const JPROMO_IMG = { mode:'promo-mode.jpg', beaute:'promo-beaute.jpg', super:'promo-supermarche.jpg',
+  alim:'promo-alimentation.jpg', 'maison-new':'promo-maison-nouveautes.jpg', maisondeco:'promo-maison-deco.jpg',
+  tech:'promo-high-tech.jpg', bebe:'promo-bebe.jpg', sport:'promo-sport.jpg', auto:'promo-auto.jpg',
+  papier:'promo-papeterie.jpg', flash:'promo-promos.jpg' };
+function jpromoHTML(){
+  const cat = window.PAGE_CAT; if(!cat) return '';
+  const img = JPROMO_IMG[cat] || 'promo-promos.jpg';
+  const ALL = (typeof visibleProducts === 'function') ? visibleProducts() : products;
+  let promoList = ALL.filter(p => p.cat === cat && p.old);
+  if(!promoList.length) promoList = ALL.filter(p => p.cat === cat).slice(0, 10);
+  promoList = promoList.slice(0, 12);
+  const item = p => '<a class="jm-item" href="index.html#/produit/' + p.id + '">' +
+      '<img src="' + esc(p.image || (p.images && p.images[0]) || '') + '" alt="" loading="lazy" onerror="this.style.visibility=\'hidden\'">' +
+      '<span class="jm-n">' + esc(p.name) + '</span>' +
+      '<span class="jm-p">' + money(p.price) + (p.old ? ' <b>-' + Math.round((1 - p.price/p.old) * 100) + '%</b>' : '') + '</span>' +
+    '</a>';
+  const track = promoList.map(item).join('') ;
+  return '<div class="jpromo">' +
+    '<a class="jpromo-band" href="promos.html" style="background-image:url(\'' + img + '\'), linear-gradient(115deg,#0e8a4e,#063d23)">' +
+      '<span class="shine"></span>' +
+      '<div class="jpromo-tx">' +
+        '<span class="lg">CCL <i class="ti ti-diamond"></i></span>' +
+        '<h3>Les meilleures<br><b>offres</b> sont là !</h3>' +
+        '<span class="pill">Jusqu\'à <b>-40%</b></span>' +
+        '<span class="go">J\'achète <i class="ti ti-chevron-right"></i></span>' +
+      '</div>' +
+    '</a>' +
+    (promoList.length >= 4 ? '<div class="jpromo-marq"><div class="jm-track">' + track + track + '</div></div>' : '') +
+  '</div>';
+}
+
 function renderPage(){
   const box = $('#page-results'); if(!box) return;
   const list = pageList();
@@ -138,7 +171,8 @@ function renderPage(){
     return;
   }
   const shown = list.slice(0, pageState.limit);
-  box.innerHTML = '<div class="pgrid">' + shown.map(cardHTML).join('') + '</div>' +
+  const cut = shown.length > 8 ? 8 : shown.length;
+  box.innerHTML = '<div class="pgrid">' + shown.slice(0, cut).map(cardHTML).join('') + jpromoHTML() + shown.slice(cut).map(cardHTML).join('') + '</div>' +
     (list.length > pageState.limit
       ? '<div class="loadmore"><button class="btn btn-line" onclick="pageState.limit += 24; renderPage();">Afficher plus (' + (list.length - pageState.limit) + ' restants)</button></div>'
       : '');
