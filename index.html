@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crystal Company Limited — Boutique en ligne au Sénégal | Livraison Dakar</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <meta name="description" content="Boutique en ligne au Sénégal : mode, électroménager, beauté & parfums, alimentation Best Foods, papier Capital & Double A. Livraison J+1 à Dakar. Paiement Wave, Orange Money ou à la livraison." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#0b7a44" />
@@ -14,7 +15,7 @@
   <meta property="og:site_name" content="Crystal Company Limited" />
   <meta property="og:title" content="Crystal Company Limited — Boutique en ligne au Sénégal" />
   <meta property="og:description" content="Mode, électroménager, beauté, alimentation, papier. Livraison J+1 à Dakar. Wave, Orange Money, paiement à la livraison." />
-  <meta property="og:image" content="https://crystal-company.sn/campagne-hero.jpg" />
+  <meta property="og:image" content="https://projetmahwaccs-cpu.github.io/NeW-sIte-CcL/campagne-hero.jpg" />
   <meta property="og:url" content="https://crystal-company.sn/" />
   <meta property="og:locale" content="fr_SN" />
   <link rel="icon" href="ccl-logo.png" type="image/png" />
@@ -66,13 +67,19 @@
     </form>
     <div class="hacts">
       <div class="hdrop">
-        <a class="hact" href="#/favoris" onclick="return window.innerWidth>760;"><i class="ti ti-user"></i><span class="lbl">Compte</span><i class="ti ti-chevron-down caret lbl"></i></a>
+        <a class="hact" href="#/favoris" onclick="return window.innerWidth>760;"><img class="hava" id="acct-photo" alt="" hidden><i class="ti ti-user" id="acct-ic"></i><span class="lbl" id="acct-label">Compte</span><i class="ti ti-chevron-down caret lbl"></i></a>
         <div class="hdrop-menu">
+          <button class="gbtn" id="btn-google" type="button" onclick="googleSignIn()">
+            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C41 35.4 44 30.2 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+            Continuer avec Google
+          </button>
           <a class="cta" href="https://wa.me/221774976364" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" style="color:#fff;"></i> Nous écrire sur WhatsApp</a>
+          <a href="#" id="menu-signin" onclick="event.preventDefault(); gwallOpen();"><i class="ti ti-login"></i> Se connecter / S'inscrire</a>
           <a href="#/favoris"><i class="ti ti-heart"></i> Mes favoris</a>
           <a href="#/panier"><i class="ti ti-shopping-bag"></i> Mon panier</a>
           <div class="sep"></div>
           <a href="vendeur.html"><i class="ti ti-building-store"></i> Devenir vendeur</a>
+          <a id="btn-signout" href="#" hidden onclick="event.preventDefault(); googleSignOut();"><i class="ti ti-logout"></i> Se déconnecter</a>
         </div>
       </div>
       <div class="hdrop">
@@ -160,6 +167,123 @@
 
 <script src="products.js"></script>
 <script>
+/* ============================================================
+   COMPTE — Connexion Google via Supabase
+   >>> COLLE TA CLE "anon public" A LA LIGNE SUIVANTE <<<
+   (Supabase > Settings > API Keys > anon public)
+   ============================================================ */
+const SB_URL = 'https://xhvbqneqczbnogsuhdxt.supabase.co';
+const SB_KEY = 'COLLE_TA_CLE_ANON_PUBLIC_ICI';
+let sb = null;
+try{
+  if(window.supabase && SB_KEY.indexOf('COLLE') === -1){
+    sb = window.supabase.createClient(SB_URL, SB_KEY);
+  }
+}catch(e){ console.warn('Supabase non initialisé', e); }
+
+function googleSignIn(){
+  if(!sb){ toast('Compte bientôt disponible', 'user'); return; }
+  sb.auth.signInWithOAuth({ provider:'google', options:{ redirectTo: location.origin + location.pathname } });
+}
+async function googleSignOut(){
+  if(!sb) return;
+  await sb.auth.signOut();
+  toast('Vous êtes déconnecté', 'logout');
+}
+function paintUser(u){
+  const mi = document.getElementById('menu-signin');
+  if(mi) mi.style.display = u ? 'none' : '';
+  const ph = document.getElementById('acct-photo'), ic = document.getElementById('acct-ic'),
+        lb = document.getElementById('acct-label'), bg = document.getElementById('btn-google'),
+        bo = document.getElementById('btn-signout');
+  if(!lb) return;
+  if(u){
+    const meta = u.user_metadata || {};
+    const prenom = String(meta.full_name || meta.name || u.email || 'Compte').split(' ')[0];
+    lb.textContent = prenom;
+    if(meta.avatar_url && ph){ ph.src = meta.avatar_url; ph.hidden = false; if(ic) ic.style.display = 'none'; }
+    if(bg) bg.hidden = true;
+    if(bo) bo.hidden = false;
+  } else {
+    lb.textContent = 'Compte';
+    if(ph) ph.hidden = true;
+    if(ic) ic.style.display = '';
+    if(bg) bg.hidden = false;
+    if(bo) bo.hidden = true;
+  }
+}
+
+/* Connexion / inscription par e-mail */
+let gwallSignup = false;
+function gwallMode(){
+  gwallSignup = !gwallSignup;
+  const s = document.getElementById('gwall-submit'), w = document.getElementById('gwall-switch');
+  if(s) s.textContent = gwallSignup ? "Créer mon compte" : "Se connecter";
+  if(w) w.innerHTML = gwallSignup ? "Déjà un compte ? <b>Se connecter</b>" : "Pas encore de compte ? <b>S'inscrire</b>";
+}
+async function emailAuth(form){
+  if(!sb){ toast('Compte bientôt disponible', 'user'); return; }
+  const email = form.email.value.trim(), password = form.password.value;
+  const btn = document.getElementById('gwall-submit');
+  if(btn){ btn.disabled = true; btn.textContent = 'Un instant...'; }
+  try{
+    if(gwallSignup){
+      const { data, error } = await sb.auth.signUp({ email: email, password: password,
+        options: { emailRedirectTo: location.origin + location.pathname } });
+      if(error) throw error;
+      if(data.session){ toast('Compte créé, bienvenue !', 'user-check'); }
+      else { toast('Compte créé ! Vérifiez votre boîte mail pour confirmer.', 'mail-check'); gwallClose(); }
+    } else {
+      const { error } = await sb.auth.signInWithPassword({ email: email, password: password });
+      if(error) throw error;
+    }
+  }catch(err){
+    const msg = String(err.message || err);
+    if(msg.indexOf('Invalid login credentials') !== -1) toast('E-mail ou mot de passe incorrect', 'alert-triangle');
+    else if(msg.indexOf('already registered') !== -1) toast('Cet e-mail a déjà un compte — connectez-vous', 'alert-triangle');
+    else if(msg.indexOf('Email not confirmed') !== -1) toast('Confirmez votre e-mail (vérifiez votre boîte mail)', 'mail');
+    else toast('Erreur : ' + msg, 'alert-triangle');
+  }
+  if(btn){ btn.disabled = false; btn.textContent = gwallSignup ? "Créer mon compte" : "Se connecter"; }
+}
+function gwallOpen(){
+  const w = document.getElementById('gwall');
+  if(w){ w.hidden = false; requestAnimationFrame(function(){ w.classList.add('on'); }); }
+}
+
+/* Invitation à la connexion : 1,5s après l'arrivée, pas plus d'une fois par 24h */
+function gwallClose(){
+  const w = document.getElementById('gwall');
+  if(w){ w.classList.remove('on'); setTimeout(function(){ w.hidden = true; }, 250); }
+  try{ localStorage.setItem('ccl_gwall', String(Date.now())); }catch(e){}
+}
+function gwallMaybeShow(session){
+  if(!sb || session) return;
+  let last = 0;
+  try{ last = Number(localStorage.getItem('ccl_gwall')) || 0; }catch(e){}
+  if(Date.now() - last < 24 * 3600 * 1000) return;
+  setTimeout(function(){
+    const w = document.getElementById('gwall');
+    if(w){ w.hidden = false; requestAnimationFrame(function(){ w.classList.add('on'); }); }
+  }, 1500);
+}
+
+if(sb){
+  sb.auth.getSession().then(function(r){ paintUser(r.data.session ? r.data.session.user : null); gwallMaybeShow(r.data.session); });
+  sb.auth.onAuthStateChange(function(ev, session){
+    paintUser(session ? session.user : null);
+    if(session){ const w = document.getElementById('gwall'); if(w && !w.hidden) gwallClose(); }
+    if(ev === 'SIGNED_IN' && session){
+      const meta = session.user.user_metadata || {};
+      toast('Bienvenue ' + String(meta.full_name || meta.name || '').split(' ')[0] + ' !', 'user-check');
+      if(location.hash.indexOf('access_token') !== -1 || location.search.indexOf('code=') !== -1){
+        history.replaceState(null, '', location.pathname);
+      }
+    }
+  });
+}
+
+
 /* ============================================================
    CCL E-COMMERCE PRO — Application
    Architecture : mini-routeur par hash → vraies pages
@@ -1133,5 +1257,31 @@ document.getElementById('year').textContent = new Date().getFullYear();
 badges();
 render();
 </script>
+
+<!-- ===================== INVITATION CONNEXION GOOGLE ===================== -->
+<div class="gwall" id="gwall" hidden>
+  <div class="gwall-card">
+    <button class="gwall-x" onclick="gwallClose()" aria-label="Fermer"><i class="ti ti-x"></i></button>
+    <div class="gwall-head">
+      <span class="lg">CCL <i class="ti ti-diamond"></i></span>
+      <h3>Bienvenue chez Crystal Company Limited !</h3>
+      <p>Connectez-vous pour retrouver vos favoris et suivre vos commandes sur tous vos appareils.</p>
+    </div>
+    <div class="gwall-body">
+      <button class="gbtn" type="button" onclick="googleSignIn()">
+        <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.5l6.2 5.2C41 35.4 44 30.2 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+        Continuer avec Google
+      </button>
+      <div class="gwall-or"><span>ou par e-mail</span></div>
+      <form class="gwall-form" onsubmit="event.preventDefault(); emailAuth(this);">
+        <input type="email" name="email" placeholder="Adresse e-mail" required autocomplete="email">
+        <input type="password" name="password" placeholder="Mot de passe (6 caractères min.)" required minlength="6" autocomplete="current-password">
+        <button class="gwall-go" type="submit" id="gwall-submit">Se connecter</button>
+      </form>
+      <button class="gwall-switch" type="button" id="gwall-switch" onclick="gwallMode()">Pas encore de compte ? <b>S'inscrire</b></button>
+      <button class="gwall-skip" type="button" onclick="gwallClose()">Continuer sans compte</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
