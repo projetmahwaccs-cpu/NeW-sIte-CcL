@@ -972,3 +972,59 @@ footer{ position:relative; z-index:2; }
 .hs-p{ font-size:12.5px; font-weight:800; white-space:nowrap; }
 .hs-all{ display:flex; align-items:center; gap:9px; padding:12px 14px; font-size:12.5px; font-weight:700; color:var(--accent); }
 .hs-all:hover{ background:#f3f8f5; }
+
+/* ============================================================
+   Héros des sous-pages : version encore plus haute (demande)
+   ============================================================ */
+div.cathero.fx.photo{ display:flex; align-items:center; min-height:440px; }
+div.cathero.fx.photo .cathero-in{ padding:90px var(--pad); width:100%; }
+div.cathero.fx.photo h1{ font-size:clamp(36px,4.6vw,52px); }
+div.cathero.fx.photo p{ font-size:16.5px; max-width:620px; }
+div.cathero.fx.photo .cathero-ic{ width:96px; height:96px; flex:0 0 96px; font-size:44px; }
+@media(max-width:720px){
+  div.cathero.fx.photo{ min-height:300px; }
+  div.cathero.fx.photo .cathero-in{ padding:52px var(--pad); }
+  div.cathero.fx.photo h1{ font-size:30px; }
+  div.cathero.fx.photo .cathero-ic{ width:70px; height:70px; flex:0 0 70px; font-size:32px; }
+}
+
+/* ============================================================
+   COMPTE GOOGLE — bouton et avatar
+   ============================================================ */
+.gbtn{ display:flex; align-items:center; justify-content:center; gap:10px; margin:8px 12px 4px; width:calc(100% - 24px); background:#fff; border:1.5px solid #dadce0; border-radius:6px; padding:10px 14px; font-size:13.5px; font-weight:700; color:#3c4043; cursor:pointer; transition:.15s; font-family:inherit; }
+.gbtn:hover{ background:#f8faf9; border-color:#c6c6c6; box-shadow:0 1px 4px rgba(0,0,0,.12); }
+.hava{ width:26px; height:26px; border-radius:99px; object-fit:cover; border:2px solid var(--accent); }
+
+/* ============================================================
+   INVITATION CONNEXION GOOGLE (fenêtre de bienvenue)
+   ============================================================ */
+.gwall{ position:fixed; inset:0; background:rgba(4,30,18,.6); backdrop-filter:blur(3px); z-index:500; display:flex; align-items:center; justify-content:center; padding:18px; opacity:0; transition:.25s; }
+.gwall.on{ opacity:1; }
+.gwall-card{ width:min(400px,100%); background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.4); transform:translateY(14px); transition:.25s; position:relative; }
+.gwall.on .gwall-card{ transform:none; }
+.gwall-x{ position:absolute; top:12px; right:12px; width:30px; height:30px; border-radius:99px; border:none; background:rgba(255,255,255,.25); color:#fff; font-size:15px; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:2; }
+.gwall-x:hover{ background:rgba(255,255,255,.4); }
+.gwall-head{ background:url('campagne-carre.jpg') center/cover, linear-gradient(140deg,#0e8a4e,#063d23); padding:28px 26px 22px; color:#fff; position:relative; }
+.gwall-head::before{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(4,40,22,.35),rgba(4,40,22,.72)); }
+.gwall-head > *{ position:relative; }
+.gwall-head .lg{ font-weight:800; font-size:16px; display:inline-flex; align-items:center; gap:6px; }
+.gwall-head .lg i{ color:#F2D57A; }
+.gwall-head h3{ font-size:20px; font-weight:800; margin:10px 0 6px; line-height:1.2; }
+.gwall-head p{ font-size:13px; line-height:1.5; opacity:.94; }
+.gwall-body{ padding:18px 14px 20px; display:flex; flex-direction:column; gap:4px; }
+.gwall-body .gbtn{ margin:0 auto; width:calc(100% - 8px); padding:12px 14px; font-size:14px; }
+.gwall-skip{ background:none; border:none; color:var(--body); font-size:12.5px; font-weight:600; padding:12px 8px 2px; cursor:pointer; font-family:inherit; }
+.gwall-skip:hover{ color:var(--accent); text-decoration:underline; }
+
+/* Formulaire e-mail de la fenêtre compte */
+.gwall-or{ display:flex; align-items:center; gap:12px; margin:12px 6px 8px; color:#9a9a9a; font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; }
+.gwall-or::before,.gwall-or::after{ content:""; flex:1; height:1px; background:var(--line); }
+.gwall-form{ display:flex; flex-direction:column; gap:9px; padding:0 4px; }
+.gwall-form input{ border:1.5px solid #dadce0; border-radius:6px; padding:11px 13px; font-size:13.5px; font-family:inherit; }
+.gwall-form input:focus{ outline:none; border-color:var(--accent); }
+.gwall-go{ background:var(--accent); color:#fff; border:none; border-radius:6px; padding:12px; font-size:13.5px; font-weight:800; letter-spacing:.03em; cursor:pointer; font-family:inherit; transition:.15s; }
+.gwall-go:hover{ background:var(--accent-dark); }
+.gwall-go:disabled{ opacity:.6; cursor:wait; }
+.gwall-switch{ background:none; border:none; color:var(--body); font-size:12.5px; padding:10px 4px 0; cursor:pointer; font-family:inherit; }
+.gwall-switch b{ color:var(--accent); }
+.gwall-switch:hover b{ text-decoration:underline; }
