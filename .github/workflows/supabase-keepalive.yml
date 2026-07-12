@@ -1,0 +1,28 @@
+name: Garder Supabase actif
+
+# Ping automatique toutes les 48h pour empêcher la mise en pause
+# du projet Supabase gratuit (New site CRYSTAL).
+#
+# INSTALLATION : place ce fichier dans ton repo à cet emplacement EXACT :
+#     .github/workflows/supabase-keepalive.yml
+# (crée les dossiers .github puis workflows s'ils n'existent pas)
+# C'est tout — aucun autre réglage nécessaire.
+
+on:
+  schedule:
+    - cron: '0 6 */2 * *'   # tous les 2 jours à 6h00 UTC
+  workflow_dispatch:         # bouton "Run workflow" pour tester manuellement
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://xhvbqneqczbnogsuhdxt.supabase.co/rest/v1/" \
+            -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhodmJxbmVxY3pibm9nc3VoZHh0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA3ODA1NjUsImV4cCI6MjA5NjM1NjU2NX0.ZTaCcDBEt8E5HUKRC5QTUD7hLV0TE4gI69O3PK0I6a0")
+          echo "Réponse Supabase : $code"
+          if [ "$code" -ge 500 ]; then
+            echo "Supabase semble en panne ou en pause." && exit 1
+          fi
