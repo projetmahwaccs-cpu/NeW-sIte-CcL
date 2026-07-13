@@ -1,0 +1,56 @@
+═══════════════════════════════════════════════════════════
+  CCL — PACKAGE DE MISE À JOUR DU CATALOGUE
+  Remplacement progressif produits (sourcing Alibaba)
+═══════════════════════════════════════════════════════════
+
+CONTENU DU PACKAGE (91 fichiers)
+---------------------------------
+1. products.js       → catalogue mis à jour : 212 produits
+                       (10 anciens produits retirés, 34 nouveaux ajoutés)
+2. index.html        → NOUVELLE FONCTIONNALITÉ : galerie photos/vidéos
+                       sur les fiches produits (miniatures cliquables)
+3. 9 vidéos .mp4     → produits vidéo (autoplay dans les cartes)
+4. 80 images .jpg    → photos produits + galeries (optimisées web)
+
+COMMENT PUBLIER SUR GITHUB (5 minutes)
+---------------------------------------
+1. Va sur github.com/projetmahwaccs-cpu/NeW-sIte-CcL
+2. Clique "Add file" → "Upload files"
+3. Glisse TOUS les fichiers de ce dossier d'un coup
+   (GitHub remplacera automatiquement products.js et index.html)
+4. En bas, écris un message de commit, ex : "Nouveaux produits + galerie"
+5. Clique "Commit changes"
+6. Attends 1-2 minutes → le site est à jour !
+
+VÉRIFICATION APRÈS PUBLICATION
+-------------------------------
+□ Ouvre le site et va sur une fiche avec galerie, ex :
+  index.html#/produit/626  (protège-chaussures : vidéo + 5 images)
+  index.html#/produit/625  (pyjama : vidéo + 4 images)
+  index.html#/produit/629  (écouteurs Buds Pro : 4 images)
+□ Vérifie que les miniatures s'affichent sous le média principal
+□ Clique une miniature → le grand média doit changer
+□ Vérifie les catégories : Bébé (5), Sport (8) ont de nouveaux produits
+
+PRIX À CONFIRMER (modifiables via le panneau admin)
+----------------------------------------------------
+⚠ id 631 — Landwind X7 (SUV) ............ 8 500 000 F (estimation)
+⚠ id 646 — Scooter Électrique ........... 550 000 F (estimation)
+⚠ id 648 — Bureau d'Ordinateur .......... 35 000 F (estimation)
+
+NOTE : LOT 1 RETIRÉ
+--------------------
+Les 19 produits proposés au tout début (montre connectée, mini
+projecteur, ring light, etc.) ont été RETIRÉS car aucune photo
+n'a été fournie. Pour les remettre : envoie simplement les photos
+de ceux qui t'intéressent et ils seront réintégrés.
+
+PRODUITS RETIRÉS DE L'ANCIEN CATALOGUE (10)
+--------------------------------------------
+7 écouteurs en doublon (404, 405, 406, 409, 412, 415, 416),
+panier pliable (474), applicateur teinture (493),
+ancienne écailleuse sans image (538).
+Tous les produits Best Foods, Capital, SSR, wax, boubous,
+meubles et véhicules existants sont INTACTS.
+
+═══════════════════════════════════════════════════════════

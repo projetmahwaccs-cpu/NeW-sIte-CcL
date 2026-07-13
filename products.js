@@ -122,19 +122,12 @@ const products = [
     { id:401, cat:'tech', name:'Câble USB-C vers Lightning 1m', price:3000, image:'cable-usbc-lightning-1m.jpg' },
     { id:402, cat:'tech', badge:'Top', name:'Écouteurs Sans Fil Pro 5 (Boîtier)', price:7000, image:'ecouteurs-airpods-pro5.jpg' },
     { id:403, cat:'tech', badge:'Promo', name:'Pack Casque Bluetooth + Écouteurs Sans Fil', price:5000, image:'casque-airpods-pack.jpg' },
-    { id:404, cat:'tech', name:'Écouteurs Sans Fil 2 (Boîtier de Charge)', price:6000, image:'ecouteurs-airpods-2.jpg' },
-    { id:405, cat:'tech', badge:'Nouveau', name:'Écouteurs Sans Fil 3 (Boîtier de Charge)', price:7000, image:'ecouteurs-airpods-3.jpg' },
-    { id:406, cat:'tech', name:'Écouteurs X5 TWS Perfect Fit (Affichage LED)', price:6000, image:'ecouteurs-x5-tws.jpg' },
     { id:407, cat:'tech', badge:'Top', name:'Casque Bluetooth P9 Noir', price:6000, image:'casque-p9-noir.jpg' },
     { id:408, cat:'tech', badge:'Promo', name:'Casque P9 Pro Max + Écouteurs AirPod3 (Pack Bass)', price:8000, image:'casque-p9-promax-airpod3.jpg' },
-    { id:409, cat:'tech', name:'Écouteurs Métal KM-Mini 3 (Sans Fil)', price:5000, image:'ecouteurs-km-mini3-metal.jpg' },
     { id:410, cat:'tech', badge:'Nouveau', name:'Écouteurs Clip Open-Ear Violet', price:5000, image:'ecouteurs-clip-violet.jpg' },
     { id:411, cat:'tech', badge:'Luxe', name:'Casque Bose 700 Bluetooth', price:35000, image:'casque-bose-700.jpg' },
-    { id:412, cat:'tech', name:'Pack Écouteurs Filaires Blue Spectrum (Jack 3.5)', price:1500, image:'ecouteurs-filaires-blue-spectrum.jpg' },
     { id:413, cat:'tech', badge:'Sport', name:'Écouteurs Sport Tour de Cou Bluetooth', price:6000, image:'ecouteurs-sport-tourdecou.jpg' },
     { id:414, cat:'tech', name:'Câble 3-en-1 (USB-C / Micro / Lightning)', price:2500, image:'cable-3en1.jpg' },
-    { id:415, cat:'tech', name:'Écouteurs Clip Open-Ear Noir', price:5000, image:'ecouteurs-clip-noir.jpg' },
-    { id:416, cat:'tech', name:'Écouteurs Filaires 14 Pro Pop-Up (JH-103F)', price:3000, image:'ecouteurs-filaires-14pro-popup.jpg' },
     { id:417, cat:'tech', badge:'Nouveau', name:'Écouteurs FreeOWS Open-Ear (Clip Oreille)', price:7000, image:'ecouteurs-freeows-openear.jpg' },
     { id:418, cat:'tech', badge:'Top', name:'Écouteurs Tour de Cou Bluetooth Écran LED', price:8000, image:'tourdecou-bluetooth-led.jpg' },
     { id:419, cat:'tech', badge:'Luxe', name:'Samsung Galaxy Buds3 (Boîtier)', price:25000, image:'ecouteurs-galaxy-buds3.jpg' },
@@ -184,7 +177,6 @@ const products = [
     { id:471, cat:'maisondeco', badge:'Luxe', name:'Lit en Bois Massif Clair (Tête de Lit à Lattes)', price:250000, image:'lit-bois-massif-clair.jpg' },
     { id:472, cat:'maisondeco', name:'Lit Wengé Moderne Bandeau (2 Places)', price:180000, image:'lit-wenge-bandeau.jpg' },
     { id:473, cat:'maisondeco', name:'Lit Chêne Gris Contemporain (1 Place)', price:120000, image:'lit-moderne-chene-gris.jpg' },
-    { id:474, cat:'maisondeco', name:'Panier de Rangement Pliable (Plastique)', price:3500, image:'panier-rangement-pliable.jpg' },
 
     /* --- BEAUTÉ : Accessoires Corps (ajouts lot 3) --- */
     { id:475, cat:'beaute', name:'Gant de Gommage Silicone (Corps & Visage)', price:2500, image:'gant-gommage-silicone-rose.jpg' },
@@ -212,7 +204,6 @@ const products = [
     /* --- BEAUTÉ : Soins (ajouts lot 4) --- */
     { id:491, cat:'beaute', badge:'Coffret', name:'Coffret V.V.Love Mellow Melody (Mist + Lotion + Crème)', price:9500, image:'coffret-vvlove-mellow-melody.jpg' },
     { id:492, cat:'beaute', badge:'Top', name:'Eau Micellaire Byphasse 4-en-1 (Clear/Charbon/Waterproof)', price:6000, image:'eau-micellaire-byphasse-3types.jpg' },
-    { id:493, cat:'beaute', name:'Applicateur Teinture + Brosse Massante Cuir Chevelu', price:3000, image:'applicateur-teinture-brosse-massante.jpg' },
 
     /* --- MAISON & DÉCO (ajouts lot 4) --- */
     { id:494, cat:'maisondeco', badge:'Top', name:'Crochets Adhésifs Transparents (Lot de 50)', price:5000, image:'crochets-adhesifs-transparents-50pcs.jpg' },
@@ -263,13 +254,53 @@ const products = [
     { id:537, cat:'maison-new', badge:'Vidéo', name:'Mini Machine à Laver Waterproof (Portable)', price:25000, image:'mini_machine_a_laver_waterproof.mp4', video:'mini_machine_a_laver_waterproof.mp4' },
     
     /* --- NOUVEAU PRODUIT : ÉCAILLEUSE MANUELLE PREMIUM --- */
-    { id:538, cat:'maison-new', badge:'Nouveau', name:'Écailleuse Manuelle Premium', price:1500, image:'produitsouvertbleu.png', video:'p.mp4' },
 
     /* --- NOUVEAUX PRODUITS VIDÉO (lot 7) --- */
     { id:539, cat:'maison-new', badge:'Vidéo', name:'Poubelle Design Inox (Pédale · 2 Compartiments)', price:3500, image:'POUBELLE.mp4', video:'POUBELLE.mp4' },
     { id:540, cat:'maison-new', badge:'Vidéo', name:'Range-Chaussures Empilable', price:15000, image:'range-chaussure.mp4', video:'range-chaussure.mp4' },
     { id:541, cat:'sport', badge:'Vidéo', name:'Tapis Roulant Électrique Pliable (Usage Maison)', price:45000, image:'tapisroulante.mp4', video:'tapisroulante.mp4' },
-  ];
+  
+
+    /* --- LOT 2 : PRODUITS VIDEO (sourcing Alibaba) --- */
+    { id:619, cat:'maisondeco', badge:'Vidéo', name:'Couvre-Plats Élastiques Réutilisables (Lot)', price:3500, image:'filmalimentelastique.mp4' },
+    { id:620, cat:'maisondeco', badge:'Vidéo', name:'Porte-Savon Mural Adhésif Rabattable (Égouttoir)', price:3000, image:'posesavon.mp4' },
+    { id:621, cat:'maisondeco', badge:'Vidéo', name:'Machine à Boulettes de Viande (Farce & Kefta)', price:5000, image:'bouletteuse.mp4' },
+    { id:622, cat:'maisondeco', badge:'Vidéo', name:"Coupeuse d'Aliments Multifonction avec Récipient", price:9000, image:'coupeusedaliments.mp4' },
+    { id:623, cat:'maisondeco', badge:'Vidéo', name:"Diffuseur d'Arômes & Humidificateur d'Ambiance", price:12000, image:'difusseur.mp4' },
+    { id:624, cat:'maisondeco', badge:'Vidéo', name:'Coupe-Légumes Multifonction Pro (Lames Interchangeables)', price:8000, image:'coupeuse2.mp4' },
+    { id:625, cat:'mode', badge:'Vidéo', name:'Pyjama Femme Short & Haut (Plusieurs Coloris, M à 2XL)', price:5000, image:'sousvetements.mp4', images:['pyjama-short-haut-1.jpg','pyjama-short-haut-2.jpg','pyjama-short-haut-3.jpg','pyjama-short-haut-4.jpg'] },
+    { id:626, cat:'mode', badge:'Vidéo', name:'Protège-Chaussures Imperméables Silicone (Pluie)', price:4000, image:'protegechaussure.mp4', images:['protegechaussure-1.jpg','protegechaussure-2.jpg','protegechaussure-3.jpg','protegechaussure-4.jpg','protegechaussure-5.jpg'] },
+    { id:627, cat:'tech', badge:'Vidéo', name:'Kit Câbles Multifonction 60W (Boîte de Rangement, USB/Type-C/Micro)', price:6000, image:'chargeurmultifonction.mp4', images:['chargeurmultifonction-1.jpg','chargeurmultifonction-2.jpg','chargeurmultifonction-3.jpg'] },
+    /* --- LOT 3 : PRODUITS AVEC GALERIE --- */
+    { id:628, cat:'mode', badge:'Nouveau', name:'Imperméable de Pluie à Capuche (EVA Réutilisable)', price:3000, image:'impermeable-1.jpg', images:['impermeable-1.jpg','impermeable-2.jpg'] },
+    { id:629, cat:'tech', badge:'Hot', name:'Écouteurs Sans Fil Buds Pro (Boîtier de Charge, 4 Coloris)', price:9000, image:'ecouteurs-buds-pro-1.jpg', images:['ecouteurs-buds-pro-1.jpg','ecouteurs-buds-pro-2.jpg','ecouteurs-buds-pro-3.jpg','ecouteurs-buds-pro-4.jpg'] },
+    { id:630, cat:'tech', name:'Câble Tressé Charge Rapide 5A (Renforcé)', price:2500, image:'cable-tresse-1.jpg', images:['cable-tresse-1.jpg','cable-tresse-2.jpg','cable-tresse-3.jpg'] },
+    { id:631, cat:'auto', badge:'Occasion', name:'Landwind X7 (SUV, Intérieur Cuir, Écran Tactile)', price:8500000, image:'landwind-x7-1.jpg', images:['landwind-x7-1.jpg','landwind-x7-2.jpg','landwind-x7-3.jpg','landwind-x7-4.jpg'] },
+    { id:632, cat:'papier', badge:'Étudiants', name:'Calculatrice Scientifique 991ES Plus (417 Fonctions, Solaire)', price:6000, image:'calculatrice-991es-1.jpg', images:['calculatrice-991es-1.jpg','calculatrice-991es-2.jpg','calculatrice-991es-3.jpg'] },
+    /* --- LOT 4 --- */
+    { id:633, cat:'maisondeco', badge:'Nouveau', name:'Écailleuse à Poisson avec Récupérateur (Sans Éclaboussures)', price:2000, image:'ecailleuse-poisson-1.jpg', images:['ecailleuse-poisson-1.jpg','ecailleuse-poisson-2.jpg','ecailleuse-poisson-3.jpg','ecailleuse-poisson-4.jpg','ecailleuse-poisson-5.jpg'] },
+    { id:634, cat:'maisondeco', badge:'Premium', name:'Ménagère Couverts Inox (Doré, Argenté, Rose Gold)', price:12000, image:'menagere-couverts-inox-1.jpg' },
+    { id:635, cat:'maisondeco', name:'Boîtes Alimentaires Transparentes avec Couvercle (Lot)', price:3000, image:'boites-alimentaires-1.jpg' },
+    { id:636, cat:'maisondeco', name:'Passoires Fines Inox (Set Plusieurs Tailles)', price:3500, image:'passoires-inox-1.jpg', images:['passoires-inox-1.jpg','passoires-inox-2.jpg'] },
+    { id:637, cat:'mode', badge:'Rentrée', name:'Sac à Dos Scolaire Uni (Coloris Variés)', price:6000, image:'sac-a-dos-scolaire-1.jpg', images:['sac-a-dos-scolaire-1.jpg','sac-a-dos-scolaire-2.jpg','sac-a-dos-scolaire-3.jpg'] },
+    { id:638, cat:'bebe', badge:'Rentrée', name:'Cartable Enfant Ergonomique SM Baby (Réfléchissant)', price:8000, image:'cartable-sm-baby-1.jpg', images:['cartable-sm-baby-1.jpg','cartable-sm-baby-2.jpg','cartable-sm-baby-3.jpg'] },
+    { id:639, cat:'bebe', badge:'Mignon', name:'Sac à Dos Maternelle Ourson 3D', price:5000, image:'sac-ourson-maternelle-1.jpg' },
+    /* --- LOT 5 --- */
+    { id:640, cat:'bebe', badge:'Mignon', name:'Sac à Dos Paillettes Oreilles de Lapin (Fille)', price:6000, image:'sac-paillettes-lapin-1.jpg', images:['sac-paillettes-lapin-1.jpg','sac-paillettes-lapin-2.jpg','sac-paillettes-lapin-3.jpg'] },
+    { id:641, cat:'sport', badge:'Nouveau', name:'Gourde Isotherme Inox Mate 500ml (Chaud 12h / Froid 24h)', price:5000, image:'gourde-isotherme-mate-1.jpg', images:['gourde-isotherme-mate-1.jpg','gourde-isotherme-mate-2.jpg','gourde-isotherme-mate-3.jpg','gourde-isotherme-mate-4.jpg','gourde-isotherme-mate-5.jpg'] },
+    { id:642, cat:'maisondeco', name:'Bouteille en Verre avec Infuseur (Design Mignon)', price:3500, image:'bouteille-infuseur-1.jpg', images:['bouteille-infuseur-1.jpg','bouteille-infuseur-2.jpg','bouteille-infuseur-3.jpg'] },
+    { id:643, cat:'sport', name:'Gourde Isotherme Forme Cola (Coloris Métallisés)', price:4000, image:'gourde-cola-1.jpg', images:['gourde-cola-1.jpg','gourde-cola-2.jpg','gourde-cola-3.jpg'] },
+    { id:644, cat:'bebe', badge:'Mignon', name:'Gourde Enfant Kawaii avec Paille & Bandoulière', price:6000, image:'gourde-enfant-kawaii-1.jpg', images:['gourde-enfant-kawaii-1.jpg','gourde-enfant-kawaii-2.jpg'] },
+    /* --- LOT 6 --- */
+    { id:645, cat:'bebe', badge:'Nouveau', name:'Sandales Enfant à Boucles (Semelle Souple)', price:4000, image:'sandales-enfant-boucles-1.jpg', images:['sandales-enfant-boucles-1.jpg','sandales-enfant-boucles-2.jpg','sandales-enfant-boucles-3.jpg'] },
+    { id:646, cat:'auto', badge:'Nouveau', name:'Scooter Électrique (Moteur Brushless, Longue Autonomie)', price:550000, image:'scooter-electrique-1.jpg' },
+    { id:647, cat:'mode', name:'Parapluie Pliable Anti-UV (Coloris Variés)', price:2500, image:'parapluie-pliable-1.jpg', images:['parapluie-pliable-1.jpg','parapluie-pliable-2.jpg','parapluie-pliable-3.jpg'] },
+    { id:648, cat:'maisondeco', badge:'Bureau', name:"Bureau d'Ordinateur Moderne (Structure Acier)", price:35000, image:'bureau-ordinateur-moderne-1.jpg', images:['bureau-ordinateur-moderne-1.jpg','bureau-ordinateur-moderne-2.jpg'] },
+    { id:649, cat:'mode', name:'Bandana Paisley (Coloris Variés)', price:1000, image:'bandanas-paisley-1.jpg', images:['bandanas-paisley-1.jpg','bandanas-paisley-2.jpg','bandanas-paisley-3.jpg'] },
+    { id:650, cat:'tech', badge:'Pratique', name:'Powerbank 10 000 mAh (4 Câbles Intégrés, Charge x5)', price:8000, image:'powerbank-cables-integres-1.jpg', images:['powerbank-cables-integres-1.jpg','powerbank-cables-integres-2.jpg','powerbank-cables-integres-3.jpg'] },
+    { id:651, cat:'tech', name:'Chargeur Secteur 45W USB-C Quick Charge (Blanc/Noir)', price:3500, image:'chargeur-45w-usbc-1.jpg', images:['chargeur-45w-usbc-1.jpg','chargeur-45w-usbc-2.jpg','chargeur-45w-usbc-3.jpg','chargeur-45w-usbc-4.jpg'] },
+    { id:652, cat:'papier', name:'Stylos Gel Rouge/Noir/Bleu (Lot de 12)', price:2000, image:'stylos-gel-lot-1.jpg' },
+];
 
 const CAT_LABEL = { 'maison-new':'Maison','flash':'Flash Vente','tech':'High-Tech','mode':'Mode','beaute':'Parfums & Beauté','alim':'Épicerie','maisondeco':'Maison & Déco','sport':'Sport','auto':'Automobiles','papier':'Papeterie','super':'Supermarché','bebe':'Rayon Bébé' };
 
