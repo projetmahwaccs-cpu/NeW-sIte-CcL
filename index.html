@@ -45,6 +45,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
 
 <link rel="stylesheet" href="ccl-styles.css">
+<style>
+/* Galerie fiche produit */
+.gthumbs{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;}
+.gthumb{position:relative;width:72px;height:72px;border-radius:12px;overflow:hidden;border:2px solid rgba(11,122,68,.18);background:#fff;cursor:pointer;padding:0;flex:0 0 auto;transition:border-color .15s, transform .15s;}
+.gthumb:hover{transform:translateY(-2px);}
+.gthumb.on{border-color:var(--brand,#0b7a44);box-shadow:0 0 0 2px rgba(11,122,68,.25);}
+.gthumb img,.gthumb video{width:100%;height:100%;object-fit:cover;display:block;}
+.gthumb .gv{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;background:rgba(4,20,12,.32);z-index:1;font-size:20px;}
+</style>
 </head>
 <body>
 
@@ -247,7 +256,10 @@ if(sb){
     if(ev === 'SIGNED_IN' && session){
       const meta = session.user.user_metadata || {};
       toast('Bienvenue ' + String(meta.full_name || meta.name || '').split(' ')[0] + ' !', 'user-check');
-      if(location.hash.indexOf('access_token') !== -1 || location.search.indexOf('code=') !== -1) history.replaceState(null, '', location.pathname);
+      if(isAuthHash() || location.search.indexOf('code=') !== -1){
+        history.replaceState(null, '', location.pathname + '#/');
+        if(typeof render === 'function') render(); // replaceState ne déclenche pas hashchange : on force le rendu
+      }
     }
   });
 }
@@ -773,6 +785,34 @@ function renderShopResults(){
 }
 
 /* ---------- FICHE PRODUIT ---------- */
+/* ---------- Galerie fiche produit ---------- */
+function galItems(p){
+  const main = p.video || p.image || '';
+  const rest = (p.images || []).filter(m => m && m !== main);
+  return (main ? [main] : []).concat(rest);
+}
+function galMediaHTML(src, name, badge){
+  if(isVid(src)) return (badge||'') + '<video src="' + esc(src) + '" muted loop playsinline autoplay preload="metadata"></video><span class="vtag"><i class="ti ti-player-play-filled"></i> Vidéo</span>';
+  return (badge||'') + '<img src="' + esc(src) + '" alt="' + esc(name) + '" loading="lazy" onerror="imgErr(this)">';
+}
+function galleryThumbsHTML(p){
+  const items = galItems(p);
+  if(items.length < 2) return '';
+  window._gal = { items: items, name: p.name, badge: badgeHTML(p) };
+  return '<div class="gthumbs">' + items.map((m, i) =>
+    '<button class="gthumb' + (i===0?' on':'') + '" onclick="swapGal(' + i + ', this)" aria-label="Voir média ' + (i+1) + '">' +
+      (isVid(m)
+        ? '<span class="gv"><i class="ti ti-player-play-filled"></i></span><video src="' + esc(m) + '" muted preload="metadata"></video>'
+        : '<img src="' + esc(m) + '" alt="" loading="lazy">') +
+    '</button>').join('') + '</div>';
+}
+function swapGal(i, btn){
+  const g = window._gal; if(!g) return;
+  const main = document.getElementById('gmain'); if(!main) return;
+  main.innerHTML = galMediaHTML(g.items[i], g.name, g.badge);
+  document.querySelectorAll('.gthumb').forEach(b => b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+}
 function viewProduct(id){
   const p = byId(id);
   if(!p) return view404();
@@ -785,10 +825,11 @@ function viewProduct(id){
   <section class="sec">
     <div class="prod">
       <div class="prod-img">
-        <div class="pimg${(p.image||p.video)?'':' noimg'}">
+        <div class="pimg${(p.image||p.video)?'':' noimg'}" id="gmain">
           ${badgeHTML(p)}
           ${mediaHTML(p)}
         </div>
+        ${galleryThumbsHTML(p)}
       </div>
       <div class="prod-info">
         <span class="pcat">${esc(CAT_LABEL[p.cat]||'Boutique')} · Réf. CCL-${p.id}${sellerOf(p) ? ' · Vendu par <b>'+esc(sellerOf(p).shop)+'</b>' : ''}</span>
@@ -1162,7 +1203,11 @@ function view404(){
 /* ============================================================
    ROUTEUR
    ============================================================ */
+function isAuthHash(){
+  return /(^|[#&])(access_token|refresh_token|provider_token|error_description|error_code|token_type)=/.test(location.hash);
+}
 function parseHash(){
+  if(isAuthHash()) return { path: [], params: new URLSearchParams('') }; // retour OAuth Google : afficher l'accueil, Supabase gère le jeton
   const h = location.hash.replace(/^#\/?/, '');
   const [pathStr, queryStr] = h.split('?');
   return { path: pathStr.split('/').filter(Boolean), params: new URLSearchParams(queryStr || '') };
