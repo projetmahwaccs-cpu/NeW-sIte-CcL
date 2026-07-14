@@ -186,7 +186,12 @@ function googleSignIn(){
   if(!sb){ toast('Compte bientôt disponible', 'user'); return; }
   sb.auth.signInWithOAuth({ provider:'google', options:{ redirectTo: location.origin + location.pathname } });
 }
-async function googleSignOut(){ if(sb){ await sb.auth.signOut(); toast('Vous êtes déconnecté', 'logout'); } }
+async function googleSignOut(){
+  if(!sb) return;
+  try{ await sb.auth.signOut(); }catch(e){ /* session déjà expirée : on nettoie quand même */ }
+  paintUser(null);
+  toast('Vous êtes déconnecté', 'logout');
+}
 function paintUser(u){
   const mi = document.getElementById('menu-signin'); if(mi) mi.style.display = u ? 'none' : '';
   const ph = document.getElementById('acct-photo'), ic = document.getElementById('acct-ic'),
@@ -235,24 +240,38 @@ async function emailAuth(form){
   }
   if(btn){ btn.disabled = false; btn.textContent = gwallSignup ? "Créer mon compte" : "Se connecter"; }
 }
-function gwallOpen(){ const w = document.getElementById('gwall'); if(w){ w.hidden = false; requestAnimationFrame(function(){ w.classList.add('on'); }); } }
+function gwallOpen(){
+  const w = document.getElementById('gwall');
+  if(w){ w.hidden = false; w.style.display = ''; w.style.pointerEvents = ''; requestAnimationFrame(function(){ w.classList.add('on'); }); }
+}
 function gwallClose(){
   const w = document.getElementById('gwall');
-  if(w){ w.classList.remove('on'); setTimeout(function(){ w.hidden = true; }, 250); }
+  if(w){
+    w.classList.remove('on');
+    w.style.pointerEvents = 'none'; /* l'overlay ne bloque plus les clics pendant la transition */
+    setTimeout(function(){ w.hidden = true; w.style.display = 'none'; }, 250);
+  }
   try{ localStorage.setItem('ccl_gwall', String(Date.now())); }catch(e){}
+}
+/* Fermeture immédiate et totale (retour OAuth) : pas de transition, zéro overlay résiduel */
+let gwallTimer = null;
+function gwallKill(){
+  if(gwallTimer){ clearTimeout(gwallTimer); gwallTimer = null; }
+  const w = document.getElementById('gwall');
+  if(w){ w.classList.remove('on'); w.hidden = true; w.style.display = 'none'; w.style.pointerEvents = 'none'; }
 }
 function gwallMaybeShow(session){
   if(!sb || session) return;
   let last = 0;
   try{ last = Number(localStorage.getItem('ccl_gwall')) || 0; }catch(e){}
   if(Date.now() - last < 24 * 3600 * 1000) return;
-  setTimeout(function(){ gwallOpen(); }, 1500);
+  gwallTimer = setTimeout(function(){ gwallTimer = null; gwallOpen(); }, 1500);
 }
 if(sb){
-  sb.auth.getSession().then(function(r){ paintUser(r.data.session ? r.data.session.user : null); gwallMaybeShow(r.data.session); });
+  sb.auth.getSession().then(function(r){ paintUser(r.data.session ? r.data.session.user : null); if(r.data.session) gwallKill(); else gwallMaybeShow(r.data.session); });
   sb.auth.onAuthStateChange(function(ev, session){
     paintUser(session ? session.user : null);
-    if(session){ const w = document.getElementById('gwall'); if(w && !w.hidden) gwallClose(); }
+    if(session) gwallKill(); /* connecté : aucun overlay ne doit rester, même invisible */
     if(ev === 'SIGNED_IN' && session){
       const meta = session.user.user_metadata || {};
       toast('Bienvenue ' + String(meta.full_name || meta.name || '').split(' ')[0] + ' !', 'user-check');
@@ -1273,7 +1292,7 @@ render();
 </script>
 
 <!-- ===================== INVITATION CONNEXION ===================== -->
-<div class="gwall" id="gwall" hidden>
+<div class="gwall" id="gwall" hidden onclick="if(event.target === this) gwallClose();">
   <div class="gwall-card">
     <button class="gwall-x" onclick="gwallClose()" aria-label="Fermer"><i class="ti ti-x"></i></button>
     <div class="gwall-head">
