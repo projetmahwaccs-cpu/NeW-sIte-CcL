@@ -300,6 +300,22 @@ const products = [
     { id:650, cat:'tech', badge:'Pratique', name:'Powerbank 10 000 mAh (4 Câbles Intégrés, Charge x5)', price:8000, image:'powerbank-cables-integres-1.jpg', images:['powerbank-cables-integres-1.jpg','powerbank-cables-integres-2.jpg','powerbank-cables-integres-3.jpg'] },
     { id:651, cat:'tech', name:'Chargeur Secteur 45W USB-C Quick Charge (Blanc/Noir)', price:3500, image:'chargeur-45w-usbc-1.jpg', images:['chargeur-45w-usbc-1.jpg','chargeur-45w-usbc-2.jpg','chargeur-45w-usbc-3.jpg','chargeur-45w-usbc-4.jpg'] },
     { id:652, cat:'papier', name:'Stylos Gel Rouge/Noir/Bleu (Lot de 12)', price:2000, image:'stylos-gel-lot-1.jpg' },
+
+    /* --- LOT NOUVEAUX PRODUITS (13/07) --- */
+    { id:653, cat:'bebe', badge:'Nouveau', name:'Couches Lavables Réutilisables Bébé AnAnBaby (Taille Ajustable)', price:3500, image:'couches-lavables-bebe-1.jpg', images:['couches-lavables-bebe-1.jpg','couches-lavables-bebe-2.jpg','couches-lavables-bebe-3.jpg','couches-lavables-bebe-4.jpg'] },
+    { id:654, cat:'bebe', badge:'Top', name:'Tire-Lait Manuel Aidoqi avec Biberon 160ml (Coussin Massant)', price:9500, image:'tire-lait-manuel-aidoqi-1.jpg', images:['tire-lait-manuel-aidoqi-1.jpg','tire-lait-manuel-aidoqi-2.jpg','tire-lait-manuel-aidoqi-3.jpg','tire-lait-manuel-aidoqi-4.jpg'] },
+    { id:655, cat:'bebe', badge:'Vidéo', name:'Tire-Lait Électrique Portable Mains Libres MY-381 (Sans Fil)', price:22000, image:'1783944503734_20260713-1207-27_6799394.mp4', images:['tire-lait-electrique-portable-1.jpg','tire-lait-electrique-portable-2.jpg'] },
+    { id:656, cat:'papier', badge:'Nouveau', name:'Cahier Spirale Van Gogh B5 (Lignes 8mm, Couverture Rigide)', price:3000, image:'cahier-spirale-van-gogh-1.jpg', images:['cahier-spirale-van-gogh-1.jpg','cahier-spirale-van-gogh-2.jpg'] },
+    { id:657, cat:'maison-new', badge:'Nouveau', name:'Cuisinière à Gaz XUNDA 4 Feux avec Four (Blanc/Inox)', price:95000, image:'cuisiniere-gaz-xunda-4feux-1.jpg', images:['cuisiniere-gaz-xunda-4feux-1.jpg','cuisiniere-gaz-xunda-4feux-2.jpg'] },
+
+    /* --- LOT 2 (13/07) --- */
+    { id:658, cat:'maison-new', badge:'Nouveau', name:'Mini Réfrigérateur BCD-118 Double Porte (Congélateur + Frigo)', price:85000, image:'mini-refrigerateur-bcd118-1.jpg', images:['mini-refrigerateur-bcd118-1.jpg','mini-refrigerateur-bcd118-2.jpg','mini-refrigerateur-bcd118-3.jpg','mini-refrigerateur-bcd118-4.jpg','mini-refrigerateur-bcd118-5.jpg','mini-refrigerateur-bcd118-6.jpg'] },
+    { id:659, cat:'maison-new', badge:'Nouveau', name:'Mini Gaufrier Électrique Antiadhésif (Gaufres, Hashbrowns)', price:7000, image:'mini-gaufrier-electrique-1.jpg', images:['mini-gaufrier-electrique-1.jpg','mini-gaufrier-electrique-2.jpg','mini-gaufrier-electrique-3.jpg'] },
+    { id:660, cat:'mode', badge:'Nouveau', name:'Mini Sac à Main Bandoulière Femme Matelassé (Marron/Rose)', price:4500, image:'mini-sac-bandouliere-femme-1.jpg', images:['mini-sac-bandouliere-femme-1.jpg','mini-sac-bandouliere-femme-2.jpg'] },
+    { id:661, cat:'maison-new', badge:'Top', name:'Set 6 Couteaux de Cuisine Zepter Antiadhésifs + Éplucheur', price:8000, image:'set-couteaux-zepter-6pcs-1.jpg', images:['set-couteaux-zepter-6pcs-1.jpg','set-couteaux-zepter-6pcs-2.jpg','set-couteaux-zepter-6pcs-3.jpg'] },
+    { id:662, cat:'tech', badge:'Nouveau', name:'Sacoche Ordinateur Portable 15.6" Multi-Compartiments (Gris)', price:9000, image:'sacoche-ordinateur-portable-1.jpg' },
+    { id:663, cat:'tech', badge:'Pratique', name:'Trousse EVA Rangement Câbles & Powerbank (23x14.5cm)', price:4000, image:'trousse-eva-rangement-cables-1.jpg', images:['trousse-eva-rangement-cables-1.jpg','trousse-eva-rangement-cables-2.jpg'] },
+    { id:664, cat:'mode', badge:'Nouveau', name:'Lunettes de Soleil Carrées Monture Épaisse (Noir)', price:3500, image:'lunettes-soleil-carrees-noires-1.jpg' },
 ];
 
 const CAT_LABEL = { 'maison-new':'Maison','flash':'Flash Vente','tech':'High-Tech','mode':'Mode','beaute':'Parfums & Beauté','alim':'Épicerie','maisondeco':'Maison & Déco','sport':'Sport','auto':'Automobiles','papier':'Papeterie','super':'Supermarché','bebe':'Rayon Bébé' };
